@@ -379,48 +379,15 @@
 
       
         
-          
-            <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？</p>
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？</p>
 <p>原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的<code>pod AFNetworking, &#39;~1.1.0&#39;</code>，配置podspec之后，我们就可以pod自己的代码来使用了。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先，我们的电脑上应该已经配置好git和pod环境，如果没有配置好，请自行google。</p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>这第一步呢，当然是创建自己的项目了，在创建项目的时候，需要注意几点：</p>
-<ul>
-<li>项目命名最好个性化一点，比如加上特殊前缀，以防跟cocoapods库中已有的pod项目重名导致最终不能上传，当然，你可以通过<code>pod search 项目名</code>去检验一下是否有重名。</li>
-<li>在用xcode编写项目时，需要将pod文件和Example文件分别存放（物理和逻辑上），后面配置podspec文件时需要指定目录。</li>
-</ul>
-<h3 id="项目上传github"><a href="#项目上传github" class="headerlink" title="项目上传github"></a>项目上传github</h3><p>在github上新建一个repo，记得选中创建README.md。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">以下操作都是在terminal下完成的。</div><div class="line">   1) 如果本地代码没有被git管理，则cd到工程目录，执行git init。</div><div class="line">   2) git add origin &apos;github_repo_url&apos; //将github上新建的repo url添加进来。</div><div class="line">   3) git remote -v  //检查以下是否添加成功</div><div class="line">   4) git commit -am &quot;init commmit&quot;</div><div class="line">   5) git pull origin</div><div class="line">   6) git push origin</div></pre></td></tr></table></figure>
-<h3 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h3><p>这个文件对于推广自己的pod非常重要，要让别人了解你的pod的用法，作用，都是通过这个文件表现出来的。可以参照一下我的repo中README文件的格式写法。这个文件是用Markdown语法写的，如果对MD语法不熟悉，请Google。</p>
-<p>大家可能看到在这个文件中有一个Gif的动画，这里推荐一个工具叫做LICEcap，很小巧的一款屏幕录制工具，录制完记得要保存成gif格式的，然后将保存好的git图片放到项目中，然后在README中将路径指向gif就行。</p>
-<h3 id="podspec"><a href="#podspec" class="headerlink" title="podspec"></a>podspec</h3><p>终于到了这一步，这一步也是我遇到很多坑的地方，查阅的时候资料也不是特别的多，而且基本都是英文的。</p>
-<p>先在自己的工程目录上建立一个podspec文件，文件的命名方式是：<code>podName.podspec</code>，podName是你pod的名称，应该与工程名相同。后缀是podspec。创建命令：<br><code>$ pod spec create JSCalendar</code></p>
-<p>用编辑器打开.podspec文件 (我自己用Sublime Text)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#JSCalendar.podspec</div><div class="line">Pod::Spec.new do |s|</div><div class="line">  s.name         = &quot;JSCalendar&quot;</div><div class="line">  s.version      = &quot;1.0.0&quot;</div><div class="line">  s.summary      = &quot;a calendar view.&quot;</div><div class="line"></div><div class="line">  s.homepage     = &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;</div><div class="line">  s.license      = &apos;MIT&apos;</div><div class="line">  s.author       = &#123; &quot;jindou lee&quot; =&gt; &quot;jindou92jin@gmail.com&quot; &#125;</div><div class="line">  s.platform     = :ios, &quot;7.0&quot;</div><div class="line">  s.ios.deployment_target = &quot;7.0&quot;</div><div class="line">  s.source       = &#123; :git =&gt; &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;, :tag =&gt; s.version&#125;</div><div class="line">  s.source_files  = &apos;JSCalendar/JSCalendar/*.&#123;h,m&#125;&apos;</div><div class="line">  s.exclude_files = &quot;JSCalendar/Exclude&quot;</div><div class="line">  s.public_header_files = &quot;JSCalendar/Classes/UIKit/UI_Categories.h&quot;，&quot;JSCalendar/Classes/Foundation/Foundation_Category.h&quot;，&quot;JSCalendar/Classes/**/*.h&quot;</div><div class="line">  s.requires_arc = true</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>podspec文件中有很多参数，但并不是每一个都能用上，我写的这个podspec文件中的参数基本上够用了。这个文件使用ruby语言写的，所以如果有ruby语言的功底看这个代码应该很熟悉，当然没有也没关系，因为理解起来实在太简单了。</p>
-<p>下面还是挨个对每个参数介绍下：<br>1.name ：pod的名字，应该与你的工程名保持一致<br>2.version： 版本号，<strong><em>你以为是你工程的版本号，那你就大错特错了</em></strong>，我在这个地方坑了好久。后来才知道这个version是和你的branch名称保持一致的，如果你的branch名字叫做1.0.0，那这个version就可以要写成1.0.0，当更新版本的时候，要重新建立一个branch命名为1.0.1，然后version也要写成1.0.1。</p>
-<p>3.summary：一句话介绍你的pod<br>4.homepage：pod的url地址<br>5.license：你的pod所遵守的开源协议、 一般都是‘MIT’<br>6.author： 作者名，联系方式<br>7.platform：pod所支持平台和最小系统版本<br>8.ios.deployment_target：同上<br>9.source：pod的地址和tag<br>10.source_files：pod在工程中的所在目录，如果有多个不同的目录，则写成这种形式 :’floder1…’,’floder2….’,’….’<br>11.requires_arc：是否是ARC。</p>
-<p>ok，认真填写podspec文件。已经成功了一大半了。<br>这里还要注意一个问题，source_files中指定的.h .m文件一定不要引用source _files以外文件中的变量，头文件等，不然后面会出错。source _files中的文件应该是独立的模块。</p>
-<h3 id="验证podspec文件"><a href="#验证podspec文件" class="headerlink" title="验证podspec文件"></a>验证podspec文件</h3><p>编辑完podspec文件后需要验证一下这个文件是否可用，podspec文件不允许有任何的<code>Warning</code>或者<code>Error</code>。为了验证podspec的合法性，并根据podspec文件对工程进行编译，<br>执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint</div></pre></td></tr></table></figure>
-<p>如果出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-&gt; JSCalendar (1.0.0)</div><div class="line"></div><div class="line">JSCalendar passed validation.</div></pre></td></tr></table></figure>
-<p>则说明验证通过， 否则， 根据提示修改podspec文件再次验证直到验证通过</p>
-<p>附带说一下，Xcode允许警告存在，所以可以通过命令屏蔽警告</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --allow-warnings</div></pre></td></tr></table></figure>
-<p>如果出现Error但是提示信息不足，可以添加<code>--verbose</code>以获取更多错误信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --verbose</div></pre></td></tr></table></figure>
-<p>也许你会遇到一个错误叫做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Could not find remote branch x.x.x to clone</div></pre></td></tr></table></figure>
-<p>你遇到这个问题说明还是没有看懂我之前写的对于version的解释。</p>
-<p>x.x.x是你在podspec中写的版本号。假如这里是1.0.0，你要先看看自己有没有创建一个叫做1.0.0的分支，然后将1.0.0这个分支push到github上，然后切换到1.0.0这个分支上，再重复执行上面的命令即可。</p>
-<h3 id="cocoapods上传podspec"><a href="#cocoapods上传podspec" class="headerlink" title="cocoapods上传podspec"></a>cocoapods上传podspec</h3><p>podspec文件中需要指定的tag， 完成上述操作后给项目打tag</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git tag -m&quot;first release JSCalendar with podspec&quot; &quot;1.0.0&quot;</div><div class="line">$ git push --tags</div></pre></td></tr></table></figure>
-<p>pod trunk需要注册cocoapods</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk register YOUR_EMAIL &apos;YOUR_NAME&apos;</div></pre></td></tr></table></figure>
-<p>然后你会收到一封邮件，点击确认一下。<br>最后使用pod trunk命令，把podspec文件推送到CocoaPod官方库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk push PodName.podspec</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/14/创建podspec文件，为自己的项目添加pod支持/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -571,13 +538,16 @@
       
         
           
-            <h3 id="弹出框相关"><a href="#弹出框相关" class="headerlink" title="弹出框相关"></a>弹出框相关</h3><p><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display dialog &quot;hello world&quot; buttons &#123;&quot;新按钮&quot;, &quot;新二按钮&quot;&#125; default button 1 with title &quot;标题&quot; with icon note giving up after 5</div></pre></td></tr></table></figure>
-<p><code>buttons {&quot;新按钮&quot;, &quot;新二按钮&quot;}</code> 自定义弹框的按钮文字, 可省略<br><br><code>default button 1</code> 默认高亮的按钮, 也可写作<code>default button &quot;新二按钮&quot;</code>, 可省略<br><br><code>with title &quot;标题&quot;</code>弹出框的标题,可省略<br><br><code>with icon note</code> 弹出框的图片, 默认的有<code>note``caution``stop</code>三种图标, 也可以自定义图标, 可省略<br><br><code>giving up after 5</code>5秒后弹框自动关闭,可省略</p>
-<p>手动换行 opt+return</p>
-<h3 id="注释相关"><a href="#注释相关" class="headerlink" title="注释相关"></a>注释相关</h3><p>单行注释在前边加上”–”，多行注释在前后分别加上(*和*)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">--单行注释(*</div><div class="line">多行注释由(**)组成</div><div class="line">*)</div></pre></td></tr></table></figure>
-          
+          弹出框相关
+1display dialog &quot;hello world&quot; buttons &#123;&quot;新按钮&quot;, &quot;新二按钮&quot;&#125; default button 1 with title &quot;标题&quot; with ic
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/10/AppleScript入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -728,80 +698,20 @@
       
         
           
-            <h2 id="打个招呼先"><a href="#打个招呼先" class="headerlink" title="打个招呼先"></a>打个招呼先</h2><p>这是我的第一篇博文，以后将会持续更新，请大家多多关照。</p>
-<h2 id="Markdown语法入门"><a href="#Markdown语法入门" class="headerlink" title="Markdown语法入门"></a>Markdown语法入门</h2><h3 id="一-什么是Markdown语言"><a href="#一-什么是Markdown语言" class="headerlink" title="一.什么是Markdown语言"></a>一.什么是Markdown语言</h3><p>百度百科的定义:</p>
-<blockquote>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，他可以是普通文本内容具有一定的格式。</p>
-</blockquote>
-<p>对于码农来说，GitHub一定是如雷贯耳。我们在GitHub的项目目录下会看到一个”README.MD”文件，这就是Markdown语言编写的文件，”*.md”就是Markdown文件在windows平台下的后缀名现在假定你已经有了基本的HTML基础，(<a href="http://www.w3school.com.cn/html/" target="_blank" rel="external">不懂的点这里</a>‘简单的html教程’)现在进入Markdown的入门阶段。</p>
-<h3 id="二-准备阶段"><a href="#二-准备阶段" class="headerlink" title="二.准备阶段"></a>二.准备阶段</h3><p>根据操作系统选择一个适用的Markdown编辑器:</p>
-<ul>
-<li>Windows: MarkdownPad</li>
-<li>Linux: ReText</li>
-<li>Mac: Mou</li>
-<li>Wordpress:<a href="https://link.zhihu.com/?target=http%3A//wordpress.org/extend/plugins/markdown-for-wordpress-and-bbpress/" target="_blank" rel="external">WordPress &gt; Markdown for WordPress and bbPress &lt;&lt; WordPress Plugins</a></li>
-</ul>
-<h3 id="三-Markdown官方文档"><a href="#三-Markdown官方文档" class="headerlink" title="三.Markdown官方文档"></a>三.Markdown官方文档</h3><blockquote>
-<p>这里可以看到官方的 Markdown 语法规则文档，当然，后文我也会用自己的方式阐述<strong>这些语法的具体用法</strong>。</p>
-</blockquote>
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">创始人 John Gruber 的 Markdown 语法说明</a></li>
-<li><a href="http://wowubuntu.com/markdown/#list" target="_blank" rel="external">Markdown 中文版语法说明</a></li>
-</ul>
-<h3 id="四-语法入门"><a href="#四-语法入门" class="headerlink" title="四.语法入门"></a>四.语法入门</h3><h4 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h4><p>标题是文章中常用的格式。类似于html中的<code>&lt;h1&gt;</code>到<code>&lt;h6&gt;</code>标签，Markdown中1到6个#号来标志1到6号标题。所以要想把一段文字定义为标题，只需在前面加上若干的#号即可。</p>
-<h4 id="2-列表"><a href="#2-列表" class="headerlink" title="2.列表"></a>2.列表</h4><p>学过html的同学一定知道什么是有序列表和无序列表。在Markdown中非常方便，在文字前面加上*或者+或者-就可将其变成无序列表。在文字前面加上1.,2.,3.就可将其变成有序列表。</p>
-<h4 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h4><p>如果你在此处引用别的地方的文字，那么就需要引用的格式。<br>只需在引用文字前面加上一个<code>&gt;</code>号（大于号）即可。</p>
-<blockquote>
-<p>引用的样式</p>
-</blockquote>
-<h4 id="4-粗体，斜体与删除线"><a href="#4-粗体，斜体与删除线" class="headerlink" title="4.粗体，斜体与删除线"></a>4.粗体，斜体与删除线</h4><p>Markdown中粗体与斜体非常简单，用两个*号把文字包围相当于粗体，用一个*号把文字包围相当于斜体。使用两个~~号包围则显示删除线效果。<br>例如： </p>
-<p><strong>这是粗体</strong></p>
-<p><em>这是斜体</em>   </p>
-<p><del>这是删除线</del></p>
-<h4 id="5-链接与图片"><a href="#5-链接与图片" class="headerlink" title="5.链接与图片"></a>5.链接与图片</h4><p>链接格式：[title](URL)</p>
-<p>图片格式：![title](URL)</p>
-<p>ok，我们可以看到链接和图片的格式相当像，区别在于图片格式多一个!号。<br>插入一个图片需要有<a href="http://baike.baidu.com/link?url=ILGJOOJW8UxE76bymD3J6GxJjvUitqCtZvb85HdWX1N33WwDjHqYCiZ0Ha1k1U8mo6anVej6ziRv8vgA2XvGd9kXTA7YI_EOyfvrwQ6_eW_" target="_blank" rel="external">图床</a>的支持。我推荐七牛云和腾讯云，新用户送免费容量，对于放一些图片来说足够了（不要放高清图）</p>
-<p>推荐一篇文章：<a href="https://zhuanlan.zhihu.com/p/20380531" target="_blank" rel="external">怎样用七牛云做图床</a></p>
-<h4 id="6-代码块"><a href="#6-代码块" class="headerlink" title="6.代码块"></a>6.代码块</h4><p>Markdown当然不会忘了经常使用它的程序猿们，使用` 号（英文半角状态下的Tab键上面的那个键）将代码包围起来即可。</p>
-<p><code>$ echo &quot;Hello, wrold!&quot;</code></p>
-<p>ok，那么你可能会问，我有一个好多代码的代码块，这样打字会疯的，其实markdown还提供了一种简单的嵌入代码块的语法。在你的代码块的前面和后面都加上```(三个反引号)即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo &quot;Hello, world again!&quot;</div></pre></td></tr></table></figure>
-<h4 id="7-更改图片大小"><a href="#7-更改图片大小" class="headerlink" title="7.更改图片大小"></a>7.更改图片大小</h4><p>我们在上面插入的图片的大小都是固定的，那么有什么方法可以改变图片的默认大小呢？<br>我们说过，我们说过，markdown是兼容HTML语法的，所以可以利用<code>&lt;img&gt;</code>标签来定义图片的大小</p>
-<p><code>&lt;img src=&quot;filename&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/img&gt;</code></p>
-<p>这样通过img标签就可以改变图片的大小了。<br>  <br></p>
-<h5 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h5><p>markdown生成表格是比较麻烦的。<br>1.使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行：</p>
-<p>name | age</p>
-<p>—- | —</p>
-<p>LearnShare | 12</p>
-<p>Mike | 32</p>
-<p>2.为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：</p>
-<p>| name | age |</p>
-<p>| ———- | — |</p>
-<p>| LearnShare | 12 |</p>
-<p>| Mike | 32 |<br>在表头下方的分隔线标记中加入 :，即可标记下方单元格内容的对齐方式：</p>
-<p>:— 代表左对齐</p>
-<p>:–: 代表居中对齐</p>
-<p>—: 代表右对齐</p>
-<p>| left | center | right |</p>
-<p>| :— | :—-: | —-: |</p>
-<p>| aaaa | bbbbbb | ccccc |</p>
-<p>| a | b | c |</p>
-<p>使用html标签创建表格，例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">这是一个普通段落。</div><div class="line"></div><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;Foo&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line"></div><div class="line">这是另一个普通段落。</div></pre></td></tr></table></figure>
-<h3 id="五-小技巧"><a href="#五-小技巧" class="headerlink" title="五.小技巧"></a>五.小技巧</h3><h4 id="1-字符转义"><a href="#1-字符转义" class="headerlink" title="1.字符转义"></a>1.字符转义</h4><p>比如我们想输出反引号，但是markdown把反引号作为标记，有编程语言的基础的同学知道，转义符的存在。<br>反斜线（\）用于插入在 Markdown 语法中有特殊作用的字符。</p>
-<h4 id="2-首行缩进"><a href="#2-首行缩进" class="headerlink" title="2.首行缩进"></a>2.首行缩进</h4><p>很遗憾，markdown没有专门的符号来表示首行缩进，但是这也难不倒伟大的人们。我们发现把输入法置为全角状态，然后再输入两个空格就可以了。<br>效果：</p>
-<p>这是默认的效果</p>
-<p>　　这是加了状态的效果</p>
-<p>ok，是不是很神奇呢？</p>
-<h4 id="3-字体大小"><a href="#3-字体大小" class="headerlink" title="3.字体大小"></a>3.字体大小</h4><p>我们之前说过。markdown是兼容HTML的，所以可以使用<code>&lt;font&gt;</code>标签来设置字体大小。</p>
-<p><code>&lt;font size=8&gt;我是放大字&lt;/font&gt;</code></p>
-<font size="8">我是放大字</font>
+          打个招呼先这是我的第一篇博文，以后将会持续更新，请大家多多关照。
+Markdown语法入门一.什么是Markdown语言百度百科的定义:
 
-<p><code>&lt;font size=2&gt;我是缩小字&lt;/font&gt;</code><br>我是缩小字</p>
-<h3 id="六-兼容HTML"><a href="#六-兼容HTML" class="headerlink" title="六.兼容HTML"></a>六.兼容HTML</h3><p>我们反复说到markdown兼容HTML，因为两者的组合可以实现各种神奇的效果，与Word不逞多让。这种小技巧还有很多，在这里就不在叙述。相信你一定迫不及待想试试了。</p>
-<h3 id="七-小结"><a href="#七-小结" class="headerlink" title="七.小结"></a>七.小结</h3><p>Markdown还有好多其他的用法，但是常用的最基本的也就那么几种，大家多用几次Markdown就会熟练了。另外Markdown也兼容html的标签，所以诸如<code>&lt;br/&gt;</code>换行符<code>&lt;hr/&gt;</code>水平线也是可以使用的，你甚至可以用<code>&lt;font&gt;</code>标签来设置字体。<br>如果你确实想要依赖 Markdown 来插入<code>&lt;br/&gt;</code>标签的话，在插入处先按入两个以上的空格然后回车。</p>
+Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，他可以是普通文本内容具有一定的格式。
 
-          
+对于码农来说，GitHub一定是如雷贯耳
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/08/Markdown入门（一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
