@@ -109,7 +109,7 @@ Markdown语法入门一.什么是Markdown语言百度百科的定义:
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，他可以是普通文本内容具有一定的格式。
 
 对于码农来说，GitHub一定是如雷贯耳。我们在GitHub的项目目录下会看到一个”README.MD”文件，这就是Markdown语言编写">
-<meta property="og:updated_time" content="2017-02-14T04:27:21.000Z">
+<meta property="og:updated_time" content="2017-02-24T07:40:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown入门（一）">
 <meta name="twitter:description" content="打个招呼先这是我的第一篇博文，以后将会持续更新，请大家多多关照。
@@ -437,22 +437,23 @@ Markdown是一种可以使用普通文本编辑器编写的标记语言，通过
 <p><code>&lt;img src=&quot;filename&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/img&gt;</code></p>
 <p>这样通过img标签就可以改变图片的大小了。<br>  <br></p>
 <h5 id="8-表格"><a href="#8-表格" class="headerlink" title="8.表格"></a>8.表格</h5><p>markdown生成表格是比较麻烦的。<br>1.使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行：</p>
-<p>name | age</p>
-<p>—- | —</p>
-<p>LearnShare | 12</p>
-<p>Mike | 32</p>
-<p>2.为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：</p>
 <p>| name | age |</p>
-<p>| ———- | — |</p>
+<p>|:—- | —:|</p>
 <p>| LearnShare | 12 |</p>
-<p>| Mike | 32 |<br>在表头下方的分隔线标记中加入 :，即可标记下方单元格内容的对齐方式：</p>
+<p>| Mike | 32 |</p>
+<p>2.为了美观，可以使用空格对齐不同行的单元格，并在左右两侧都使用 | 来标记单元格边界：</p>
+<p>| name             |     age        |</p>
+<p>| ———-     |     —     |</p>
+<p>| LearnShare    |     12         |</p>
+<p>| Mike             |     32         |</p>
+<p>在表头下方的分隔线标记中加入 :，即可标记下方单元格内容的对齐方式：</p>
 <p>:— 代表左对齐</p>
 <p>:–: 代表居中对齐</p>
 <p>—: 代表右对齐</p>
 <p>| left | center | right |</p>
 <p>| :— | :—-: | —-: |</p>
 <p>| aaaa | bbbbbb | ccccc |</p>
-<p>| a | b | c |</p>
+<p>|    a    | b     | c         |</p>
 <p>使用html标签创建表格，例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">这是一个普通段落。</div><div class="line"></div><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;Foo&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div><div class="line"></div><div class="line">这是另一个普通段落。</div></pre></td></tr></table></figure>
 <h3 id="五-小技巧"><a href="#五-小技巧" class="headerlink" title="五.小技巧"></a>五.小技巧</h3><h4 id="1-字符转义"><a href="#1-字符转义" class="headerlink" title="1.字符转义"></a>1.字符转义</h4><p>比如我们想输出反引号，但是markdown把反引号作为标记，有编程语言的基础的同学知道，转义符的存在。<br>反斜线（\）用于插入在 Markdown 语法中有特殊作用的字符。</p>
