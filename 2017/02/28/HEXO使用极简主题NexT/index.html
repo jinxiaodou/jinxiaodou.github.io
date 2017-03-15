@@ -103,7 +103,7 @@
 在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 He">
 <meta property="og:image" content="http://om2jpczx8.bkt.clouddn.com/next_001.png">
 <meta property="og:image" content="http://om2jpczx8.bkt.clouddn.com/next_002.png">
-<meta property="og:updated_time" content="2017-02-28T13:40:44.000Z">
+<meta property="og:updated_time" content="2017-03-02T15:03:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO使用极简主题NexT">
 <meta name="twitter:description" content="前言使用hexo搭建好个人博客之后，觉得自己好流弊啊，然而总感觉咋么这么丑捏？于是去看别人的博客，有些挺好看的嘛，于是学着使用了第一个主题：jacman，费劲力气配置好主题之后，打开博客，嗯……不丑了，难看了。去知乎翻一翻别人推荐的主题，嘿，发现了这款最适合我的极简主题NexT。
@@ -346,6 +346,17 @@
 
           
           
+             <span id="/2017/02/28/HEXO使用极简主题NexT/" class="leancloud_visitors" data-flag-title="HEXO使用极简主题NexT">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -549,6 +560,7 @@
 
 <p>创建站点完成后在 <strong>主题配置文件</strong> 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duoshuo_shortname: iissnan-notes</div></pre></td></tr></table></figure></p>
 <p>请注意为了确保多说索引的页面地址正确，需要在 <strong>站点配置文件</strong> 中正确设置 <code>url</code> 为你站点的域名。 若您的评论跳转到 <code>http://yoursite.com</code>，请检查下 <code>url</code> 的配置是否正确。</p>
+<p><strong><a href="https://notes.wanghao.work/2015-07-25-多说主动邮件提醒.html#more" target="_blank" rel="external">关于多有评论的通知提醒</a></strong></p>
 <h3 id="阅读次数统计（LeanCloud）-由-Doublemine-贡献"><a href="#阅读次数统计（LeanCloud）-由-Doublemine-贡献" class="headerlink" title="阅读次数统计（LeanCloud） 由 Doublemine 贡献"></a>阅读次数统计（LeanCloud） 由 <a href="https://github.com/iissnan/hexo-theme-next/pull/439" target="_blank" rel="external">Doublemine</a> 贡献</h3><p>请查看 <a href="https://notes.wanghao.work/2015-10-21-为NexT主题添加文章阅读量统计功能.html#配置LeanCloud" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
 <h3 id="其他第三方服务"><a href="#其他第三方服务" class="headerlink" title="其他第三方服务"></a><a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="external">其他第三方服务</a></h3><p><a href="http://theme-next.iissnan.com/third-party-services.html#algolia-search" target="_blank" rel="external">Algolia搜索</a></p>
 <h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>更多关于next主题使用，请参考<a href="http://www.codepub.cn/2016/03/20/Hexo-blog-theme-switching-from-Jacman-to-NexT-Mist/" target="_blank" rel="external">Hexo博客主题从Jacman切换到NexT.Mist</a></p>
@@ -681,7 +693,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -858,7 +870,7 @@
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jinxiaodou-github"};
+    var duoshuoQuery = {short_name:"jinxiaodougithub"};
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
@@ -895,6 +907,113 @@
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FxqMNgAbim5zwowLcfk4w2DF-gzGzoHsz", "Y0tgeTTgwjqV939b9176C9lY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
