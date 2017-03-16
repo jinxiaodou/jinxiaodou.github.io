@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="podspec,cocoapods,pods,ios," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,19 +93,19 @@
 
 
 
-<meta name="description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
-原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
+<meta name="description" content="前言相信大家都使用过cocoapods第三方库管理工具，今天给大家推荐一个新兴的管理工具carthage。
+同样是第三方管理工具，cocoapods会创建和修改项目的workspace配置，使用起来也很便捷，但是需要翻墙。carthage的特点是灵活，不会生成workspace文件，只需要打包好的framework文件，引入之后就能使用，而且使用的时候项目干干净净，就像使用原生的framework">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建podspec文件，为自己的项目添加pod支持">
-<meta property="og:url" content="http://yoursite.com/2017/02/14/create_cocoapods/index.html">
+<meta property="og:title" content="carthage 第三方库管理工具">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/SwiftCarthage/index.html">
 <meta property="og:site_name" content="金豆的个人空间">
-<meta property="og:description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
-原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
-<meta property="og:updated_time" content="2017-02-28T12:31:27.000Z">
+<meta property="og:description" content="前言相信大家都使用过cocoapods第三方库管理工具，今天给大家推荐一个新兴的管理工具carthage。
+同样是第三方管理工具，cocoapods会创建和修改项目的workspace配置，使用起来也很便捷，但是需要翻墙。carthage的特点是灵活，不会生成workspace文件，只需要打包好的framework文件，引入之后就能使用，而且使用的时候项目干干净净，就像使用原生的framework">
+<meta property="og:updated_time" content="2017-02-27T09:41:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="创建podspec文件，为自己的项目添加pod支持">
-<meta name="twitter:description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
-原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
+<meta name="twitter:title" content="carthage 第三方库管理工具">
+<meta name="twitter:description" content="前言相信大家都使用过cocoapods第三方库管理工具，今天给大家推荐一个新兴的管理工具carthage。
+同样是第三方管理工具，cocoapods会创建和修改项目的workspace配置，使用起来也很便捷，但是需要翻墙。carthage的特点是灵活，不会生成workspace文件，只需要打包好的framework文件，引入之后就能使用，而且使用的时候项目干干净净，就像使用原生的framework">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/14/create_cocoapods/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/27/SwiftCarthage/"/>
 
 
 
 
 
-  <title> 创建podspec文件，为自己的项目添加pod支持 | 金豆的个人空间 </title>
+  <title> carthage 第三方库管理工具 | 金豆的个人空间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/14/create_cocoapods/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/27/SwiftCarthage/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="jindou.li">
@@ -300,7 +300,7 @@
             
             
               
-                创建podspec文件，为自己的项目添加pod支持
+                carthage 第三方库管理工具
               
             
           </h1>
@@ -315,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-14T10:41:55+08:00">
-                2017-02-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-27T17:02:55+08:00">
+                2017-02-27
               </time>
             
 
@@ -356,8 +356,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/14/create_cocoapods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/create_cocoapods/" itemprop="commentCount"></span>
+                <a href="/2017/02/27/SwiftCarthage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/27/SwiftCarthage/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,7 +365,7 @@
 
           
           
-             <span id="/2017/02/14/create_cocoapods/" class="leancloud_visitors" data-flag-title="创建podspec文件，为自己的项目添加pod支持">
+             <span id="/2017/02/27/SwiftCarthage/" class="leancloud_visitors" data-flag-title="carthage 第三方库管理工具">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,46 +394,26 @@
       
 
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？</p>
-<p>原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的<code>pod AFNetworking, &#39;~1.1.0&#39;</code>，配置podspec之后，我们就可以pod自己的代码来使用了。</p>
-<a id="more"></a>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先，我们的电脑上应该已经配置好git和pod环境，如果没有配置好，请自行google。</p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>这第一步呢，当然是创建自己的项目了，在创建项目的时候，需要注意几点：</p>
-<ul>
-<li>项目命名最好个性化一点，比如加上特殊前缀，以防跟cocoapods库中已有的pod项目重名导致最终不能上传，当然，你可以通过<code>pod search 项目名</code>去检验一下是否有重名。</li>
-<li>在用xcode编写项目时，需要将pod文件和Example文件分别存放（物理和逻辑上），后面配置podspec文件时需要指定目录。</li>
-</ul>
-<h3 id="项目上传github"><a href="#项目上传github" class="headerlink" title="项目上传github"></a>项目上传github</h3><p>在github上新建一个repo，记得选中创建README.md。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">以下操作都是在terminal下完成的。</div><div class="line">   1) 如果本地代码没有被git管理，则cd到工程目录，执行git init。</div><div class="line">   2) git add origin &apos;github_repo_url&apos; //将github上新建的repo url添加进来。</div><div class="line">   3) git remote -v  //检查以下是否添加成功</div><div class="line">   4) git commit -am &quot;init commmit&quot;</div><div class="line">   5) git pull origin</div><div class="line">   6) git push origin</div></pre></td></tr></table></figure>
-<h3 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h3><p>这个文件对于推广自己的pod非常重要，要让别人了解你的pod的用法，作用，都是通过这个文件表现出来的。可以参照一下我的repo中README文件的格式写法。这个文件是用Markdown语法写的，如果对MD语法不熟悉，请Google。</p>
-<p>大家可能看到在这个文件中有一个Gif的动画，这里推荐一个工具叫做LICEcap，很小巧的一款屏幕录制工具，录制完记得要保存成gif格式的，然后将保存好的git图片放到项目中，然后在README中将路径指向gif就行。</p>
-<h3 id="podspec"><a href="#podspec" class="headerlink" title="podspec"></a>podspec</h3><p>终于到了这一步，这一步也是我遇到很多坑的地方，查阅的时候资料也不是特别的多，而且基本都是英文的。</p>
-<p>先在自己的工程目录上建立一个podspec文件，文件的命名方式是：<code>podName.podspec</code>，podName是你pod的名称，应该与工程名相同。后缀是podspec。创建命令：<br><code>$ pod spec create JSCalendar</code></p>
-<p>用编辑器打开.podspec文件 (我自己用Sublime Text)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#JSCalendar.podspec</div><div class="line">Pod::Spec.new do |s|</div><div class="line">  s.name         = &quot;JSCalendar&quot;</div><div class="line">  s.version      = &quot;1.0.0&quot;</div><div class="line">  s.summary      = &quot;a calendar view.&quot;</div><div class="line"></div><div class="line">  s.homepage     = &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;</div><div class="line">  s.license      = &apos;MIT&apos;</div><div class="line">  s.author       = &#123; &quot;jindou lee&quot; =&gt; &quot;jindou92jin@gmail.com&quot; &#125;</div><div class="line">  s.platform     = :ios, &quot;7.0&quot;</div><div class="line">  s.ios.deployment_target = &quot;7.0&quot;</div><div class="line">  s.source       = &#123; :git =&gt; &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;, :tag =&gt; s.version&#125;</div><div class="line">  s.source_files  = &apos;JSCalendar/JSCalendar/*.&#123;h,m&#125;&apos;</div><div class="line">  s.exclude_files = &quot;JSCalendar/Exclude&quot;</div><div class="line">  s.public_header_files = &quot;JSCalendar/Classes/UIKit/UI_Categories.h&quot;，&quot;JSCalendar/Classes/Foundation/Foundation_Category.h&quot;，&quot;JSCalendar/Classes/**/*.h&quot;</div><div class="line">  s.requires_arc = true</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>podspec文件中有很多参数，但并不是每一个都能用上，我写的这个podspec文件中的参数基本上够用了。这个文件使用ruby语言写的，所以如果有ruby语言的功底看这个代码应该很熟悉，当然没有也没关系，因为理解起来实在太简单了。</p>
-<p>下面还是挨个对每个参数介绍下：<br>1.name ：pod的名字，应该与你的工程名保持一致<br>2.version： 版本号，<strong><em>你以为是你工程的版本号，那你就大错特错了</em></strong>，我在这个地方坑了好久。后来才知道这个version是和你的branch名称保持一致的，如果你的branch名字叫做1.0.0，那这个version就可以要写成1.0.0，当更新版本的时候，要重新建立一个branch命名为1.0.1，然后version也要写成1.0.1。</p>
-<p>3.summary：一句话介绍你的pod<br>4.homepage：pod的url地址<br>5.license：你的pod所遵守的开源协议、 一般都是‘MIT’<br>6.author： 作者名，联系方式<br>7.platform：pod所支持平台和最小系统版本<br>8.ios.deployment_target：同上<br>9.source：pod的地址和tag<br>10.source_files：pod在工程中的所在目录，如果有多个不同的目录，则写成这种形式 :’floder1…’,’floder2….’,’….’<br>11.requires_arc：是否是ARC。</p>
-<p>ok，认真填写podspec文件。已经成功了一大半了。<br>这里还要注意一个问题，source_files中指定的.h .m文件一定不要引用source _files以外文件中的变量，头文件等，不然后面会出错。source _files中的文件应该是独立的模块。</p>
-<h3 id="验证podspec文件"><a href="#验证podspec文件" class="headerlink" title="验证podspec文件"></a>验证podspec文件</h3><p>编辑完podspec文件后需要验证一下这个文件是否可用，podspec文件不允许有任何的<code>Warning</code>或者<code>Error</code>。为了验证podspec的合法性，并根据podspec文件对工程进行编译，<br>执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint</div></pre></td></tr></table></figure>
-<p>如果出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-&gt; JSCalendar (1.0.0)</div><div class="line"></div><div class="line">JSCalendar passed validation.</div></pre></td></tr></table></figure>
-<p>则说明验证通过， 否则， 根据提示修改podspec文件再次验证直到验证通过</p>
-<p>附带说一下，Xcode允许警告存在，所以可以通过命令屏蔽警告</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --allow-warnings</div></pre></td></tr></table></figure>
-<p>如果出现Error但是提示信息不足，可以添加<code>--verbose</code>以获取更多错误信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --verbose</div></pre></td></tr></table></figure>
-<p>也许你会遇到一个错误叫做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Could not find remote branch x.x.x to clone</div></pre></td></tr></table></figure>
-<p>你遇到这个问题说明还是没有看懂我之前写的对于version的解释。</p>
-<p>x.x.x是你在podspec中写的版本号。假如这里是1.0.0，你要先看看自己有没有创建一个叫做1.0.0的分支，然后将1.0.0这个分支push到github上，然后切换到1.0.0这个分支上，再重复执行上面的命令即可。</p>
-<h3 id="cocoapods上传podspec"><a href="#cocoapods上传podspec" class="headerlink" title="cocoapods上传podspec"></a>cocoapods上传podspec</h3><p>podspec文件中需要指定的tag， 完成上述操作后给项目打tag</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git tag -m&quot;first release JSCalendar with podspec&quot; &quot;1.0.0&quot;</div><div class="line">$ git push --tags</div></pre></td></tr></table></figure>
-<p>pod trunk需要注册cocoapods</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk register YOUR_EMAIL &apos;YOUR_NAME&apos;</div></pre></td></tr></table></figure>
-<p>然后你会收到一封邮件，点击确认一下。<br>最后使用pod trunk命令，把podspec文件推送到CocoaPod官方库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk push PodName.podspec</div></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信大家都使用过cocoapods第三方库管理工具，今天给大家推荐一个新兴的管理工具carthage。</p>
+<p></p><p>同样是第三方管理工具，cocoapods会创建和修改项目的workspace配置，使用起来也很便捷，但是需要翻墙。carthage的特点是灵活，不会生成workspace文件，只需要打包好的framework文件，引入之后就能使用，而且使用的时候项目干干净净，就像使用原生的framework一样，而且不用担心cocoapods打包时出现的各种问题。</p>
+<p>##安装使用Carthage</p>
+<h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ brew update</div><div class="line"></div><div class="line">$ brew install carthage</div></pre></td></tr></table></figure>
+<p>###查看版本号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ carthage version</div></pre></td></tr></table></figure>
+<p>在项目中使用carthage</p>
+<h3 id="1、进入项目所在文件夹"><a href="#1、进入项目所在文件夹" class="headerlink" title="1、进入项目所在文件夹"></a>1、进入项目所在文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd ~/Documents/Project</div></pre></td></tr></table></figure>
+<h3 id="2、创建空的Carthage文件"><a href="#2、创建空的Carthage文件" class="headerlink" title="2、创建空的Carthage文件"></a>2、创建空的Carthage文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch Carthage</div></pre></td></tr></table></figure>
+<h3 id="3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）"><a href="#3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）" class="headerlink" title="3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）"></a>3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ open -a Xcode Carthage</div></pre></td></tr></table></figure>
+<h3 id="4、写入需要的第三方库"><a href="#4、写入需要的第三方库" class="headerlink" title="4、写入需要的第三方库"></a>4、写入需要的第三方库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 3.0</div></pre></td></tr></table></figure>
+<p>这里与cocoapods中一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">~&gt; 3.0 表示使用版本3.0以上但是低于4.0的最新版本，如3.5, 3.9</div><div class="line">== 3.0 表示使用3.0版本</div><div class="line">\&gt;= 3.0表示使用3.0或更高的版本</div><div class="line">如果你没有指明版本号，则会自动使用最新的版本</div></pre></td></tr></table></figure>
+<h3 id="5、保存并关闭Cartfile文件，终端运行"><a href="#5、保存并关闭Cartfile文件，终端运行" class="headerlink" title="5、保存并关闭Cartfile文件，终端运行"></a>5、保存并关闭Cartfile文件，终端运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ carthage update --platform iOS</div></pre></td></tr></table></figure>
+<p>carthage会为你下载和编译所需要的第三方库，当命令执行完毕，在你的项目文件夹中会创建一个名为Carthage的文件夹</p>
+<p>在 ~/Carthage/Build/iOS里会出现xxx.framework文件</p>
+<h3 id="6、现在打开你的项目，点击project，选择target-再选择上方的General，将需要的framework文件拖到-Linked-frameworks-and-Binaries内"><a href="#6、现在打开你的项目，点击project，选择target-再选择上方的General，将需要的framework文件拖到-Linked-frameworks-and-Binaries内" class="headerlink" title="6、现在打开你的项目，点击project，选择target, 再选择上方的General，将需要的framework文件拖到 Linked frameworks and Binaries内"></a><p>6、现在打开你的项目，点击project，选择target, 再选择上方的General，将需要的framework文件拖到 Linked frameworks and Binaries内</p></h3><h3 id="7、点击Build-Phrase-tab选项，添加相应的run-script。建立对此脚本的依赖（编译静态库的后会运行此脚本）"><a href="#7、点击Build-Phrase-tab选项，添加相应的run-script。建立对此脚本的依赖（编译静态库的后会运行此脚本）" class="headerlink" title="7、点击Build Phrase tab选项，添加相应的run script。建立对此脚本的依赖（编译静态库的后会运行此脚本）"></a><p>7、点击Build Phrase tab选项，添加相应的run script。建立对此脚本的依赖（编译静态库的后会运行此脚本）</p></h3><p><br><br>shell中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user/local/bin/carthage copy-frameworks</div></pre></td></tr></table></figure></p>
+<p>Input Files中导入对应framework<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(SRCROOT/Cartfile/Build/iOS/Alamofire.framework)</div></pre></td></tr></table></figure></p>
+<p><br></p>
+<h3 id="8、使用第三方库"><a href="#8、使用第三方库" class="headerlink" title="8、使用第三方库"></a>8、使用第三方库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Alamofire</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -455,18 +435,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/podspec/" rel="tag"># podspec</a>
-          
-            <a href="/tags/cocoapods/" rel="tag"># cocoapods</a>
-          
-            <a href="/tags/pods/" rel="tag"># pods</a>
-          
-            <a href="/tags/ios/" rel="tag"># ios</a>
-          
-        </div>
-      
 
       
         
@@ -476,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/10/AppleScriptLesson/" rel="next" title="AppleScript入门">
-                <i class="fa fa-chevron-left"></i> AppleScript入门
+              <a href="/2017/02/14/create_cocoapods/" rel="next" title="创建podspec文件，为自己的项目添加pod支持">
+                <i class="fa fa-chevron-left"></i> 创建podspec文件，为自己的项目添加pod支持
               </a>
             
           </div>
@@ -486,8 +454,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/27/SwiftCarthage/" rel="prev" title="carthage 第三方库管理工具">
-                carthage 第三方库管理工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/28/useQiNiuPicService/" rel="prev" title="使用七牛云搭建免费图床">
+                使用七牛云搭建免费图床 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -515,8 +483,8 @@
   
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/14/create_cocoapods/"
-           data-title="创建podspec文件，为自己的项目添加pod支持" data-url="http://yoursite.com/2017/02/14/create_cocoapods/">
+      <div class="ds-thread" data-thread-key="2017/02/27/SwiftCarthage/"
+           data-title="carthage 第三方库管理工具" data-url="http://yoursite.com/2017/02/27/SwiftCarthage/">
       </div>
     
   </div>
@@ -616,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目上传github"><span class="nav-number">4.</span> <span class="nav-text">项目上传github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#README-md"><span class="nav-number">5.</span> <span class="nav-text">README.md</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#podspec"><span class="nav-number">6.</span> <span class="nav-text">podspec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证podspec文件"><span class="nav-number">7.</span> <span class="nav-text">验证podspec文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cocoapods上传podspec"><span class="nav-number">8.</span> <span class="nav-text">cocoapods上传podspec</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装命令"><span class="nav-number">1.1.</span> <span class="nav-text">安装命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、进入项目所在文件夹"><span class="nav-number">1.2.</span> <span class="nav-text">1、进入项目所在文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、创建空的Carthage文件"><span class="nav-number">1.3.</span> <span class="nav-text">2、创建空的Carthage文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）"><span class="nav-number">1.4.</span> <span class="nav-text">3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、写入需要的第三方库"><span class="nav-number">1.5.</span> <span class="nav-text">4、写入需要的第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、保存并关闭Cartfile文件，终端运行"><span class="nav-number">1.6.</span> <span class="nav-text">5、保存并关闭Cartfile文件，终端运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、现在打开你的项目，点击project，选择target-再选择上方的General，将需要的framework文件拖到-Linked-frameworks-and-Binaries内"><span class="nav-number">1.7.</span> <span class="nav-text">6、现在打开你的项目，点击project，选择target, 再选择上方的General，将需要的framework文件拖到 Linked frameworks and Binaries内</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、点击Build-Phrase-tab选项，添加相应的run-script。建立对此脚本的依赖（编译静态库的后会运行此脚本）"><span class="nav-number">1.8.</span> <span class="nav-text">7、点击Build Phrase tab选项，添加相应的run script。建立对此脚本的依赖（编译静态库的后会运行此脚本）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、使用第三方库"><span class="nav-number">1.9.</span> <span class="nav-text">8、使用第三方库</span></a></li></ol></li></ol></div>
             
 
           </div>
