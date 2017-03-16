@@ -1,0 +1,894 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|family=Neucha:300,300italic,400,400italic,700,700italic:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="podspec,cocoapods,pods,ios," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
+原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建podspec文件，为自己的项目添加pod支持">
+<meta property="og:url" content="http://yoursite.com/2017/02/14/create_cocoapods/index.html">
+<meta property="og:site_name" content="金豆的个人空间">
+<meta property="og:description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
+原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
+<meta property="og:updated_time" content="2017-02-28T12:31:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="创建podspec文件，为自己的项目添加pod支持">
+<meta name="twitter:description" content="写在前面平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？
+原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的pod AFNetworking, &amp;#39;~1.1.0&amp;#39;，配置podspec之后，我们就可以pod自己的代码来使用了。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/14/create_cocoapods/"/>
+
+
+
+
+
+  <title> 创建podspec文件，为自己的项目添加pod支持 | 金豆的个人空间 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">金豆的个人空间</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">金豆的博客</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/14/create_cocoapods/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="jindou.li">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="金豆的个人空间">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="金豆的个人空间" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                创建podspec文件，为自己的项目添加pod支持
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-14T10:41:55+08:00">
+                2017-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/14/create_cocoapods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/create_cocoapods/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/02/14/create_cocoapods/" class="leancloud_visitors" data-flag-title="创建podspec文件，为自己的项目添加pod支持">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？</p>
+<p>原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的<code>pod AFNetworking, &#39;~1.1.0&#39;</code>，配置podspec之后，我们就可以pod自己的代码来使用了。</p>
+<a id="more"></a>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先，我们的电脑上应该已经配置好git和pod环境，如果没有配置好，请自行google。</p>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>这第一步呢，当然是创建自己的项目了，在创建项目的时候，需要注意几点：</p>
+<ul>
+<li>项目命名最好个性化一点，比如加上特殊前缀，以防跟cocoapods库中已有的pod项目重名导致最终不能上传，当然，你可以通过<code>pod search 项目名</code>去检验一下是否有重名。</li>
+<li>在用xcode编写项目时，需要将pod文件和Example文件分别存放（物理和逻辑上），后面配置podspec文件时需要指定目录。</li>
+</ul>
+<h3 id="项目上传github"><a href="#项目上传github" class="headerlink" title="项目上传github"></a>项目上传github</h3><p>在github上新建一个repo，记得选中创建README.md。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">以下操作都是在terminal下完成的。</div><div class="line">   1) 如果本地代码没有被git管理，则cd到工程目录，执行git init。</div><div class="line">   2) git add origin &apos;github_repo_url&apos; //将github上新建的repo url添加进来。</div><div class="line">   3) git remote -v  //检查以下是否添加成功</div><div class="line">   4) git commit -am &quot;init commmit&quot;</div><div class="line">   5) git pull origin</div><div class="line">   6) git push origin</div></pre></td></tr></table></figure>
+<h3 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h3><p>这个文件对于推广自己的pod非常重要，要让别人了解你的pod的用法，作用，都是通过这个文件表现出来的。可以参照一下我的repo中README文件的格式写法。这个文件是用Markdown语法写的，如果对MD语法不熟悉，请Google。</p>
+<p>大家可能看到在这个文件中有一个Gif的动画，这里推荐一个工具叫做LICEcap，很小巧的一款屏幕录制工具，录制完记得要保存成gif格式的，然后将保存好的git图片放到项目中，然后在README中将路径指向gif就行。</p>
+<h3 id="podspec"><a href="#podspec" class="headerlink" title="podspec"></a>podspec</h3><p>终于到了这一步，这一步也是我遇到很多坑的地方，查阅的时候资料也不是特别的多，而且基本都是英文的。</p>
+<p>先在自己的工程目录上建立一个podspec文件，文件的命名方式是：<code>podName.podspec</code>，podName是你pod的名称，应该与工程名相同。后缀是podspec。创建命令：<br><code>$ pod spec create JSCalendar</code></p>
+<p>用编辑器打开.podspec文件 (我自己用Sublime Text)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#JSCalendar.podspec</div><div class="line">Pod::Spec.new do |s|</div><div class="line">  s.name         = &quot;JSCalendar&quot;</div><div class="line">  s.version      = &quot;1.0.0&quot;</div><div class="line">  s.summary      = &quot;a calendar view.&quot;</div><div class="line"></div><div class="line">  s.homepage     = &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;</div><div class="line">  s.license      = &apos;MIT&apos;</div><div class="line">  s.author       = &#123; &quot;jindou lee&quot; =&gt; &quot;jindou92jin@gmail.com&quot; &#125;</div><div class="line">  s.platform     = :ios, &quot;7.0&quot;</div><div class="line">  s.ios.deployment_target = &quot;7.0&quot;</div><div class="line">  s.source       = &#123; :git =&gt; &quot;https://github.com/jinxiaodou/JSCalendar.git&quot;, :tag =&gt; s.version&#125;</div><div class="line">  s.source_files  = &apos;JSCalendar/JSCalendar/*.&#123;h,m&#125;&apos;</div><div class="line">  s.exclude_files = &quot;JSCalendar/Exclude&quot;</div><div class="line">  s.public_header_files = &quot;JSCalendar/Classes/UIKit/UI_Categories.h&quot;，&quot;JSCalendar/Classes/Foundation/Foundation_Category.h&quot;，&quot;JSCalendar/Classes/**/*.h&quot;</div><div class="line">  s.requires_arc = true</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>podspec文件中有很多参数，但并不是每一个都能用上，我写的这个podspec文件中的参数基本上够用了。这个文件使用ruby语言写的，所以如果有ruby语言的功底看这个代码应该很熟悉，当然没有也没关系，因为理解起来实在太简单了。</p>
+<p>下面还是挨个对每个参数介绍下：<br>1.name ：pod的名字，应该与你的工程名保持一致<br>2.version： 版本号，<strong><em>你以为是你工程的版本号，那你就大错特错了</em></strong>，我在这个地方坑了好久。后来才知道这个version是和你的branch名称保持一致的，如果你的branch名字叫做1.0.0，那这个version就可以要写成1.0.0，当更新版本的时候，要重新建立一个branch命名为1.0.1，然后version也要写成1.0.1。</p>
+<p>3.summary：一句话介绍你的pod<br>4.homepage：pod的url地址<br>5.license：你的pod所遵守的开源协议、 一般都是‘MIT’<br>6.author： 作者名，联系方式<br>7.platform：pod所支持平台和最小系统版本<br>8.ios.deployment_target：同上<br>9.source：pod的地址和tag<br>10.source_files：pod在工程中的所在目录，如果有多个不同的目录，则写成这种形式 :’floder1…’,’floder2….’,’….’<br>11.requires_arc：是否是ARC。</p>
+<p>ok，认真填写podspec文件。已经成功了一大半了。<br>这里还要注意一个问题，source_files中指定的.h .m文件一定不要引用source _files以外文件中的变量，头文件等，不然后面会出错。source _files中的文件应该是独立的模块。</p>
+<h3 id="验证podspec文件"><a href="#验证podspec文件" class="headerlink" title="验证podspec文件"></a>验证podspec文件</h3><p>编辑完podspec文件后需要验证一下这个文件是否可用，podspec文件不允许有任何的<code>Warning</code>或者<code>Error</code>。为了验证podspec的合法性，并根据podspec文件对工程进行编译，<br>执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint</div></pre></td></tr></table></figure>
+<p>如果出现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-&gt; JSCalendar (1.0.0)</div><div class="line"></div><div class="line">JSCalendar passed validation.</div></pre></td></tr></table></figure>
+<p>则说明验证通过， 否则， 根据提示修改podspec文件再次验证直到验证通过</p>
+<p>附带说一下，Xcode允许警告存在，所以可以通过命令屏蔽警告</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --allow-warnings</div></pre></td></tr></table></figure>
+<p>如果出现Error但是提示信息不足，可以添加<code>--verbose</code>以获取更多错误信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod lib lint --verbose</div></pre></td></tr></table></figure>
+<p>也许你会遇到一个错误叫做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Could not find remote branch x.x.x to clone</div></pre></td></tr></table></figure>
+<p>你遇到这个问题说明还是没有看懂我之前写的对于version的解释。</p>
+<p>x.x.x是你在podspec中写的版本号。假如这里是1.0.0，你要先看看自己有没有创建一个叫做1.0.0的分支，然后将1.0.0这个分支push到github上，然后切换到1.0.0这个分支上，再重复执行上面的命令即可。</p>
+<h3 id="cocoapods上传podspec"><a href="#cocoapods上传podspec" class="headerlink" title="cocoapods上传podspec"></a>cocoapods上传podspec</h3><p>podspec文件中需要指定的tag， 完成上述操作后给项目打tag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git tag -m&quot;first release JSCalendar with podspec&quot; &quot;1.0.0&quot;</div><div class="line">$ git push --tags</div></pre></td></tr></table></figure>
+<p>pod trunk需要注册cocoapods</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk register YOUR_EMAIL &apos;YOUR_NAME&apos;</div></pre></td></tr></table></figure>
+<p>然后你会收到一封邮件，点击确认一下。<br>最后使用pod trunk命令，把podspec文件推送到CocoaPod官方库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod trunk push PodName.podspec</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/podspec/" rel="tag"># podspec</a>
+          
+            <a href="/tags/cocoapods/" rel="tag"># cocoapods</a>
+          
+            <a href="/tags/pods/" rel="tag"># pods</a>
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/10/AppleScriptLesson/" rel="next" title="AppleScript入门">
+                <i class="fa fa-chevron-left"></i> AppleScript入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/27/SwiftCarthage/" rel="prev" title="carthage 第三方库管理工具">
+                carthage 第三方库管理工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/14/create_cocoapods/"
+           data-title="创建podspec文件，为自己的项目添加pod支持" data-url="http://yoursite.com/2017/02/14/create_cocoapods/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="jindou.li" />
+          <p class="site-author-name" itemprop="name">jindou.li</p>
+          <p class="site-description motion-element" itemprop="description">关于个人编程以来的总结</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目上传github"><span class="nav-number">4.</span> <span class="nav-text">项目上传github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#README-md"><span class="nav-number">5.</span> <span class="nav-text">README.md</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#podspec"><span class="nav-number">6.</span> <span class="nav-text">podspec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证podspec文件"><span class="nav-number">7.</span> <span class="nav-text">验证podspec文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cocoapods上传podspec"><span class="nav-number">8.</span> <span class="nav-text">cocoapods上传podspec</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jindou.li</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jinxiaodougithub"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FxqMNgAbim5zwowLcfk4w2DF-gzGzoHsz", "Y0tgeTTgwjqV939b9176C9lY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
