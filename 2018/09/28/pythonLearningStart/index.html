@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="金豆的个人空间">
 <meta property="og:description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。
 最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Pyth">
-<meta property="og:updated_time" content="2018-09-28T10:01:18.544Z">
+<meta property="og:updated_time" content="2018-10-23T08:36:45.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想学Python">
 <meta name="twitter:description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。
@@ -398,6 +398,17 @@
 <p>最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Python的，结果人家不情不愿的，那算咯，我自己来学。</p>
 <h3 id="学前准备"><a href="#学前准备" class="headerlink" title="学前准备"></a>学前准备</h3><p>本来想着，是不是先去网上扫一堆资料，然后再开始学。可是知乎大神说的对，学习资料满天飞，但是初期，其实只需要一本书，一本讲解基础姿势（咳）的书，先学会走路和平衡，再去试着跑步，然后才能去装逼花里胡哨的动作。（突然想探讨下行知和知行的优缺点，还是算了罢）这里我推荐一本<a href="https://pan.baidu.com/s/1DdCS76JLUmlIvyl0gVVjRQ" target="_blank" rel="external">《Learning Python》第四版</a>和<a href="https://pan.baidu.com/s/1d4bVEJvS6kR3xlnzl2EM8w" target="_blank" rel="external">《Programing Python》第四版</a>，我准备从这两本书开始，前者就是基础知识学习，后者据说是应用。</p>
 <p>emmmm……今天就先到这里吧，下班啦，有空续写。</p>
+<hr>
+<h3 id="开始学习"><a href="#开始学习" class="headerlink" title="开始学习"></a>开始学习</h3><p>日常有空的时候就看一点，看一点，然后就困了。总结之前这段时间学的内容，比较需要注意的是</p>
+<h4 id="1-关于"><a href="#1-关于" class="headerlink" title="1.关于#!"></a>1.关于#!</h4><p>一般python文件的开头都会有一句<code>#!/usr/bin/python</code>，这是告诉系统Python解释器保存在哪里，从技术上来说，这一行属于注释，其实不用在意。如果使用<code>python xxx.py</code>去执行文件，如果有，会忽略掉<code>#!</code>的注释。</p>
+<p>在一些UNIX系统上，也许可以避免硬编码Python解释器的路径，使用<code>#!/usr/bin/env python</code>，env程序可以通过系统的搜索路径的设置（例如，在绝大多数的UNIX Shell中，通过搜索PATH环境变量中的罗列出的所有目录）定位Python解释器。这种方法可以使代码更具可移植性。</p>
+<h4 id="2-关于模块导入和重载"><a href="#2-关于模块导入和重载" class="headerlink" title="2.关于模块导入和重载"></a>2.关于模块导入和重载</h4><p>每一个以扩展名py结尾的Python源代码文件都是一个模块。其他的文件可以通过导入一个模块读取这个模块的内容。导入从本质上来讲，就是载入另一个文件，并能够读取那个文件的内容。</p>
+<p>一般使用<code>import script</code>导入模块，以及<code>reload(script)</code>进行重载，需要注意重载是<code>reload()</code>方法，需要注意加上括号。具体如以下示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#  myfile.py如下</div><div class="line"></div><div class="line">title = &apos;this is my file&apos;</div><div class="line">b = 8</div><div class="line"></div><div class="line"># imp.py如下</div><div class="line"></div><div class="line">import myfile</div><div class="line">print(myfile.title)</div><div class="line"></div><div class="line"># 或者imp.py如下</div><div class="line"></div><div class="line">from myfile import title,b</div><div class="line">print(title)</div></pre></td></tr></table></figure>
+<p>两者打印结果都是 <code>this is my file</code>，并且from和import两者都会执行myfile.py的语句。</p>
+<h4 id="3-数据类型与基本方法"><a href="#3-数据类型与基本方法" class="headerlink" title="3.数据类型与基本方法"></a>3.数据类型与基本方法</h4><p>这里需要注意的是，在python中，索引从0开始，并且有一个比较奇特的<font size="5"><code>反向索引</code></font>，从最后一个开始（正向索引是从左边开始计算，反向索引是从右边开始计算）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; S = &apos;spam&apos;</div><div class="line">&gt;&gt;&gt; S[0]  </div><div class="line">&apos;s&apos;</div><div class="line">&gt;&gt;&gt; S[1]</div><div class="line">&apos;p&apos;</div><div class="line">&gt;&gt;&gt; S[-1]</div><div class="line">&apos;m&apos;</div><div class="line">&gt;&gt;&gt; S[-2]</div><div class="line">&apos;a&apos;</div></pre></td></tr></table></figure>
+<p>…未完待遇</p>
 
       
     </div>
@@ -564,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始学习Python"><span class="nav-number">1.</span> <span class="nav-text">开始学习Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#学前准备"><span class="nav-number">1.1.</span> <span class="nav-text">学前准备</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始学习Python"><span class="nav-number">1.</span> <span class="nav-text">开始学习Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#学前准备"><span class="nav-number">1.1.</span> <span class="nav-text">学前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始学习"><span class="nav-number">1.2.</span> <span class="nav-text">开始学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关于"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.关于#!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-关于模块导入和重载"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.关于模块导入和重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数据类型与基本方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.数据类型与基本方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
