@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="金豆的个人空间">
 <meta property="og:description" content="一般来说，我们开发的时候，都是前后端结合的，可是有时候后端API开发会延期，这样会导致我们做前端的进度啊，你又不能打他们，怎么办呢？你们后端不行那我来写，但是要想在自己电脑上搞个API服务器，需要巴拉巴拉一大堆（反正我不懂），我就是想模拟一下API耶，咋就这么难呢？
 当打了挡，这次我发现了个神器，Moco！我们可以用Moco自己在本地搭建一个服务器写好想要数据，然后我们通过接口get或post请求">
-<meta property="og:updated_time" content="2018-12-07T04:55:55.430Z">
+<meta property="og:updated_time" content="2018-12-07T04:59:53.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="本地模拟API服务器">
 <meta name="twitter:description" content="一般来说，我们开发的时候，都是前后端结合的，可是有时候后端API开发会延期，这样会导致我们做前端的进度啊，你又不能打他们，怎么办呢？你们后端不行那我来写，但是要想在自己电脑上搞个API服务器，需要巴拉巴拉一大堆（反正我不懂），我就是想模拟一下API耶，咋就这么难呢？
@@ -396,8 +396,7 @@
       
         <p>一般来说，我们开发的时候，都是前后端结合的，可是有时候后端API开发会延期，这样会导致我们做前端的进度啊，你又不能打他们，怎么办呢？你们后端不行那我来写，但是要想在自己电脑上搞个API服务器，需要巴拉巴拉一大堆（反正我不懂），我就是想模拟一下API耶，咋就这么难呢？</p>
 <p>当打了挡，这次我发现了个神器，Moco！我们可以用Moco自己在本地搭建一个服务器写好想要数据，然后我们通过接口get或post请求将数据拿到项目中去使用。</p>
-<p>##搭建本地测试服务器</p>
-<p>首先得配置jdk环境</p>
+<h2 id="搭建本地测试服务器"><a href="#搭建本地测试服务器" class="headerlink" title="搭建本地测试服务器"></a>搭建本地测试服务器</h2><p>首先得配置jdk环境</p>
 <p>第一步 : 下载安装mac 版的 JDK（<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">下载地址</a>），同意协议并点击下载安装。</p>
 <p>第二步 : 下载moco服务端jar包（<a href="https://pan.baidu.com/s/15DcNtNPvJ5LnlC3uBCUF9g" target="_blank" rel="external">下载地址</a>）</p>
 <p>首先把刚才下载的jar包放在本地文件夹，这里文件夹命名为MINE_API，然后在文件夹里创建一个MineAPI.json文件(.json是文件后缀)。<br>然后在MineAPI.json文件里输入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"> &#123;</div><div class="line">    &quot;response&quot;: &#123;</div><div class="line">       &quot;text&quot;: &quot;Hello world!&quot;</div><div class="line">    &#125;</div><div class="line"> &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
@@ -406,10 +405,8 @@
 <p>打印出现如下内容表示运行成功： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">INFO Server is started at 8888</div><div class="line">INFO Shutdown port is 50621</div></pre></td></tr></table></figure>
 <p>在浏览器流输入：（<a href="http://localhost:8888" target="_blank" rel="external">http://localhost:8888</a>）可以看到”Hello World!”字样。<br>说明模拟服务器是可以正常使用的。到此服务器基本就搭建完毕了，还是挺简单的。</p>
-<p>##使用测试服务器</p>
-<p>这里我要使用moco服务器，模拟项目中的登陆界面和登录以后界面列表数据。<br>在实际项目中，请求接口数据比较多。因此把所有的配置放在同一个文件里，是非常不合适的，这里需要进行全局配置。<br>前期准备，写配置文件<br>在MINE_API文件夹创建settings.json,同时创建login和asset两个文件夹(为了方便查找)。<br>在login文件夹内创建login.json和login_response.json两个文件。<br>在asset文件夹内创建assetList.json和assetList_response.json两个文件。 </p>
-<p>###配置项目</p>
-<p>1、文件配置</p>
+<h2 id="使用测试服务器"><a href="#使用测试服务器" class="headerlink" title="使用测试服务器"></a>使用测试服务器</h2><p>这里我要使用moco服务器，模拟项目中的登陆界面和登录以后界面列表数据。<br>在实际项目中，请求接口数据比较多。因此把所有的配置放在同一个文件里，是非常不合适的，这里需要进行全局配置。<br>前期准备，写配置文件<br>在MINE_API文件夹创建settings.json,同时创建login和asset两个文件夹(为了方便查找)。<br>在login文件夹内创建login.json和login_response.json两个文件。<br>在asset文件夹内创建assetList.json和assetList_response.json两个文件。 </p>
+<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><p>1、文件配置</p>
 <p>  单个文件配置<br>这种情况下是将所有的接口请求和数据返回都放在一个.json文件中进行，在setting.json中写入数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"> &#123;</div><div class="line">    &quot;response&quot;: &#123;</div><div class="line">       &quot;text&quot;: &quot;Hello world!&quot;</div><div class="line">    &#125;</div><div class="line"> &#125;,</div><div class="line"> &#123;</div><div class="line">     &quot;request&quot;: &#123;</div><div class="line">        &quot;method&quot; : &quot;get&quot;,</div><div class="line">        &quot;uri&quot;: &quot;/getMethod&quot;</div><div class="line">     &#125;,</div><div class="line">    &quot;response&quot;: &#123;</div><div class="line">        &quot;text&quot;: &quot;This is a Get Method!&quot;</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <p>  全局文件配置<br>在settings.json文件输入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        &quot;include&quot; : &quot;login/login.json&quot;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        &quot;include&quot; : &quot;asset/assetList.json&quot;</div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure></p>
@@ -421,19 +418,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    &quot;request&quot; :</div><div class="line">    &#123;</div><div class="line">      &quot;uri&quot; : &quot;/assetApp/assetList&quot;,</div><div class="line">      &quot;method&quot; : &quot;post&quot;,</div><div class="line">      &quot;headers&quot; : &#123;</div><div class="line">        &quot;content-type&quot; : &quot;application/json&quot;</div><div class="line">      &#125;,</div><div class="line">      &quot;queries&quot; : &#123;</div><div class="line">        &quot;type&quot;: &quot;search&quot;</div><div class="line">      &#125;,</div><div class="line">      &quot;forms&quot;: &#123;</div><div class="line">        &quot;username&quot;: &quot;jin&quot;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    &quot;response&quot; :</div><div class="line">    &#123;</div><div class="line">      &quot;file&quot; : &quot;./asset/assetList_response.json&quot;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
 <p>5、assetList_response.json 内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;雷军&quot;,</div><div class="line">    &quot;unit&quot;: &quot;小米&quot;,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;董明珠&quot;,</div><div class="line">    &quot;unit&quot;: &quot;格力&quot;,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;乔布斯&quot;,</div><div class="line">    &quot;unit&quot;: &quot;苹果&quot;,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;马云&quot;,</div><div class="line">    &quot;unit&quot;: &quot;阿里&quot;,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;李彦宏&quot;,</div><div class="line">    &quot;unit&quot;: &quot;百度&quot;,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    &quot;name&quot;: &quot;马化腾&quot;,</div><div class="line">    &quot;unit&quot;: &quot;腾讯&quot;,</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>###运行项目</p>
-<p>配置完以上内容后在终端里输入以下方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /Users/xxx/xxx/MINE_API</div><div class="line">//然后回车，在输入以下内容，这里注意是 -g 不在是 -c了</div><div class="line">java -jar moco.jar start -p 8888 -g settings.json</div></pre></td></tr></table></figure></p>
-<p>###测试API</p>
-<p>GET请求：<a href="http://localhost:8888/assetApp/login?username=jinxiaodou&amp;password=666666" target="_blank" rel="external">http://localhost:8888/assetApp/login?username=jinxiaodou&amp;password=666666</a></p>
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>配置完以上内容后在终端里输入以下方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /Users/xxx/xxx/MINE_API</div><div class="line">//然后回车，在输入以下内容，这里注意是 -g 不在是 -c了</div><div class="line">java -jar moco.jar start -p 8888 -g settings.json</div></pre></td></tr></table></figure></p>
+<h3 id="测试API"><a href="#测试API" class="headerlink" title="测试API"></a>测试API</h3><p>GET请求：<a href="http://localhost:8888/assetApp/login?username=jinxiaodou&amp;password=666666" target="_blank" rel="external">http://localhost:8888/assetApp/login?username=jinxiaodou&amp;password=666666</a></p>
 <p>结果OK！</p>
 <p>POST请求：<a href="http://localhost:8888/assetApp/assetList，同样OK！" target="_blank" rel="external">http://localhost:8888/assetApp/assetList，同样OK！</a></p>
-<p>##具体解析</p>
-<p>跟着代码小爽一把之后，再看配置的具体含义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd &lt;setting.json所在目录&gt;</div><div class="line">//8888是端口号，可以是任意数字，-p后设置端口号，-c后设置单个配置，-g后设置全局配置</div><div class="line">单个配置如下：java -jar moco.jar start -p 8888 -c setting.json</div><div class="line">全局配置如下：java -jar moco.jar start -p 8888 -g setting.json</div></pre></td></tr></table></figure></p>
-<p>###下面是POST和GET两种常用的网络数据请求的配置</p>
-<p>####request请求</p>
-<p>有14个固定的属性: <code>method</code>, <code>headers</code>, <code>json</code>, <code>factory</code>, <code>uri</code>, <code>text</code>, <code>cookies</code>, <code>xpaths</code>, <code>json_paths</code>, <code>version</code>, <code>file</code>, <code>queries</code>, <code>path_resource</code>, <code>forms</code>。一定要遵循这些方法。 常用的<code>method(请求方式)</code>, <code>headers(heads参数)</code>, <code>uri(url地址)</code>, <code>file(指定调用的请求文件)</code>, <code>queries(请求带参)</code>，<code>forms(表单内容)</code>。</p>
-<p>####response响应</p>
-<p>有12个固定属性：<code>status</code>, <code>attachment</code>, <code>headers</code>, <code>version</code>, <code>factory</code>, <code>file</code>, <code>text</code>, <code>proxy</code>, <code>cookies</code>, <code>json</code>, <code>latency</code>, <code>path_resource</code>。</p>
+<h2 id="具体解析"><a href="#具体解析" class="headerlink" title="具体解析"></a>具体解析</h2><p>跟着代码小爽一把之后，再看配置的具体含义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd &lt;setting.json所在目录&gt;</div><div class="line">//8888是端口号，可以是任意数字，-p后设置端口号，-c后设置单个配置，-g后设置全局配置</div><div class="line">单个配置如下：java -jar moco.jar start -p 8888 -c setting.json</div><div class="line">全局配置如下：java -jar moco.jar start -p 8888 -g setting.json</div></pre></td></tr></table></figure></p>
+<h3 id="下面是POST和GET两种常用的网络数据请求的配置"><a href="#下面是POST和GET两种常用的网络数据请求的配置" class="headerlink" title="下面是POST和GET两种常用的网络数据请求的配置"></a>下面是POST和GET两种常用的网络数据请求的配置</h3><h4 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h4><p>有14个固定的属性: <code>method</code>, <code>headers</code>, <code>json</code>, <code>factory</code>, <code>uri</code>, <code>text</code>, <code>cookies</code>, <code>xpaths</code>, <code>json_paths</code>, <code>version</code>, <code>file</code>, <code>queries</code>, <code>path_resource</code>, <code>forms</code>。一定要遵循这些方法。 常用的<code>method(请求方式)</code>, <code>headers(heads参数)</code>, <code>uri(url地址)</code>, <code>file(指定调用的请求文件)</code>, <code>queries(请求带参)</code>，<code>forms(表单内容)</code>。</p>
+<h4 id="response响应"><a href="#response响应" class="headerlink" title="response响应"></a>response响应</h4><p>有12个固定属性：<code>status</code>, <code>attachment</code>, <code>headers</code>, <code>version</code>, <code>factory</code>, <code>file</code>, <code>text</code>, <code>proxy</code>, <code>cookies</code>, <code>json</code>, <code>latency</code>, <code>path_resource</code>。</p>
 
       
     </div>
@@ -524,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpeg"
@@ -581,6 +581,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建本地测试服务器"><span class="nav-number">1.</span> <span class="nav-text">搭建本地测试服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用测试服务器"><span class="nav-number">2.</span> <span class="nav-text">使用测试服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置项目"><span class="nav-number">2.1.</span> <span class="nav-text">配置项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行项目"><span class="nav-number">2.2.</span> <span class="nav-text">运行项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试API"><span class="nav-number">2.3.</span> <span class="nav-text">测试API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体解析"><span class="nav-number">3.</span> <span class="nav-text">具体解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下面是POST和GET两种常用的网络数据请求的配置"><span class="nav-number">3.1.</span> <span class="nav-text">下面是POST和GET两种常用的网络数据请求的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#request请求"><span class="nav-number">3.1.1.</span> <span class="nav-text">request请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#response响应"><span class="nav-number">3.1.2.</span> <span class="nav-text">response响应</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
