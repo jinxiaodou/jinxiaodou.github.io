@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="金豆的个人空间">
 <meta property="og:description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。
 最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Pyth">
-<meta property="og:updated_time" content="2018-10-31T09:59:55.980Z">
+<meta property="og:updated_time" content="2018-11-05T09:19:14.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想学Python">
 <meta name="twitter:description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。
@@ -436,7 +436,10 @@
 <p>进制转换，oct函数会将十进制数转换为八进制数，hex函数会将十进制转换为十六进制数，而bin会将十进制数转换为二进制。另一种方式，内置的int函数会将一个数字的字符串变换为一个整数，并可以通过定义的第二个参数来确定变换后的数字的进制：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; oct(64), hex(64), bin(64)</div><div class="line">(&apos;0o100&apos;, &apos;0x40&apos;, &apos;0b1000000&apos;)</div><div class="line">&gt;&gt;&gt; int(&apos;64&apos;), int(&apos;100&apos;, 8), int(&apos;40&apos;, 16), int(&apos;1000000&apos;, 2)</div><div class="line">(64, 64, 64, 64)</div></pre></td></tr></table></figure>
 <p>emmmm，又吃了一下午的鸡，最近上班吃鸡，好累。。。</p>
-
+<p>浮点型数字缺乏精确性，不过使用小数对象会改正。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#精度问题</div><div class="line">&gt;&gt;&gt; 0.1+0.1+0.1-0.3</div><div class="line">5.551115123125783e-17</div><div class="line">#使用小数对象</div><div class="line">&gt;&gt;&gt; from decimal import Decimal</div><div class="line">&gt;&gt;&gt; Decimal(&apos;0.1&apos;)+Decimal(&apos;0.1&apos;)+Decimal(&apos;0.1&apos;)-Decimal(&apos;0.3&apos;)</div><div class="line">Decimal(&apos;0.0&apos;)</div><div class="line">#设置全局精度</div><div class="line">&gt;&gt;&gt; import decimal</div><div class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</div><div class="line">Decimal(&apos;0.1428571428571428571428571429&apos;)</div><div class="line">&gt;&gt;&gt; decimal.getcontext().prec = 4</div><div class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</div><div class="line">Decimal(&apos;0.1429&apos;)</div></pre></td></tr></table></figure>
+<p>分数类型实现了一个有理数对象。它明确地保留一个分子和一个分母，从而避免了浮点数学的某些不精确性和局限性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from fractions import Fraction</div><div class="line">&gt;&gt;&gt; x = Fraction(1, 3)</div><div class="line">&gt;&gt;&gt; x</div><div class="line">Fraction(1, 3)</div><div class="line">&gt;&gt;&gt; y = Fraction(4, 6)</div><div class="line">&gt;&gt;&gt; y</div><div class="line">Fraction(2, 3)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -475,6 +478,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/08/pythonExe/" rel="prev" title="Python代码编译成可执行文件">
+                Python代码编译成可执行文件 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -549,7 +556,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
