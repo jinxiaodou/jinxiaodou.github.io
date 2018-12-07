@@ -125,7 +125,7 @@
 <meta property="og:image" content="http://om2jpczx8.bkt.clouddn.com/7niu_create006.png">
 <meta property="og:image" content="http://om2jpczx8.bkt.clouddn.com/7niu_aText_001.png">
 <meta property="og:image" content="http://om2jpczx8.bkt.clouddn.com/7niu_aText_002.png">
-<meta property="og:updated_time" content="2017-02-28T08:44:09.000Z">
+<meta property="og:updated_time" content="2018-12-07T05:04:09.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用七牛云搭建免费图床">
 <meta name="twitter:description" content="前言因为使用github搭建的个人博客容量有限，所以许多时候都不舍得向博客中添加图片，但是没有图片的博文就像餐中无肉一样，看起来就没食欲，因此跟大牛们学着使用七牛云免费存储空间，在这里向大家分享一下使用方法。
@@ -454,11 +454,11 @@
 <li><p>终端命令</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp /Users/lijinshuai/Downloads/qiniu-devtools-darwin_amd64-v2.6.20131211/qrsync /usr/local/bin/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cp /Users/xxx/Downloads/qiniu-devtools-darwin_amd64-v2.6.20131211/qrsync /usr/local/bin/</div></pre></td></tr></table></figure>
 <h3 id="配置-conf-json"><a href="#配置-conf-json" class="headerlink" title="配置 conf.json"></a>配置 conf.json</h3><p>配置说明：用 conf.json将本地文件与七牛云的通道打通，将本机指定文件上传到指定的空间。</p>
 <p>目的：将 conf.json 文件里面的语法填写正确</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">            &quot;access_key&quot;: &quot;Please apply your access key here&quot;,</div><div class="line">            &quot;secret_key&quot;: &quot;Dont send your secret key to anyone&quot;,</div><div class="line">            &quot;bucket&quot;: &quot;Bucket name on qiniu resource storage&quot;,</div><div class="line">            &quot;sync_dir&quot;: &quot;Local directory to upload&quot;,</div><div class="line">            &quot;async_ops&quot;: &quot;fop1;fop2;fopN&quot;,</div><div class="line">            &quot;debug_level&quot;: 1</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<p>建立 conf.json 文件<br><br>用 sublime 新建文档，粘贴以上文本<br><br>Shift+Command+P 打开 命令面板<br><br>输入 json 回车，将文件格式改为 json<br><br>Command+S，将其保存在/Users/cnfeat/7niu/目录下，文件名保存为 conf<br><br>这样 conf.json 文件就新建好<br><br>目录地址是/Users/lijinshuai/7niu/conf.json</p>
+<p>建立 conf.json 文件<br><br>用 sublime 新建文档，粘贴以上文本<br><br>Shift+Command+P 打开 命令面板<br><br>输入 json 回车，将文件格式改为 json<br><br>Command+S，将其保存在/Users/cnfeat/7niu/目录下，文件名保存为 conf<br><br>这样 conf.json 文件就新建好<br><br>目录地址是/Users/xxx/7niu/conf.json</p>
 <ul>
 <li>到七牛云获取你的AccessKey/SecretKey</li>
 </ul>
@@ -473,14 +473,14 @@
 <ul>
 <li>“sync_dir” 是你本地要上传图片文件夹的地址</li>
 <li>例如，我就在 Documents/Pictures 文件夹建了 名为7niu 的文件夹，并在里面放了一张名为shuimo.jpg的图片</li>
-<li>所以，上传地址就是 <code>/Users/lijinshuai/Documents/Pictures/7niu</code></li>
+<li>所以，上传地址就是 <code>/Users/xxx/Documents/Pictures/7niu</code></li>
 <li>“async_ops” 是设置上传预转参数，可以留空</li>
 <li>“debug_level” 默认就好</li>
 </ul>
 <h3 id="使用命令行同步"><a href="#使用命令行同步" class="headerlink" title="使用命令行同步"></a>使用命令行同步</h3><p>打开终端输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qrsync /Users/lijinshuai/7niu/conf.json</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qrsync /Users/xxx/7niu/conf.json</div></pre></td></tr></table></figure>
 <p>出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:205: Syncing /Users/lijinshuai/Documents/Pictures/7niu =&gt; jinimg ...</div><div class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:213: Progress file: /Users/lijinshuai/.qrsync/J90i1ichzB7rPSSfLVRzWw==.log</div><div class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] syncer.go:83: Put /Users/lijinshuai/Documents/Pictures/7niu/shuimo.jpg =&gt; shuimo.jpg</div><div class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] qrsync.go:184: Sync done!</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:205: Syncing /Users/xxx/Documents/Pictures/7niu =&gt; jinimg ...</div><div class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:213: Progress file: /Users/xxx/.qrsync/J90i1ichzB7rPSSfLVRzWw==.log</div><div class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] syncer.go:83: Put /Users/xxx/Documents/Pictures/7niu/shuimo.jpg =&gt; shuimo.jpg</div><div class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] qrsync.go:184: Sync done!</div></pre></td></tr></table></figure>
 <p>显示 shuimo.jpg 图片已经上传成功。</p>
 <p>打开 <a href="http://om2jpczx8.bkt.clouddn.com/shuimo.jpg" target="_blank" rel="external">http://om2jpczx8.bkt.clouddn.com/shuimo.jpg</a>可以看见图片了。</p>
 <p>至此，用 命令行 上传图片至 七牛云 的教程完成。</p>
@@ -492,7 +492,7 @@
 </li>
 <li><p>仔细看一下图片的链接，都是由固定前缀加上图片名字生成的</p>
 </li>
-<li>每次同步图片的命令行也是固定的 <code>qrsync /Users/lijinshuai/7niu/conf.json</code></li>
+<li>每次同步图片的命令行也是固定的 <code>qrsync /Users/xxx/7niu/conf.json</code></li>
 <li>而Markdown中大部分的格式也都是固定格式</li>
 </ul>
 <p>每次写都要DuangDuangDuang的敲，麻烦死了。作为一个半资深程序猿，写程序的最高境界就是不写程序，既然都是固定格式，那能不能快捷简便地储存这些代码，就像Xcode的snippets代码块那样，输入简单快捷键就能调出来这些代码，bingo，当然有啦，那就是<strong>aText</strong>。</p>
