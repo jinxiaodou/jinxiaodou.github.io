@@ -1,0 +1,876 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|family=Neucha:300,300italic,400,400italic,700,700italic:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="之前一直使用朋友的shadowsocks服务器科学上网，今天发现翻不出去了，估计是服务器没再续费吧，所以，一狠心，自己搭建个shadowsocks服务器。本来准备咬牙掏钱买个服务器来着，可是突然发现亚马逊的AWS广告，嘿！首次注册，免费使用12个月，那就它了。
+申请aws服务器1、注册AWS账号。AWS注册地址，在这里注册账号，反正就是填个人信息，最后需要填信用卡信息，我在填完信息后，信用卡被扣了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用免费aws搭建shadowsocks服务器">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/ShadowsocksOnAWS/index.html">
+<meta property="og:site_name" content="金豆的个人空间">
+<meta property="og:description" content="之前一直使用朋友的shadowsocks服务器科学上网，今天发现翻不出去了，估计是服务器没再续费吧，所以，一狠心，自己搭建个shadowsocks服务器。本来准备咬牙掏钱买个服务器来着，可是突然发现亚马逊的AWS广告，嘿！首次注册，免费使用12个月，那就它了。
+申请aws服务器1、注册AWS账号。AWS注册地址，在这里注册账号，反正就是填个人信息，最后需要填信用卡信息，我在填完信息后，信用卡被扣了">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49doiiplj211y0kl784">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49fttpqij21160e9n1h">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49jajfg8j211s0cpacr">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49k3y4hdj21190ew40n">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49kjjuhdj211l0erwgo">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49l0bof9j211n0ewacm">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49mwfuiyj20ji0ck40j">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy4abdz9acj20h10cyab9">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy4anoh3dkj21qw10a7cz">
+<meta property="og:updated_time" content="2018-12-12T14:04:06.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用免费aws搭建shadowsocks服务器">
+<meta name="twitter:description" content="之前一直使用朋友的shadowsocks服务器科学上网，今天发现翻不出去了，估计是服务器没再续费吧，所以，一狠心，自己搭建个shadowsocks服务器。本来准备咬牙掏钱买个服务器来着，可是突然发现亚马逊的AWS广告，嘿！首次注册，免费使用12个月，那就它了。
+申请aws服务器1、注册AWS账号。AWS注册地址，在这里注册账号，反正就是填个人信息，最后需要填信用卡信息，我在填完信息后，信用卡被扣了">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49doiiplj211y0kl784">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/12/ShadowsocksOnAWS/"/>
+
+
+
+
+
+  <title> 使用免费aws搭建shadowsocks服务器 | 金豆的个人空间 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">金豆的个人空间</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">金豆的博客</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/ShadowsocksOnAWS/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="jindou.li">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="金豆的个人空间">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="金豆的个人空间" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用免费aws搭建shadowsocks服务器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-12T20:49:00+08:00">
+                2018-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/12/ShadowsocksOnAWS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/12/12/ShadowsocksOnAWS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/12/ShadowsocksOnAWS/" class="leancloud_visitors" data-flag-title="使用免费aws搭建shadowsocks服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前一直使用朋友的shadowsocks服务器科学上网，今天发现翻不出去了，估计是服务器没再续费吧，所以，一狠心，自己搭建个shadowsocks服务器。本来准备咬牙掏钱买个服务器来着，可是突然发现亚马逊的AWS广告，嘿！首次注册，免费使用12个月，那就它了。</p>
+<h2 id="申请aws服务器"><a href="#申请aws服务器" class="headerlink" title="申请aws服务器"></a>申请aws服务器</h2><h3 id="1、注册AWS账号。"><a href="#1、注册AWS账号。" class="headerlink" title="1、注册AWS账号。"></a>1、注册AWS账号。</h3><p><a href="https://ap-southeast-1.console.aws.amazon.com" target="_blank" rel="external">AWS注册地址</a>，在这里注册账号，反正就是填个人信息，最后需要填信用卡信息，我在填完信息后，信用卡被扣了6.89元，去查了下才知道，好像是亚马逊为了验证什么的，冻结了1美元，不过这个钱对于服务器的诱惑，嘿嘿，不算啥。</p>
+<h3 id="2、新建免费vps"><a href="#2、新建免费vps" class="headerlink" title="2、新建免费vps"></a>2、新建免费vps</h3><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49doiiplj211y0kl784" width="500"><br></center><br>### 3、选择ubuntu，记得把仅免费套餐勾选上，不然扣钱是不会通知你的，扣完才有账单<br><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49fttpqij21160e9n1h" width="500"><br></center><br>### 4、选择免费套餐，下一步<br><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49jajfg8j211s0cpacr" width="500"><br></center>
+
+<h3 id="5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步"><a href="#5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步" class="headerlink" title="5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步"></a>5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步</h3><p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49k3y4hdj21190ew40n" width="500"><br></center></p>
+<h3 id="6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步"><a href="#6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步" class="headerlink" title="6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步"></a>6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步</h3><p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49kjjuhdj211l0erwgo" width="500"><br></center></p>
+<h3 id="7、直接下一步"><a href="#7、直接下一步" class="headerlink" title="7、直接下一步"></a>7、直接下一步</h3><h3 id="8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。"><a href="#8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。" class="headerlink" title="8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。"></a>8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。</h3><p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49l0bof9j211n0ewacm" width="500"><br></center></p>
+<h3 id="9、点击审核和启动后，直接点击启动。"><a href="#9、点击审核和启动后，直接点击启动。" class="headerlink" title="9、点击审核和启动后，直接点击启动。"></a>9、点击审核和启动后，直接点击启动。</h3><h3 id="10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例"><a href="#10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例" class="headerlink" title="10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例"></a>10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例</h3><p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy49mwfuiyj20ji0ck40j" width="500"><br></center></p>
+<h3 id="11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】-gt-【编辑入站规则】，选择【我的IP】，保存，vps就OK了。"><a href="#11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】-gt-【编辑入站规则】，选择【我的IP】，保存，vps就OK了。" class="headerlink" title="11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】-&gt;【编辑入站规则】，选择【我的IP】，保存，vps就OK了。"></a>11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】-&gt;【编辑入站规则】，选择【我的IP】，保存，vps就OK了。</h3><p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy4abdz9acj20h10cyab9" width="500"><br></center><br>下面就是连接vps安装shadowsocks服务了。</p>
+<h2 id="连接AWS服务器"><a href="#连接AWS服务器" class="headerlink" title="连接AWS服务器"></a>连接AWS服务器</h2><p>windows用户可以使用PuTTY和xshell连接AWS（<a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="external">官方PuTTy教程</a>）。MAC用户可以使用ssh方式连接AWS，下面我就使用ssh方式连接。</p>
+<p>第一步：授权之前创建实例后实操的密钥文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 400 /your_path/key.pem</div></pre></td></tr></table></figure></p>
+<p>第二步：通过其 公有 DNS 连接到您的实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -i &quot;key.pem&quot; root@xxxxxcompute.amazonaws.com</div></pre></td></tr></table></figure></p>
+<p><center><br><img src="https://ws1.sinaimg.cn/large/67dc47e9ly1fy4anoh3dkj21qw10a7cz" width="500"><br></center><br>连接成功，可以直接使用mac终端操作实例了。</p>
+<p>##安装配置shadowsocks服务</p>
+<p>终端输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo su   #获取root权限</div><div class="line">apt-get update		#更新软件源列表</div><div class="line">apt-get install python-gevent python-pip	#安装所需服务</div><div class="line">pip install shadowsocks			#安装shadowsocks</div><div class="line">apt-get install python-m2crypto		#为了支持aes-256-cfb等加密方式，可以输入此行。</div></pre></td></tr></table></figure>
+<p>然后shadowsocks就安装好了。</p>
+<h3 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h3><p>网上有如下这种配置方式，但是我没有配置成功，估计是因为手菜吧。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">vim /etc/shadowsocks.json</div><div class="line">新建一个配置文件（路径随便），按i进入编辑模式，然后配置如下内容</div><div class="line"></div><div class="line">&#123;</div><div class="line">	&quot;server&quot;: &quot;0.0.0.0&quot;,</div><div class="line">	&quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">	&quot;local_port&quot;: 2882,</div><div class="line">	&quot;port_password&quot;: &#123;</div><div class="line">		&quot;2828&quot;: &quot;pass1&quot;,</div><div class="line">		&quot;2829&quot;: &quot;pass2&quot;</div><div class="line">	&#125;,</div><div class="line">	&quot;timeout&quot;: 600,</div><div class="line">	&quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">	&quot;fast_open&quot;: false</div><div class="line">&#125;</div><div class="line"></div><div class="line">server: 服务端监听IP， aws的ec2，ip不稳定，所以监听所有IP</div><div class="line">server_port: 服务器端口号</div><div class="line">password: 密码</div><div class="line">local_address: 本地代理IP</div><div class="line">local_port: 本地代理端口</div><div class="line">port_password: 支持多用户，端口对应一个密码，可以为每个用户分配一个端口和密码</div><div class="line">timeout: 超时时间</div><div class="line">method: 加密方式</div><div class="line">fast_open: 是否使用tcp</div></pre></td></tr></table></figure>
+<p>修改好之后，按<code>ESC</code>，输入<code>:wq</code>（保存并关闭的意思），按回车，退出vim编辑。</p>
+<p>配置好之后，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json</div></pre></td></tr></table></figure></p>
+<p>如果没有提示出错，就可以了。<br>配置开机自启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vim /etc/rc/local 把下边一行添加进去，然后保存</div><div class="line">/usr/local/bin/ssserver -c /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+<p>重启服务器，<code>reboot</code>，就可以了。</p>
+<p>我是通过以下命令运行起来的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -p 8765 -k xxxx -m aes-256-cfb -d start</div></pre></td></tr></table></figure></p>
+<p>如果遇到错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">loading libcrypto from libcrypto.so.1.1</div><div class="line">Traceback (most recent call last):</div></pre></td></tr></table></figure></p>
+<p>解决办法:</p>
+<p>修改文件/usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py<br>将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)<br>改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)<br>将第111行libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)<br>改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)<br>然后再次尝试启动。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/07/MocoServer/" rel="next" title="本地模拟API服务器">
+                <i class="fa fa-chevron-left"></i> 本地模拟API服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/12/12/ShadowsocksOnAWS/"
+           data-title="使用免费aws搭建shadowsocks服务器" data-url="http://yoursite.com/2018/12/12/ShadowsocksOnAWS/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="jindou.li" />
+          <p class="site-author-name" itemprop="name">jindou.li</p>
+          <p class="site-description motion-element" itemprop="description">关于个人编程以来的总结</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#申请aws服务器"><span class="nav-number">1.</span> <span class="nav-text">申请aws服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、注册AWS账号。"><span class="nav-number">1.1.</span> <span class="nav-text">1、注册AWS账号。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、新建免费vps"><span class="nav-number">1.2.</span> <span class="nav-text">2、新建免费vps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步"><span class="nav-number">1.3.</span> <span class="nav-text">5、其用户种植保护最好勾选上，租赁选择贡献，专用是收费的。下一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步"><span class="nav-number">1.4.</span> <span class="nav-text">6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、直接下一步"><span class="nav-number">1.5.</span> <span class="nav-text">7、直接下一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。"><span class="nav-number">1.6.</span> <span class="nav-text">8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、点击审核和启动后，直接点击启动。"><span class="nav-number">1.7.</span> <span class="nav-text">9、点击审核和启动后，直接点击启动。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例"><span class="nav-number">1.8.</span> <span class="nav-text">10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】-gt-【编辑入站规则】，选择【我的IP】，保存，vps就OK了。"><span class="nav-number">1.9.</span> <span class="nav-text">11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】->【编辑入站规则】，选择【我的IP】，保存，vps就OK了。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接AWS服务器"><span class="nav-number">2.</span> <span class="nav-text">连接AWS服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置shadowsocks"><span class="nav-number">2.1.</span> <span class="nav-text">配置shadowsocks</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jindou.li</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jinxiaodougithub"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FxqMNgAbim5zwowLcfk4w2DF-gzGzoHsz", "Y0tgeTTgwjqV939b9176C9lY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
