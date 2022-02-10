@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。 最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Pyth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="想学Python">
+<meta property="og:url" content="http://example.com/2018/09/28/pythonLearningStart/index.html">
+<meta property="og:site_name" content="金豆的个人空间">
+<meta property="og:description" content="开始学习Python最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。 最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Pyth">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-09-28T09:41:17.000Z">
+<meta property="article:modified_time" content="2018-11-05T09:19:14.579Z">
+<meta property="article:author" content="jindou.li">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2018/09/28/pythonLearningStart/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>想学Python | 金豆的个人空间</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">金豆的个人空间</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">金豆的私人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/09/28/pythonLearningStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          想学Python
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-28 17:41:17" itemprop="dateCreated datePublished" datetime="2018-09-28T17:41:17+08:00">2018-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-11-05 17:19:14" itemprop="dateModified" datetime="2018-11-05T17:19:14+08:00">2018-11-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="开始学习Python"><a href="#开始学习Python" class="headerlink" title="开始学习Python"></a>开始学习Python</h2><p>最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。</p>
+<p>最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Python的，结果人家不情不愿的，那算咯，我自己来学。</p>
+<h3 id="学前准备"><a href="#学前准备" class="headerlink" title="学前准备"></a>学前准备</h3><p>本来想着，是不是先去网上扫一堆资料，然后再开始学。可是知乎大神说的对，学习资料满天飞，但是初期，其实只需要一本书，一本讲解基础姿势（咳）的书，先学会走路和平衡，再去试着跑步，然后才能去装逼花里胡哨的动作。（突然想探讨下行知和知行的优缺点，还是算了罢）这里我推荐一本<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1DdCS76JLUmlIvyl0gVVjRQ">《Learning Python》第四版</a>和<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1d4bVEJvS6kR3xlnzl2EM8w">《Programing Python》第四版</a>，我准备从这两本书开始，前者就是基础知识学习，后者据说是应用。</p>
+<p>emmmm……今天就先到这里吧，下班啦，有空续写。</p>
+<hr>
+<h3 id="开始学习"><a href="#开始学习" class="headerlink" title="开始学习"></a>开始学习</h3><p>日常有空的时候就看一点，看一点，然后就困了。总结之前这段时间学的内容，比较需要注意的是</p>
+<h4 id="1-关于"><a href="#1-关于" class="headerlink" title="1.关于#!"></a>1.关于#!</h4><p>一般python文件的开头都会有一句<code>#!/usr/bin/python</code>，这是告诉系统Python解释器保存在哪里，从技术上来说，这一行属于注释，其实不用在意。如果使用<code>python xxx.py</code>去执行文件，如果有，会忽略掉<code>#!</code>的注释。</p>
+<p>在一些UNIX系统上，也许可以避免硬编码Python解释器的路径，使用<code>#!/usr/bin/env python</code>，env程序可以通过系统的搜索路径的设置（例如，在绝大多数的UNIX Shell中，通过搜索PATH环境变量中的罗列出的所有目录）定位Python解释器。这种方法可以使代码更具可移植性。</p>
+<h4 id="2-关于模块导入和重载"><a href="#2-关于模块导入和重载" class="headerlink" title="2.关于模块导入和重载"></a>2.关于模块导入和重载</h4><p>每一个以扩展名py结尾的Python源代码文件都是一个模块。其他的文件可以通过导入一个模块读取这个模块的内容。导入从本质上来讲，就是载入另一个文件，并能够读取那个文件的内容。</p>
+<p>一般使用<code>import script</code>导入模块，以及<code>reload(script)</code>进行重载，需要注意重载是<code>reload()</code>方法，需要注意加上括号。具体如以下示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#  myfile.py如下</span><br><span class="line"></span><br><span class="line">title = &#x27;this is my file&#x27;</span><br><span class="line">b = 8</span><br><span class="line"></span><br><span class="line"># imp.py如下</span><br><span class="line"></span><br><span class="line">import myfile</span><br><span class="line">print(myfile.title)</span><br><span class="line"></span><br><span class="line"># 或者imp.py如下</span><br><span class="line"></span><br><span class="line">from myfile import title,b</span><br><span class="line">print(title)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>两者打印结果都是 <code>this is my file</code>，并且from和import两者都会执行myfile.py的语句。</p>
+<h4 id="3-数据类型与基本方法"><a href="#3-数据类型与基本方法" class="headerlink" title="3.数据类型与基本方法"></a>3.数据类型与基本方法</h4><p>反向索引</p>
+<p>这里需要注意的是，在python中，索引从0开始，并且有一个比较奇特的<font size=5><code>反向索引</code></font>，从最后一个开始（正向索引是从左边开始计算，反向索引是从右边开始计算）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[0]  </span><br><span class="line">&#x27;s&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1]</span><br><span class="line">&#x27;p&#x27;</span><br><span class="line">&gt;&gt;&gt; S[-1]</span><br><span class="line">&#x27;m&#x27;</span><br><span class="line">&gt;&gt;&gt; S[-2]</span><br><span class="line">&#x27;a&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>分片（slice）</p>
+<p>这是一种一步就能够提取整个分片（slice）的方法。它们的一般形式为X[I:J]，表示“取出在X中从偏移量为I，直到但不包括偏移量为J的内容”。结果就是返回一个新的对象。 左边界默认为0，并且右边界默认为分片序列的长度。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1:3]</span><br><span class="line">&#x27;pa&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1:]</span><br><span class="line">&#x27;pam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[:3]</span><br><span class="line">&#x27;spa&#x27;</span><br><span class="line">&gt;&gt;&gt; S[:]</span><br><span class="line">&#x27;spam&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>字符串合并</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S + &#x27;abc&#x27;</span><br><span class="line">&#x27;spamabc&#x27;</span><br><span class="line">&gt;&gt;&gt; S * 4</span><br><span class="line">&#x27;spamspamspamspam&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>字符串不可变，但变量可以重新定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">#错误写法</span><br><span class="line">&gt;&gt;&gt; S[0] = &#x27;z&#x27;</span><br><span class="line">#正确写法 </span><br><span class="line">&gt;&gt;&gt; S = &#x27;z&#x27; + S[1:]</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;zpam&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>字符串的一些方法，strip用于去除字符串的首尾字符，同理，lstrip用于去除左边的字符，rstrip用于去除右边的字符。当没有传入参数时，是默认去除空白字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spama&#x27;</span><br><span class="line">&gt;&gt;&gt; S.find(&#x27;a&#x27;)</span><br><span class="line">2      				# 返回第一个匹配的偏移量，如果没有则返回-1</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;spama&#x27;</span><br><span class="line">&gt;&gt;&gt; S.replace(&#x27;pa&#x27;, &#x27;XYZ&#x27;)</span><br><span class="line">&#x27;sXYZma&#x27;</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;spama&#x27;				# 遵循字符串不可变</span><br><span class="line">&gt;&gt;&gt; line = &#x27;aaa,bbb,ccc,dddd&#x27;</span><br><span class="line">&gt;&gt;&gt; line.split(&#x27;,&#x27;)</span><br><span class="line">[&#x27;aaa&#x27;, &#x27;bbb&#x27;, &#x27;ccc&#x27;, &#x27;dddd&#x27;]</span><br><span class="line">&gt;&gt;&gt; S = &#x27;Spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S.upper()</span><br><span class="line">&#x27;SPAM&#x27;</span><br><span class="line">&gt;&gt;&gt; S.lower()</span><br><span class="line">&#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;Spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S.isalpha()		# 检测字符串是否只由字母组成</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"># 删除 string 字符串末尾的指定字符（默认为空白字符）</span><br><span class="line">&gt;&gt;&gt; line = &#x27;abcd,edcd,se\n&#x27;</span><br><span class="line">&gt;&gt;&gt; line = line.rstrip()</span><br><span class="line">&gt;&gt;&gt; line</span><br><span class="line">&#x27;abcd,edcd,se&#x27;</span><br><span class="line">&gt;&gt;&gt; line = &#x27;esdeww  \n \t \r&#x27;</span><br><span class="line">&gt;&gt;&gt; line.rstrip()</span><br><span class="line">&#x27;esdeww&#x27;</span><br><span class="line"># 依次被去除首尾在[&#x27;s&#x27;，&#x27;a&#x27;，&#x27;y&#x27;]数组内的字符，直到字符在不数组内</span><br><span class="line">&gt;&gt;&gt; theString = &#x27;saaaay yes no yaaaass&#x27;</span><br><span class="line">&gt;&gt;&gt; theString.strip(&#x27;say&#x27;)</span><br><span class="line">&#x27; yes no &#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; &#x27;%s And %s is good friends&#x27; % (&#x27;A&#x27;, &#x27;B&#x27;)</span><br><span class="line">&#x27;A And B is good friends&#x27;</span><br><span class="line">&gt;&gt;&gt; &#x27;&#123;1&#125; And &#123;0&#125; is Good friends&#x27;.format(&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;)</span><br><span class="line">&#x27;B And A is Good friends&#x27;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以上不能列举所有的函数，所以，我们可以用dir函数去获取对象的所有属性，由于方法是函数属性，所以这里也会列举出来。dir函数简单地给出了方法的名称。要查询它们是做什么的，你可以将其传递给help函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;str&#x27;</span><br><span class="line">&gt;&gt;&gt; dir(S)</span><br><span class="line">[&#x27;__add__&#x27;, &#x27;__class__&#x27;, &#x27;__contains__&#x27;, &#x27;__delattr__&#x27;, &#x27;__dir__&#x27;, &#x27;__doc__&#x27;, &#x27;__eq__&#x27;, &#x27;__format__&#x27;, &#x27;__ge__&#x27;, &#x27;__getattribute__&#x27;, &#x27;__getitem__&#x27;, &#x27;__getnewargs__&#x27;, &#x27;__gt__&#x27;, &#x27;__hash__&#x27;, &#x27;__init__&#x27;, &#x27;__init_subclass__&#x27;, &#x27;__iter__&#x27;, &#x27;__le__&#x27;, &#x27;__len__&#x27;, &#x27;__lt__&#x27;, &#x27;__mod__&#x27;, &#x27;__mul__&#x27;, &#x27;__ne__&#x27;, &#x27;__new__&#x27;, &#x27;__reduce__&#x27;, &#x27;__reduce_ex__&#x27;, &#x27;__repr__&#x27;, &#x27;__rmod__&#x27;, &#x27;__rmul__&#x27;, &#x27;__setattr__&#x27;, &#x27;__sizeof__&#x27;, &#x27;__str__&#x27;, &#x27;__subclasshook__&#x27;, &#x27;capitalize&#x27;, &#x27;casefold&#x27;, &#x27;center&#x27;, &#x27;count&#x27;, &#x27;encode&#x27;, &#x27;endswith&#x27;, &#x27;expandtabs&#x27;, &#x27;find&#x27;, &#x27;format&#x27;, &#x27;format_map&#x27;, &#x27;index&#x27;, &#x27;isalnum&#x27;, &#x27;isalpha&#x27;, &#x27;isascii&#x27;, &#x27;isdecimal&#x27;, &#x27;isdigit&#x27;, &#x27;isidentifier&#x27;, &#x27;islower&#x27;, &#x27;isnumeric&#x27;, &#x27;isprintable&#x27;, &#x27;isspace&#x27;, &#x27;istitle&#x27;, &#x27;isupper&#x27;, &#x27;join&#x27;, &#x27;ljust&#x27;, &#x27;lower&#x27;, &#x27;lstrip&#x27;, &#x27;maketrans&#x27;, &#x27;partition&#x27;, &#x27;replace&#x27;, &#x27;rfind&#x27;, &#x27;rindex&#x27;, &#x27;rjust&#x27;, &#x27;rpartition&#x27;, &#x27;rsplit&#x27;, &#x27;rstrip&#x27;, &#x27;split&#x27;, &#x27;splitlines&#x27;, &#x27;startswith&#x27;, &#x27;strip&#x27;, &#x27;swapcase&#x27;, &#x27;title&#x27;, &#x27;translate&#x27;, &#x27;upper&#x27;, &#x27;zfill&#x27;]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; S = &#x27;ssss&#x27;</span><br><span class="line">&gt;&gt;&gt; help(S.istitle)</span><br><span class="line">Help on built-in function istitle:</span><br><span class="line"></span><br><span class="line">istitle() method of builtins.str instance</span><br><span class="line">    Return True if the string is a title-cased string, False otherwise.</span><br><span class="line">    </span><br><span class="line">    In a title-cased string, upper- and title-case characters may only</span><br><span class="line">    follow uncased characters and lowercase characters only cased ones.</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>字符串长度计算时，会将特殊字符认为一个长度。Python允许字符串包括在单引号或双引号中（它们代表着相同的东西）。它也允许在三个引号（单引号或双引号）中包括多行字符串常量。当采用这种形式的时候，所有的行都合并在一起，并在每一行的末尾增加换行符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;A\nB\tC&#x27;</span><br><span class="line">&gt;&gt;&gt; len(S)</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; msg = &#x27;&#x27;&#x27; aaaaa</span><br><span class="line">bbbb</span><br><span class="line">ccccs&#x27;&#x27;&#x27;</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&#x27; aaaaa\nbbbb\nccccs&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>啊啊啊~~~后边还有这么多看起来奇奇怪怪，用起来简简单单但根本不会用的方法。。。看不下去了。反正差不多就是这样，之后用到这些函数的时候，再说吧，比如<code>squares = [x ** 2 for x in [1, 2, 3 ,4, 4, 5]]</code>，之后得出<code> squares = [1, 4, 9, 16, 25]</code>。</p>
+<p>至于字典、元组、集合这些，就不再说了，重要的只是元组不可变，集合可以<code>&#123;&#39;a&#39;, &#39;b&#39;, &#39;c&#39;&#125;</code>或<code>set(&#39;abcd&#39;)</code>方式创建。</p>
+<p>使用type方法可以去查看变量的属性，但是使用类型检验的后遗症就是，在代码中检验了特定的类型，实际上破坏了它的灵活性，即限制它只能使用一种类型工作。没有这样的检测，代码也许能够使用整个范围的类型工作。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; L = [&#x27;a&#x27;, &#x27;b&#x27;]</span><br><span class="line">&gt;&gt;&gt; type(L)</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; if type(L) == list:</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">&gt;&gt;&gt; if type(L) == type([]):</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">&gt;&gt;&gt; if isinstance(L, list):</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">#所以尽量不要使用类型检验</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4-文件"><a href="#4-文件" class="headerlink" title="4.文件"></a>4.文件</h4><p>终于看到了文件操作的部分，事实上我学些python就是为了去爬些小说来看的，网上的小说资源太乱了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&#x27;abc.txt&#x27;, &#x27;w&#x27;)</span><br><span class="line">f.write(&#x27;abcd\n&#x27;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">#默认为r，</span><br><span class="line">f1 = open(&#x27;/Users/CodeBuilder/source/xxx.txt&#x27;)</span><br><span class="line">xxxText = f1.read()</span><br><span class="line"></span><br><span class="line">data = open(&#x27;data.bin&#x27;, &#x27;rb&#x27;).read()</span><br><span class="line">#data为</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>文件对象提供了多种读和写的方法（read可以接受一个字节大小的选项，readline每次读一行等），以及其他的工具（seek移动到一个新的文件位置）。我们在本书后面会看到，如今读取一个文件的最佳方式就是根本不读它，文件提供了一个迭代器（iterator），它在for循环或其他环境中自动地一行一行地读取。</p>
+<h4 id="5-类"><a href="#5-类" class="headerlink" title="5.类"></a>5.类</h4><p>这个类定义了一个新的对象的种类，有name和pay两个属性（有时候叫做状态信息），也有两个小的行为编写为函数（通常叫做方法）的形式。就像函数那样去调用类，会生成我们新类型的实例，并且类的方法调用时，类的方法自动获取被处理的实例（其中的self参数）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class Worker:</span><br><span class="line">	def __init__(self, name, pay):</span><br><span class="line">		self.name = name</span><br><span class="line">		self.pay = pay</span><br><span class="line">	def lastName(self):</span><br><span class="line">		return self.name.split()[-1]</span><br><span class="line">	def giveRaise(self, percent):</span><br><span class="line">		self.pay *= (1.0 + percent)</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">&gt;&gt;&gt; bd = Worker(&#x27;Biangdiang Wang&#x27;, 20.8)</span><br><span class="line">&gt;&gt;&gt; fz = Worker(&#x27;Fuzi Lao&#x27;, 500)</span><br><span class="line">&gt;&gt;&gt; bd.lastName()</span><br><span class="line">&#x27;Wang&#x27;</span><br><span class="line">&gt;&gt;&gt; fz.giveRaise(.1)</span><br><span class="line">&gt;&gt;&gt; fz.pay</span><br><span class="line">550.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="6-数字处理"><a href="#6-数字处理" class="headerlink" title="6.数字处理"></a>6.数字处理</h4><p>在Python3.0中，&#x2F;现在总是执行真除法，不管操作数的类型，都返回包含任何余数的一个浮点结果。&#x2F;&#x2F;执行Floor除法，它截除掉余数并且针对整数操作数返回一个整数，如果有任何一个操作数是浮点类型，则返回一个浮点数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 5//2</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; 5/2</span><br><span class="line">2.5</span><br><span class="line">&gt;&gt;&gt; 5//-2</span><br><span class="line">-3</span><br><span class="line">&gt;&gt;&gt; 5//-2.0</span><br><span class="line">-3.0</span><br><span class="line">&gt;&gt;&gt; import math</span><br><span class="line">&gt;&gt;&gt; math.floor(2.5)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; math.floor(-2.5)</span><br><span class="line">-3</span><br><span class="line">&gt;&gt;&gt; math.trunc(2.5)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; math.trunc(-2.5)</span><br><span class="line">-2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>进制转换，oct函数会将十进制数转换为八进制数，hex函数会将十进制转换为十六进制数，而bin会将十进制数转换为二进制。另一种方式，内置的int函数会将一个数字的字符串变换为一个整数，并可以通过定义的第二个参数来确定变换后的数字的进制：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; oct(64), hex(64), bin(64)</span><br><span class="line">(&#x27;0o100&#x27;, &#x27;0x40&#x27;, &#x27;0b1000000&#x27;)</span><br><span class="line">&gt;&gt;&gt; int(&#x27;64&#x27;), int(&#x27;100&#x27;, 8), int(&#x27;40&#x27;, 16), int(&#x27;1000000&#x27;, 2)</span><br><span class="line">(64, 64, 64, 64)</span><br></pre></td></tr></table></figure>
+
+<p>emmmm，又吃了一下午的鸡，最近上班吃鸡，好累。。。</p>
+<p>浮点型数字缺乏精确性，不过使用小数对象会改正。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#精度问题</span><br><span class="line">&gt;&gt;&gt; 0.1+0.1+0.1-0.3</span><br><span class="line">5.551115123125783e-17</span><br><span class="line">#使用小数对象</span><br><span class="line">&gt;&gt;&gt; from decimal import Decimal</span><br><span class="line">&gt;&gt;&gt; Decimal(&#x27;0.1&#x27;)+Decimal(&#x27;0.1&#x27;)+Decimal(&#x27;0.1&#x27;)-Decimal(&#x27;0.3&#x27;)</span><br><span class="line">Decimal(&#x27;0.0&#x27;)</span><br><span class="line">#设置全局精度</span><br><span class="line">&gt;&gt;&gt; import decimal</span><br><span class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</span><br><span class="line">Decimal(&#x27;0.1428571428571428571428571429&#x27;)</span><br><span class="line">&gt;&gt;&gt; decimal.getcontext().prec = 4</span><br><span class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</span><br><span class="line">Decimal(&#x27;0.1429&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>分数类型实现了一个有理数对象。它明确地保留一个分子和一个分母，从而避免了浮点数学的某些不精确性和局限性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from fractions import Fraction</span><br><span class="line">&gt;&gt;&gt; x = Fraction(1, 3)</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">Fraction(1, 3)</span><br><span class="line">&gt;&gt;&gt; y = Fraction(4, 6)</span><br><span class="line">&gt;&gt;&gt; y</span><br><span class="line">Fraction(2, 3)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/03/01/MacGoodAppliction/" rel="prev" title="Mac上比较优秀的软件">
+      <i class="fa fa-chevron-left"></i> Mac上比较优秀的软件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/11/08/pythonExe/" rel="next" title="Python代码编译成可执行文件">
+      Python代码编译成可执行文件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0Python"><span class="nav-number">1.</span> <span class="nav-text">开始学习Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E5%89%8D%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text">学前准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.2.</span> <span class="nav-text">开始学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.关于#!</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%85%B3%E4%BA%8E%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5%E5%92%8C%E9%87%8D%E8%BD%BD"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.关于模块导入和重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.数据类型与基本方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%B1%BB"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86"><span class="nav-number">1.2.6.</span> <span class="nav-text">6.数字处理</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jindou.li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jinxiaodou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jinxiaodou" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:974705131@qq.com" title="E-Mail → mailto:974705131@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/1742489577" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;1742489577" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jindou.li</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,249 +1,1768 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="金豆的个人空间">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="金豆的个人空间">
+<meta property="og:locale">
+<meta property="article:author" content="jindou.li">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.0.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test-my-site" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/02/10/test-my-site/" class="article-date">
-  <time class="dt-published" datetime="2022-02-10T08:34:11.000Z" itemprop="datePublished">2022-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/02/10/test-my-site/">test_my_site</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/10/test-my-site/" data-id="ckzgrhrbe0001va99a19ifh20" data-title="test_my_site" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+<link rel="canonical" href="http://example.com/">
 
 
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-Hans'
+  };
+</script>
 
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/02/10/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-02-10T08:30:36.160Z" itemprop="datePublished">2022-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/02/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/02/10/hello-world/" data-id="ckzgrhra80000va9948lb029p" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
+  <title>金豆的个人空间</title>
   
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
+  <div class="site-meta">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/02/10/test-my-site/">test_my_site</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/10/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">金豆的个人空间</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">金豆的私人博客</p>
   </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
-</footer>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
 </nav>
+
+
+
+
+</div>
+    </header>
+
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/12/12/ShadowsocksOnAWS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/12/12/ShadowsocksOnAWS/" class="post-title-link" itemprop="url">使用免费aws搭建shadowsocks服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-12 20:49:00" itemprop="dateCreated datePublished" datetime="2018-12-12T20:49:00+08:00">2018-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:55:41" itemprop="dateModified" datetime="2021-12-06T10:55:41+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前一直使用朋友的shadowsocks服务器科学上网，今天发现翻不出去了，估计是服务器没再续费吧，所以，一狠心，自己搭建个shadowsocks服务器。本来准备咬牙掏钱买个服务器来着，可是突然发现亚马逊的AWS广告，嘿！首次注册，免费使用12个月，那就它了。</p>
+<h2 id="申请aws服务器"><a href="#申请aws服务器" class="headerlink" title="申请aws服务器"></a>申请aws服务器</h2><h3 id="1、注册AWS账号。"><a href="#1、注册AWS账号。" class="headerlink" title="1、注册AWS账号。"></a>1、注册AWS账号。</h3><p><a target="_blank" rel="noopener" href="https://ap-southeast-1.console.aws.amazon.com/">AWS注册地址</a>，在这里注册账号，反正就是填个人信息，最后需要填信用卡信息，我在填完信息后，信用卡被扣了6.89元，去查了下才知道，好像是亚马逊为了验证什么的，冻结了1美元，不过这个钱对于服务器的诱惑，嘿嘿，不算啥。</p>
+<h3 id="2、新建免费vps"><a href="#2、新建免费vps" class="headerlink" title="2、新建免费vps"></a>2、新建免费vps</h3><center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49doiiplj211y0kl784' width='500' />
+</center>
+
+<h3 id="3、选择ubuntu，记得把仅免费套餐勾选上，不然扣钱是不会通知你的，扣完才有账单"><a href="#3、选择ubuntu，记得把仅免费套餐勾选上，不然扣钱是不会通知你的，扣完才有账单" class="headerlink" title="3、选择ubuntu，记得把仅免费套餐勾选上，不然扣钱是不会通知你的，扣完才有账单"></a>3、选择ubuntu，记得把仅免费套餐勾选上，不然扣钱是不会通知你的，扣完才有账单</h3><center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49fttpqij21160e9n1h' width='500' />
+</center>
+
+<h3 id="4、选择免费套餐，下一步"><a href="#4、选择免费套餐，下一步" class="headerlink" title="4、选择免费套餐，下一步"></a>4、选择免费套餐，下一步</h3><center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49jajfg8j211s0cpacr' width='500' />
+</center>
+
+<h3 id="5、防止意外终止保护最好勾选上，租赁选择贡献，专用是收费的。下一步"><a href="#5、防止意外终止保护最好勾选上，租赁选择贡献，专用是收费的。下一步" class="headerlink" title="5、防止意外终止保护最好勾选上，租赁选择贡献，专用是收费的。下一步"></a>5、防止意外终止保护最好勾选上，租赁选择贡献，专用是收费的。下一步</h3><center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49k3y4hdj21190ew40n' width='500' />
+</center>
+### 6、默认，8G够了，不能小于8G，大于30G是要收费的。下一步
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49kjjuhdj211l0erwgo' width='500' />
+</center>
+### 7、直接下一步
+### 8、选择一个现有的安全组，用默认的所有流量就好，不然还得自己去开端口。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49l0bof9j211n0ewacm' width='500' />
+</center>
+### 9、点击审核和启动后，直接点击启动。
+### 10、选择创建新秘钥对，输入名称，当然，不能是中文，然后点击启动实例
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy49mwfuiyj20ji0ck40j' width='500' />
+</center>
+### 11、启动完就OK啦。然后进入控制台，左边选择首选项，修改安全组的入站规则，点击【操作】->【编辑入站规则】，选择【我的IP】，保存，vps就OK了。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy4abdz9acj20h10cyab9' width='500' />
+</center>
+下面就是连接vps安装shadowsocks服务了。
+
+<h2 id="连接AWS服务器"><a href="#连接AWS服务器" class="headerlink" title="连接AWS服务器"></a>连接AWS服务器</h2><p>windows用户可以使用PuTTY和xshell连接AWS（<a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html">官方PuTTy教程</a>）。MAC用户可以使用ssh方式连接AWS，下面我就使用ssh方式连接。</p>
+<p>第一步：授权之前创建实例后实操的密钥文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 400 /your_path/key.pem</span><br></pre></td></tr></table></figure>
+
+<p>第二步：通过其 公有 DNS 连接到您的实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i &quot;key.pem&quot; root@xxxxxcompute.amazonaws.com</span><br></pre></td></tr></table></figure>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fy4anoh3dkj21qw10a7cz' width='500' />
+</center>
+连接成功，可以直接使用mac终端操作实例了。
+
+<p>##安装配置shadowsocks服务</p>
+<p>终端输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo su   #获取root权限</span><br><span class="line">apt-get update		#更新软件源列表</span><br><span class="line">apt-get install python-gevent python-pip	#安装所需服务</span><br><span class="line">pip install shadowsocks			#安装shadowsocks</span><br><span class="line">apt-get install python-m2crypto		#为了支持aes-256-cfb等加密方式，可以输入此行。</span><br></pre></td></tr></table></figure>
+
+<p>然后shadowsocks就安装好了。</p>
+<h3 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h3><p>直接通过以下命令运行起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#start server</span><br><span class="line">ssserver -p 8765 -k xxxx -m aes-256-cfb -d start</span><br><span class="line">#stop server</span><br><span class="line">ssserver -d stop</span><br></pre></td></tr></table></figure>
+<p>如果遇到错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">loading libcrypto from libcrypto.so.1.1</span><br><span class="line">Traceback (most recent call last):</span><br></pre></td></tr></table></figure>
+<p>解决办法:</p>
+<p>修改文件&#x2F;usr&#x2F;local&#x2F;lib&#x2F;python2.7&#x2F;dist-packages&#x2F;shadowsocks&#x2F;crypto&#x2F;openssl.py<br>将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes &#x3D; (c_void_p,)<br>改为libcrypto.EVP_CIPHER_CTX_reset.argtypes &#x3D; (c_void_p,)<br>将第111行libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)<br>改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)<br>然后再次尝试启动。</p>
+<p>也有有如下这种配置文件方式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">vim /etc/shadowsocks/config.json</span><br><span class="line">新建一个配置文件（路径随便），按i进入编辑模式，然后配置如下内容</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">&quot;server&quot;: &quot;0.0.0.0&quot;,</span><br><span class="line">&quot;server_port&quot;: 8388,</span><br><span class="line">&quot;local_address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">&quot;local_port&quot;: 1080,</span><br><span class="line">&quot;password&quot;: &quot;pass&quot;,</span><br><span class="line">&quot;timeout&quot;: 600,</span><br><span class="line">&quot;udp_timeout&quot;: 60,</span><br><span class="line">&quot;method&quot;: &quot;aes-256-cfb&quot;,</span><br><span class="line">&quot;protocol&quot;: &quot;auth_sha1_compatible&quot;,</span><br><span class="line">&quot;protocol_param&quot;: &quot;&quot;,</span><br><span class="line">&quot;obfs&quot;: &quot;http_simple_compatible&quot;,</span><br><span class="line">&quot;obfs_param&quot;: &quot;&quot;,</span><br><span class="line">&quot;dns_ipv6&quot;: false,</span><br><span class="line">&quot;connect_verbose_info&quot;: 0,</span><br><span class="line">&quot;redirect&quot;: &quot;&quot;,</span><br><span class="line">&quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server: 服务端监听IP， aws的ec2，ip不稳定，所以监听所有IP</span><br><span class="line">server_port: 服务器端口号</span><br><span class="line">password: 密码</span><br><span class="line">local_address: 本地代理IP</span><br><span class="line">local_port: 本地代理端口</span><br><span class="line">port_password: 支持多用户，端口对应一个密码，可以为每个用户分配一个端口和密码</span><br><span class="line">timeout: 超时时间</span><br><span class="line">method: 加密方式</span><br><span class="line">fast_open: 是否使用tcp</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>修改好之后，按<code>ESC</code>，输入<code>:wq</code>（保存并关闭的意思），按回车，退出vim编辑。</p>
+<p>配置好之后，运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#start</span><br><span class="line">ssserver -c /etc/shadowsocks/config.json -d start </span><br><span class="line">#stop</span><br><span class="line">ssserver -c /etc/shadowsocks/config.json -d stop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>如果没有提示出错，就可以了。</p>
+<p>配置开机自启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rc.local 把下边一行添加进去，然后保存</span><br><span class="line">/usr/local/bin/ssserver -c /etc/shadowsocks/config.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>重启服务器，<code>reboot</code>，就可以了。</p>
+<h2 id="安装锐速加速器"><a href="#安装锐速加速器" class="headerlink" title="安装锐速加速器"></a>安装锐速加速器</h2><p>安装锐速加速器可以让网络访问速度更快。<br>这里给一个自动换内核装锐速的脚本ubuntu16.04 ubuntu14.04，亲测可用，直接放一键脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget xiaofd.github.io/ruisu.sh &amp;&amp; bash ruisu.sh</span><br></pre></td></tr></table></figure>
+
+<p>注意：安装完会自动重启，正常现象，重启后就安装好了锐速，可以使用<code>ps aux | grep appex</code>来检测是否运行如果锐速没有自动安装可以使用<code>/appex/appexinstall.sh</code>来安装没有任何多余的判断，非ubuntu16.04和ubuntu14.04请勿运行。</p>
+<p>安装后的文件放在<code>/appex</code>目录下，运行脚本为<code>/appex/bin/serverSpeeder.sh</code>，下面是该脚本的命令参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/appex/bin/serverSpeeder.sh </span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是在停止后重新运行需要<code>serverSpeeder.sh renewLic</code>生成新的 License。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用脚本查看运行状态</span><br><span class="line"></span><br><span class="line">/appex/bin/serverSpeeder.sh status</span><br><span class="line"></span><br><span class="line">运行 start</span><br><span class="line">/appex/bin/serverSpeeder.sh start</span><br></pre></td></tr></table></figure>
+<p>注意 Shadowsocks 是否已启动.</p>
+<h3 id="服务器测速"><a href="#服务器测速" class="headerlink" title="服务器测速"></a>服务器测速</h3><p>这里介绍一个服务器测速脚本：speedtest-cli。这是一个命令行脚本用于测试网络的上行和下行带宽。</p>
+<p>脚本是用 Python 写的，可以使用pip安装。或者直接下载运行脚本，具体看 GitHub 上的文档</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py &amp;&amp; chmod +x speedtest-cli</span><br></pre></td></tr></table></figure>
+
+<p>运行脚本，系统会自动判断你服务器所在位置，并找到最近的节点进行测速，<br><a target="_blank" rel="noopener" href="http://www.speedtest.net/result/7875787488">本地测速地址</a>。</p>
+<h2 id="坑！"><a href="#坑！" class="headerlink" title="坑！"></a>坑！</h2><p>我好几次关掉就连不上远程服务器了，看控制台却一切正常，搞得我重新安装实例好多次，猜测可能是重启时间不定，有时候一分钟就重启好了，有时候等了十分钟。擦，我再也不关机了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/12/07/MocoServer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/12/07/MocoServer/" class="post-title-link" itemprop="url">本地模拟API服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-07 10:24:00" itemprop="dateCreated datePublished" datetime="2018-12-07T10:24:00+08:00">2018-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:55:10" itemprop="dateModified" datetime="2021-12-06T10:55:10+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一般来说，我们开发的时候，都是前后端结合的，可是有时候后端API开发会延期，这样会导致我们做前端的进度啊，你又不能打他们，怎么办呢？你们后端不行那我来写，但是要想在自己电脑上搞个API服务器，需要巴拉巴拉一大堆（反正我不懂），我就是想模拟一下API耶，咋就这么难呢？</p>
+<p>当打了挡，这次我发现了个神器，Moco！我们可以用Moco自己在本地搭建一个服务器写好想要数据，然后我们通过接口get或post请求将数据拿到项目中去使用。</p>
+<h2 id="搭建本地测试服务器"><a href="#搭建本地测试服务器" class="headerlink" title="搭建本地测试服务器"></a>搭建本地测试服务器</h2><p>首先得配置jdk环境</p>
+<p>第一步 : 下载安装mac 版的 JDK（<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">下载地址</a>），同意协议并点击下载安装。</p>
+<p>第二步 : 下载moco服务端jar包（<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15DcNtNPvJ5LnlC3uBCUF9g">下载地址</a>）</p>
+<p>首先把刚才下载的jar包放在本地文件夹，这里文件夹命名为MINE_API，然后在文件夹里创建一个MineAPI.json文件(.json是文件后缀)。<br>然后在MineAPI.json文件里输入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> &#123;</span><br><span class="line">    &quot;response&quot;: &#123;</span><br><span class="line">       &quot;text&quot;: &quot;Hello world!&quot;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>接下来打开终端，输入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//指向你创建的MINE_API当前目录，注意每个人的这个目录不一样，不要直接复制拿去使用 </span><br><span class="line">cd /Users/xxx/xxx/MINE_API</span><br><span class="line"></span><br><span class="line">//cd到目录后，再输入以下内容</span><br><span class="line">java -jar moco.jar start -p 8888 -c MineAPI.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>打印出现如下内容表示运行成功： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO Server is started at 8888</span><br><span class="line">INFO Shutdown port is 50621</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在浏览器流输入：（<a target="_blank" rel="noopener" href="http://localhost:8888/">http://localhost:8888</a>）可以看到”Hello World!”字样。<br>说明模拟服务器是可以正常使用的。到此服务器基本就搭建完毕了，还是挺简单的。</p>
+<h2 id="使用测试服务器"><a href="#使用测试服务器" class="headerlink" title="使用测试服务器"></a>使用测试服务器</h2><p>这里我要使用moco服务器，模拟项目中的登陆界面和登录以后界面列表数据。<br>在实际项目中，请求接口数据比较多。因此把所有的配置放在同一个文件里，是非常不合适的，这里需要进行全局配置。<br>前期准备，写配置文件<br>在MINE_API文件夹创建settings.json,同时创建login和asset两个文件夹(为了方便查找)。<br>在login文件夹内创建login.json和login_response.json两个文件。<br>在asset文件夹内创建assetList.json和assetList_response.json两个文件。 </p>
+<h3 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h3><p>1、文件配置</p>
+<p>  单个文件配置<br>这种情况下是将所有的接口请求和数据返回都放在一个.json文件中进行，在setting.json中写入数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> &#123;</span><br><span class="line">    &quot;response&quot;: &#123;</span><br><span class="line">       &quot;text&quot;: &quot;Hello world!&quot;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;</span><br><span class="line">     &quot;request&quot;: &#123;</span><br><span class="line">        &quot;method&quot; : &quot;get&quot;,</span><br><span class="line">        &quot;uri&quot;: &quot;/getMethod&quot;</span><br><span class="line">     &#125;,</span><br><span class="line">    &quot;response&quot;: &#123;</span><br><span class="line">        &quot;text&quot;: &quot;This is a Get Method!&quot;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>  全局文件配置<br>在settings.json文件输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;include&quot; : &quot;login/login.json&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;include&quot; : &quot;asset/assetList.json&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2、login.json输入以下内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;request&quot; :</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;uri&quot; : &quot;/assetApp/login&quot;,</span><br><span class="line">      &quot;method&quot; : &quot;get&quot;,</span><br><span class="line">      &quot;queries&quot; :</span><br><span class="line">        &#123;</span><br><span class="line">         &quot;username&quot; : &quot;jinxiaodou&quot;,</span><br><span class="line">         &quot;password&quot; : &quot;666666&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;response&quot; :</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;file&quot; : &quot;./login/login_response.json&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>3、login_response.json 输入以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;status&quot; : &quot;OK&quot;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>4、assetList.json内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;request&quot; :</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;uri&quot; : &quot;/assetApp/assetList&quot;,</span><br><span class="line">      &quot;method&quot; : &quot;post&quot;,</span><br><span class="line">      &quot;headers&quot; : &#123;</span><br><span class="line">        &quot;content-type&quot; : &quot;application/json&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;queries&quot; : &#123;</span><br><span class="line">        &quot;type&quot;: &quot;search&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;forms&quot;: &#123;</span><br><span class="line">        &quot;username&quot;: &quot;jin&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;response&quot; :</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;file&quot; : &quot;./asset/assetList_response.json&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>5、assetList_response.json 内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;雷军&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;小米&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;董明珠&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;格力&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;乔布斯&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;苹果&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;马云&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;阿里&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;李彦宏&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;百度&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;name&quot;: &quot;马化腾&quot;,</span><br><span class="line">    &quot;unit&quot;: &quot;腾讯&quot;,</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>配置完以上内容后在终端里输入以下方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/xxx/xxx/MINE_API</span><br><span class="line">//然后回车，在输入以下内容，这里注意是 -g 不在是 -c了</span><br><span class="line">java -jar moco.jar start -p 8888 -g settings.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试API"><a href="#测试API" class="headerlink" title="测试API"></a>测试API</h3><p>GET请求：<a target="_blank" rel="noopener" href="http://localhost:8888/assetApp/login?username=jinxiaodou&password=666666">http://localhost:8888/assetApp/login?username=jinxiaodou&password=666666</a></p>
+<p>结果OK！</p>
+<p>POST请求：<a target="_blank" rel="noopener" href="http://localhost:8888/assetApp/assetList%EF%BC%8C%E5%90%8C%E6%A0%B7OK%EF%BC%81">http://localhost:8888/assetApp/assetList，同样OK！</a></p>
+<h2 id="具体解析"><a href="#具体解析" class="headerlink" title="具体解析"></a>具体解析</h2><p>跟着代码小爽一把之后，再看配置的具体含义。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;setting.json所在目录&gt;</span><br><span class="line">//8888是端口号，可以是任意数字，-p后设置端口号，-c后设置单个配置，-g后设置全局配置</span><br><span class="line">单个配置如下：java -jar moco.jar start -p 8888 -c setting.json</span><br><span class="line">全局配置如下：java -jar moco.jar start -p 8888 -g setting.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="下面是POST和GET两种常用的网络数据请求的配置"><a href="#下面是POST和GET两种常用的网络数据请求的配置" class="headerlink" title="下面是POST和GET两种常用的网络数据请求的配置"></a>下面是POST和GET两种常用的网络数据请求的配置</h3><h4 id="request请求"><a href="#request请求" class="headerlink" title="request请求"></a>request请求</h4><p>有14个固定的属性: <code>method</code>, <code>headers</code>, <code>json</code>, <code>factory</code>, <code>uri</code>, <code>text</code>, <code>cookies</code>, <code>xpaths</code>, <code>json_paths</code>, <code>version</code>, <code>file</code>, <code>queries</code>, <code>path_resource</code>, <code>forms</code>。一定要遵循这些方法。 常用的<code>method(请求方式)</code>, <code>headers(heads参数)</code>, <code>uri(url地址)</code>, <code>file(指定调用的请求文件)</code>, <code>queries(请求带参)</code>，<code>forms(表单内容)</code>。</p>
+<h4 id="response响应"><a href="#response响应" class="headerlink" title="response响应"></a>response响应</h4><p>有12个固定属性：<code>status</code>, <code>attachment</code>, <code>headers</code>, <code>version</code>, <code>factory</code>, <code>file</code>, <code>text</code>, <code>proxy</code>, <code>cookies</code>, <code>json</code>, <code>latency</code>, <code>path_resource</code>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/11/08/pythonExe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/08/pythonExe/" class="post-title-link" itemprop="url">Python代码编译成可执行文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2018-11-08 11:35:17 / Modified: 13:51:07" itemprop="dateCreated datePublished" datetime="2018-11-08T11:35:17+08:00">2018-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>##Python代码编译成可执行文件</p>
+<p>最近学习Python，自觉地牛逼的不行，跟朋友吹嘘多么多么厉害，结果朋友提了个小功能，大包大揽地说，so easy。于是回来一边百度一边写，搞了一天，终于做出来了，结果朋友那儿用不了，(— _ -)!，我不管，反正我这边用着没问题。</p>
+<p>###功能需求</p>
+<p>朋友的需求是，去某个网站找素材图片还得点进详情页，再选择大图，然后点击下载，感觉好麻烦，问有没有简单点的方法。于是我就去看了下网页代码，万幸发现资源命名很规范，所以以我自学中的能力，还是能实现的。</p>
+<p>###配置环境</p>
+<p>之前写了个爬小说的python，但是是用最傻的字符串分隔方式去截取html代码中的正文（说到这，容我哭会儿），这次我要试试网上说的python解析html框架BeautifulSoup，emmmm，名字很不错，作者一定很爱喝汤。<br>pip是python的包管理工具，可以使用pip安装BeautifulSoup，在Python2.7的安装包中，easy_install.py是默认安装的，而pip需要我们手动安装。Pyinstaller是用来将py代码打包成各执行文件的工具，但是在Mac系统上，只能打包成exec执行文件，在windows系统上，可以打包成exe文件。</p>
+<p>好了，要解析html，就得安装beautifulSoup，要安装beautifulSoup，就得<code>pip install beautifulsoup4</code>，pip？？？好吧，再安装pip，<code>sudo easy_install pip</code>，反正就让怎么做就怎么做。</p>
+<p>Mac下，安装方法：</p>
+<p>笔者只试着用了mac系统自带的python2.7，所以用python3的可以自己找方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">安装pip （终端）输入命令：sudo easy_install pip</span><br><span class="line">安装bs4 输入命令：pip install beautifulsoup4</span><br><span class="line"></span><br><span class="line">如果出现错误 </span><br><span class="line">OSError: [Errno 13] Permission denied:</span><br><span class="line"></span><br><span class="line">输入命令：sudo easy_install beautifulsoup4</span><br><span class="line"></span><br><span class="line">使用命令安装pywin32：pip install pywin32</span><br><span class="line"></span><br><span class="line">使用命令安装Pyinstaller：pip install PyInstaller</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Windows下，下载<a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-2713/">python2.7.13</a>，选择<code>Windows x86 MSI installer</code>，点击下载，此版本默认自带pip和pyinstaller，默认安装后，在C:\Python27\Scripts文件夹下，有pip.exe和pyinstaller.exe。此时命令略有变动<code>pip.exe .....</code>， <code>pyinstaller.exe .....</code>。</p>
+<p>Pyinstaller参数的含义</p>
+<p>-F 表示生成单个可执行文件</p>
+<p>-w 表示去掉控制台窗口，这在GUI界面时非常有用。不过如果是命令行程序的话那就把这个选项删除吧！</p>
+<p>-p 表示你自己自定义需要加载的类路径，一般情况下用不到</p>
+<p>-i 表示可执行文件的图标</p>
+<p>###打包只需一句话</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mac系统：</span><br><span class="line">pyinstaller -F /Users/xxx/Desktop/imgDownload.py</span><br><span class="line"></span><br><span class="line">windows系统：</span><br><span class="line">cd C:\Python27\Scripts</span><br><span class="line">pyinstaller.exe -F C:\ Users\Desktop\imgDownload.py</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>pyinstaller打包后，生成的exe和exec在当前运行命令目录下的dist文件夹下，其他文件在build文件夹下。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/09/28/pythonLearningStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/09/28/pythonLearningStart/" class="post-title-link" itemprop="url">想学Python</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-09-28 17:41:17" itemprop="dateCreated datePublished" datetime="2018-09-28T17:41:17+08:00">2018-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2018-11-05 17:19:14" itemprop="dateModified" datetime="2018-11-05T17:19:14+08:00">2018-11-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="开始学习Python"><a href="#开始学习Python" class="headerlink" title="开始学习Python"></a>开始学习Python</h2><p>最近工作稍微清闲了一点，有些空虚寂寞，虽然国庆的气氛悄然蔓延，而且十月份开始会有一大波任务出现，但是还是想着接触学习一下Python语言，三分钟热度开始。</p>
+<p>最近Python语言挺火的，大数据处理啊什么的，听起来好像挺有前景的，（上次我这么感觉还是大学填志愿看到电子商务专业的时候，虽然学完没啥卵用，但还是能说明我的眼光挺不错的，hiahia）。原本是想让我在读的小弟学习下Python的，结果人家不情不愿的，那算咯，我自己来学。</p>
+<h3 id="学前准备"><a href="#学前准备" class="headerlink" title="学前准备"></a>学前准备</h3><p>本来想着，是不是先去网上扫一堆资料，然后再开始学。可是知乎大神说的对，学习资料满天飞，但是初期，其实只需要一本书，一本讲解基础姿势（咳）的书，先学会走路和平衡，再去试着跑步，然后才能去装逼花里胡哨的动作。（突然想探讨下行知和知行的优缺点，还是算了罢）这里我推荐一本<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1DdCS76JLUmlIvyl0gVVjRQ">《Learning Python》第四版</a>和<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1d4bVEJvS6kR3xlnzl2EM8w">《Programing Python》第四版</a>，我准备从这两本书开始，前者就是基础知识学习，后者据说是应用。</p>
+<p>emmmm……今天就先到这里吧，下班啦，有空续写。</p>
+<hr>
+<h3 id="开始学习"><a href="#开始学习" class="headerlink" title="开始学习"></a>开始学习</h3><p>日常有空的时候就看一点，看一点，然后就困了。总结之前这段时间学的内容，比较需要注意的是</p>
+<h4 id="1-关于"><a href="#1-关于" class="headerlink" title="1.关于#!"></a>1.关于#!</h4><p>一般python文件的开头都会有一句<code>#!/usr/bin/python</code>，这是告诉系统Python解释器保存在哪里，从技术上来说，这一行属于注释，其实不用在意。如果使用<code>python xxx.py</code>去执行文件，如果有，会忽略掉<code>#!</code>的注释。</p>
+<p>在一些UNIX系统上，也许可以避免硬编码Python解释器的路径，使用<code>#!/usr/bin/env python</code>，env程序可以通过系统的搜索路径的设置（例如，在绝大多数的UNIX Shell中，通过搜索PATH环境变量中的罗列出的所有目录）定位Python解释器。这种方法可以使代码更具可移植性。</p>
+<h4 id="2-关于模块导入和重载"><a href="#2-关于模块导入和重载" class="headerlink" title="2.关于模块导入和重载"></a>2.关于模块导入和重载</h4><p>每一个以扩展名py结尾的Python源代码文件都是一个模块。其他的文件可以通过导入一个模块读取这个模块的内容。导入从本质上来讲，就是载入另一个文件，并能够读取那个文件的内容。</p>
+<p>一般使用<code>import script</code>导入模块，以及<code>reload(script)</code>进行重载，需要注意重载是<code>reload()</code>方法，需要注意加上括号。具体如以下示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#  myfile.py如下</span><br><span class="line"></span><br><span class="line">title = &#x27;this is my file&#x27;</span><br><span class="line">b = 8</span><br><span class="line"></span><br><span class="line"># imp.py如下</span><br><span class="line"></span><br><span class="line">import myfile</span><br><span class="line">print(myfile.title)</span><br><span class="line"></span><br><span class="line"># 或者imp.py如下</span><br><span class="line"></span><br><span class="line">from myfile import title,b</span><br><span class="line">print(title)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>两者打印结果都是 <code>this is my file</code>，并且from和import两者都会执行myfile.py的语句。</p>
+<h4 id="3-数据类型与基本方法"><a href="#3-数据类型与基本方法" class="headerlink" title="3.数据类型与基本方法"></a>3.数据类型与基本方法</h4><p>反向索引</p>
+<p>这里需要注意的是，在python中，索引从0开始，并且有一个比较奇特的<font size=5><code>反向索引</code></font>，从最后一个开始（正向索引是从左边开始计算，反向索引是从右边开始计算）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[0]  </span><br><span class="line">&#x27;s&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1]</span><br><span class="line">&#x27;p&#x27;</span><br><span class="line">&gt;&gt;&gt; S[-1]</span><br><span class="line">&#x27;m&#x27;</span><br><span class="line">&gt;&gt;&gt; S[-2]</span><br><span class="line">&#x27;a&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>分片（slice）</p>
+<p>这是一种一步就能够提取整个分片（slice）的方法。它们的一般形式为X[I:J]，表示“取出在X中从偏移量为I，直到但不包括偏移量为J的内容”。结果就是返回一个新的对象。 左边界默认为0，并且右边界默认为分片序列的长度。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1:3]</span><br><span class="line">&#x27;pa&#x27;</span><br><span class="line">&gt;&gt;&gt; S[1:]</span><br><span class="line">&#x27;pam&#x27;</span><br><span class="line">&gt;&gt;&gt; S[:3]</span><br><span class="line">&#x27;spa&#x27;</span><br><span class="line">&gt;&gt;&gt; S[:]</span><br><span class="line">&#x27;spam&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>字符串合并</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S + &#x27;abc&#x27;</span><br><span class="line">&#x27;spamabc&#x27;</span><br><span class="line">&gt;&gt;&gt; S * 4</span><br><span class="line">&#x27;spamspamspamspam&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>字符串不可变，但变量可以重新定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spam&#x27;</span><br><span class="line">#错误写法</span><br><span class="line">&gt;&gt;&gt; S[0] = &#x27;z&#x27;</span><br><span class="line">#正确写法 </span><br><span class="line">&gt;&gt;&gt; S = &#x27;z&#x27; + S[1:]</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;zpam&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>字符串的一些方法，strip用于去除字符串的首尾字符，同理，lstrip用于去除左边的字符，rstrip用于去除右边的字符。当没有传入参数时，是默认去除空白字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;spama&#x27;</span><br><span class="line">&gt;&gt;&gt; S.find(&#x27;a&#x27;)</span><br><span class="line">2      				# 返回第一个匹配的偏移量，如果没有则返回-1</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;spama&#x27;</span><br><span class="line">&gt;&gt;&gt; S.replace(&#x27;pa&#x27;, &#x27;XYZ&#x27;)</span><br><span class="line">&#x27;sXYZma&#x27;</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;spama&#x27;				# 遵循字符串不可变</span><br><span class="line">&gt;&gt;&gt; line = &#x27;aaa,bbb,ccc,dddd&#x27;</span><br><span class="line">&gt;&gt;&gt; line.split(&#x27;,&#x27;)</span><br><span class="line">[&#x27;aaa&#x27;, &#x27;bbb&#x27;, &#x27;ccc&#x27;, &#x27;dddd&#x27;]</span><br><span class="line">&gt;&gt;&gt; S = &#x27;Spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S.upper()</span><br><span class="line">&#x27;SPAM&#x27;</span><br><span class="line">&gt;&gt;&gt; S.lower()</span><br><span class="line">&#x27;spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S</span><br><span class="line">&#x27;Spam&#x27;</span><br><span class="line">&gt;&gt;&gt; S.isalpha()		# 检测字符串是否只由字母组成</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"># 删除 string 字符串末尾的指定字符（默认为空白字符）</span><br><span class="line">&gt;&gt;&gt; line = &#x27;abcd,edcd,se\n&#x27;</span><br><span class="line">&gt;&gt;&gt; line = line.rstrip()</span><br><span class="line">&gt;&gt;&gt; line</span><br><span class="line">&#x27;abcd,edcd,se&#x27;</span><br><span class="line">&gt;&gt;&gt; line = &#x27;esdeww  \n \t \r&#x27;</span><br><span class="line">&gt;&gt;&gt; line.rstrip()</span><br><span class="line">&#x27;esdeww&#x27;</span><br><span class="line"># 依次被去除首尾在[&#x27;s&#x27;，&#x27;a&#x27;，&#x27;y&#x27;]数组内的字符，直到字符在不数组内</span><br><span class="line">&gt;&gt;&gt; theString = &#x27;saaaay yes no yaaaass&#x27;</span><br><span class="line">&gt;&gt;&gt; theString.strip(&#x27;say&#x27;)</span><br><span class="line">&#x27; yes no &#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; &#x27;%s And %s is good friends&#x27; % (&#x27;A&#x27;, &#x27;B&#x27;)</span><br><span class="line">&#x27;A And B is good friends&#x27;</span><br><span class="line">&gt;&gt;&gt; &#x27;&#123;1&#125; And &#123;0&#125; is Good friends&#x27;.format(&#x27;A&#x27;,&#x27;B&#x27;,&#x27;C&#x27;)</span><br><span class="line">&#x27;B And A is Good friends&#x27;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以上不能列举所有的函数，所以，我们可以用dir函数去获取对象的所有属性，由于方法是函数属性，所以这里也会列举出来。dir函数简单地给出了方法的名称。要查询它们是做什么的，你可以将其传递给help函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;str&#x27;</span><br><span class="line">&gt;&gt;&gt; dir(S)</span><br><span class="line">[&#x27;__add__&#x27;, &#x27;__class__&#x27;, &#x27;__contains__&#x27;, &#x27;__delattr__&#x27;, &#x27;__dir__&#x27;, &#x27;__doc__&#x27;, &#x27;__eq__&#x27;, &#x27;__format__&#x27;, &#x27;__ge__&#x27;, &#x27;__getattribute__&#x27;, &#x27;__getitem__&#x27;, &#x27;__getnewargs__&#x27;, &#x27;__gt__&#x27;, &#x27;__hash__&#x27;, &#x27;__init__&#x27;, &#x27;__init_subclass__&#x27;, &#x27;__iter__&#x27;, &#x27;__le__&#x27;, &#x27;__len__&#x27;, &#x27;__lt__&#x27;, &#x27;__mod__&#x27;, &#x27;__mul__&#x27;, &#x27;__ne__&#x27;, &#x27;__new__&#x27;, &#x27;__reduce__&#x27;, &#x27;__reduce_ex__&#x27;, &#x27;__repr__&#x27;, &#x27;__rmod__&#x27;, &#x27;__rmul__&#x27;, &#x27;__setattr__&#x27;, &#x27;__sizeof__&#x27;, &#x27;__str__&#x27;, &#x27;__subclasshook__&#x27;, &#x27;capitalize&#x27;, &#x27;casefold&#x27;, &#x27;center&#x27;, &#x27;count&#x27;, &#x27;encode&#x27;, &#x27;endswith&#x27;, &#x27;expandtabs&#x27;, &#x27;find&#x27;, &#x27;format&#x27;, &#x27;format_map&#x27;, &#x27;index&#x27;, &#x27;isalnum&#x27;, &#x27;isalpha&#x27;, &#x27;isascii&#x27;, &#x27;isdecimal&#x27;, &#x27;isdigit&#x27;, &#x27;isidentifier&#x27;, &#x27;islower&#x27;, &#x27;isnumeric&#x27;, &#x27;isprintable&#x27;, &#x27;isspace&#x27;, &#x27;istitle&#x27;, &#x27;isupper&#x27;, &#x27;join&#x27;, &#x27;ljust&#x27;, &#x27;lower&#x27;, &#x27;lstrip&#x27;, &#x27;maketrans&#x27;, &#x27;partition&#x27;, &#x27;replace&#x27;, &#x27;rfind&#x27;, &#x27;rindex&#x27;, &#x27;rjust&#x27;, &#x27;rpartition&#x27;, &#x27;rsplit&#x27;, &#x27;rstrip&#x27;, &#x27;split&#x27;, &#x27;splitlines&#x27;, &#x27;startswith&#x27;, &#x27;strip&#x27;, &#x27;swapcase&#x27;, &#x27;title&#x27;, &#x27;translate&#x27;, &#x27;upper&#x27;, &#x27;zfill&#x27;]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; S = &#x27;ssss&#x27;</span><br><span class="line">&gt;&gt;&gt; help(S.istitle)</span><br><span class="line">Help on built-in function istitle:</span><br><span class="line"></span><br><span class="line">istitle() method of builtins.str instance</span><br><span class="line">    Return True if the string is a title-cased string, False otherwise.</span><br><span class="line">    </span><br><span class="line">    In a title-cased string, upper- and title-case characters may only</span><br><span class="line">    follow uncased characters and lowercase characters only cased ones.</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>字符串长度计算时，会将特殊字符认为一个长度。Python允许字符串包括在单引号或双引号中（它们代表着相同的东西）。它也允许在三个引号（单引号或双引号）中包括多行字符串常量。当采用这种形式的时候，所有的行都合并在一起，并在每一行的末尾增加换行符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; S = &#x27;A\nB\tC&#x27;</span><br><span class="line">&gt;&gt;&gt; len(S)</span><br><span class="line">5</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; msg = &#x27;&#x27;&#x27; aaaaa</span><br><span class="line">bbbb</span><br><span class="line">ccccs&#x27;&#x27;&#x27;</span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&#x27; aaaaa\nbbbb\nccccs&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>啊啊啊~~~后边还有这么多看起来奇奇怪怪，用起来简简单单但根本不会用的方法。。。看不下去了。反正差不多就是这样，之后用到这些函数的时候，再说吧，比如<code>squares = [x ** 2 for x in [1, 2, 3 ,4, 4, 5]]</code>，之后得出<code> squares = [1, 4, 9, 16, 25]</code>。</p>
+<p>至于字典、元组、集合这些，就不再说了，重要的只是元组不可变，集合可以<code>&#123;&#39;a&#39;, &#39;b&#39;, &#39;c&#39;&#125;</code>或<code>set(&#39;abcd&#39;)</code>方式创建。</p>
+<p>使用type方法可以去查看变量的属性，但是使用类型检验的后遗症就是，在代码中检验了特定的类型，实际上破坏了它的灵活性，即限制它只能使用一种类型工作。没有这样的检测，代码也许能够使用整个范围的类型工作。比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; L = [&#x27;a&#x27;, &#x27;b&#x27;]</span><br><span class="line">&gt;&gt;&gt; type(L)</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; if type(L) == list:</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">&gt;&gt;&gt; if type(L) == type([]):</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">&gt;&gt;&gt; if isinstance(L, list):</span><br><span class="line">		print(&#x27;yes&#x27;)</span><br><span class="line">yes</span><br><span class="line">#所以尽量不要使用类型检验</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="4-文件"><a href="#4-文件" class="headerlink" title="4.文件"></a>4.文件</h4><p>终于看到了文件操作的部分，事实上我学些python就是为了去爬些小说来看的，网上的小说资源太乱了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&#x27;abc.txt&#x27;, &#x27;w&#x27;)</span><br><span class="line">f.write(&#x27;abcd\n&#x27;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">#默认为r，</span><br><span class="line">f1 = open(&#x27;/Users/CodeBuilder/source/xxx.txt&#x27;)</span><br><span class="line">xxxText = f1.read()</span><br><span class="line"></span><br><span class="line">data = open(&#x27;data.bin&#x27;, &#x27;rb&#x27;).read()</span><br><span class="line">#data为</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>文件对象提供了多种读和写的方法（read可以接受一个字节大小的选项，readline每次读一行等），以及其他的工具（seek移动到一个新的文件位置）。我们在本书后面会看到，如今读取一个文件的最佳方式就是根本不读它，文件提供了一个迭代器（iterator），它在for循环或其他环境中自动地一行一行地读取。</p>
+<h4 id="5-类"><a href="#5-类" class="headerlink" title="5.类"></a>5.类</h4><p>这个类定义了一个新的对象的种类，有name和pay两个属性（有时候叫做状态信息），也有两个小的行为编写为函数（通常叫做方法）的形式。就像函数那样去调用类，会生成我们新类型的实例，并且类的方法调用时，类的方法自动获取被处理的实例（其中的self参数）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class Worker:</span><br><span class="line">	def __init__(self, name, pay):</span><br><span class="line">		self.name = name</span><br><span class="line">		self.pay = pay</span><br><span class="line">	def lastName(self):</span><br><span class="line">		return self.name.split()[-1]</span><br><span class="line">	def giveRaise(self, percent):</span><br><span class="line">		self.pay *= (1.0 + percent)</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">&gt;&gt;&gt; bd = Worker(&#x27;Biangdiang Wang&#x27;, 20.8)</span><br><span class="line">&gt;&gt;&gt; fz = Worker(&#x27;Fuzi Lao&#x27;, 500)</span><br><span class="line">&gt;&gt;&gt; bd.lastName()</span><br><span class="line">&#x27;Wang&#x27;</span><br><span class="line">&gt;&gt;&gt; fz.giveRaise(.1)</span><br><span class="line">&gt;&gt;&gt; fz.pay</span><br><span class="line">550.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="6-数字处理"><a href="#6-数字处理" class="headerlink" title="6.数字处理"></a>6.数字处理</h4><p>在Python3.0中，&#x2F;现在总是执行真除法，不管操作数的类型，都返回包含任何余数的一个浮点结果。&#x2F;&#x2F;执行Floor除法，它截除掉余数并且针对整数操作数返回一个整数，如果有任何一个操作数是浮点类型，则返回一个浮点数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 5//2</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; 5/2</span><br><span class="line">2.5</span><br><span class="line">&gt;&gt;&gt; 5//-2</span><br><span class="line">-3</span><br><span class="line">&gt;&gt;&gt; 5//-2.0</span><br><span class="line">-3.0</span><br><span class="line">&gt;&gt;&gt; import math</span><br><span class="line">&gt;&gt;&gt; math.floor(2.5)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; math.floor(-2.5)</span><br><span class="line">-3</span><br><span class="line">&gt;&gt;&gt; math.trunc(2.5)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; math.trunc(-2.5)</span><br><span class="line">-2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>进制转换，oct函数会将十进制数转换为八进制数，hex函数会将十进制转换为十六进制数，而bin会将十进制数转换为二进制。另一种方式，内置的int函数会将一个数字的字符串变换为一个整数，并可以通过定义的第二个参数来确定变换后的数字的进制：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; oct(64), hex(64), bin(64)</span><br><span class="line">(&#x27;0o100&#x27;, &#x27;0x40&#x27;, &#x27;0b1000000&#x27;)</span><br><span class="line">&gt;&gt;&gt; int(&#x27;64&#x27;), int(&#x27;100&#x27;, 8), int(&#x27;40&#x27;, 16), int(&#x27;1000000&#x27;, 2)</span><br><span class="line">(64, 64, 64, 64)</span><br></pre></td></tr></table></figure>
+
+<p>emmmm，又吃了一下午的鸡，最近上班吃鸡，好累。。。</p>
+<p>浮点型数字缺乏精确性，不过使用小数对象会改正。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#精度问题</span><br><span class="line">&gt;&gt;&gt; 0.1+0.1+0.1-0.3</span><br><span class="line">5.551115123125783e-17</span><br><span class="line">#使用小数对象</span><br><span class="line">&gt;&gt;&gt; from decimal import Decimal</span><br><span class="line">&gt;&gt;&gt; Decimal(&#x27;0.1&#x27;)+Decimal(&#x27;0.1&#x27;)+Decimal(&#x27;0.1&#x27;)-Decimal(&#x27;0.3&#x27;)</span><br><span class="line">Decimal(&#x27;0.0&#x27;)</span><br><span class="line">#设置全局精度</span><br><span class="line">&gt;&gt;&gt; import decimal</span><br><span class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</span><br><span class="line">Decimal(&#x27;0.1428571428571428571428571429&#x27;)</span><br><span class="line">&gt;&gt;&gt; decimal.getcontext().prec = 4</span><br><span class="line">&gt;&gt;&gt; decimal.Decimal(1)/decimal.Decimal(7)</span><br><span class="line">Decimal(&#x27;0.1429&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>分数类型实现了一个有理数对象。它明确地保留一个分子和一个分母，从而避免了浮点数学的某些不精确性和局限性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from fractions import Fraction</span><br><span class="line">&gt;&gt;&gt; x = Fraction(1, 3)</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">Fraction(1, 3)</span><br><span class="line">&gt;&gt;&gt; y = Fraction(4, 6)</span><br><span class="line">&gt;&gt;&gt; y</span><br><span class="line">Fraction(2, 3)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/03/01/MacGoodAppliction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/01/MacGoodAppliction/" class="post-title-link" itemprop="url">Mac上比较优秀的软件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-01 21:24:27" itemprop="dateCreated datePublished" datetime="2017-03-01T21:24:27+08:00">2017-03-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:54:43" itemprop="dateModified" datetime="2021-12-06T10:54:43+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这几年，越来越多的人喜欢使用苹果的产品，比如苹果手机，苹果电脑。相比来说，个人的确喜欢苹果电脑的精美外形，可是对于大多数人来说，用惯了windows系统，再使用苹果的Mac系统，总是感觉不习惯，其实，Mac系统下有许多软件能够高度提高工作效率，今天，我就为大家介绍一下个人喜欢使用的Mac软件。</p>
+<h3 id="效率工具（Alfred-2）"><a href="#效率工具（Alfred-2）" class="headerlink" title="效率工具（Alfred 2）"></a>效率工具（Alfred 2）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygctab0aj206i066ab0' width='100' />
+</left>
+效率工具，嗯，意思就是使用了可以提高工作效率。在windows中，如果需要锁上电脑，win+L好像就可以了，但是Mac上，没有这种快捷键。还有，在Mac上，如果你想打开某个文件夹，除非你有快捷方式（Mac上叫替身），否则要打开Finder，一层一层去打开；想打开某个软件，要进入Launchpad或者Finder里打开应用程序，Oh Come on。来吧，下载安装Alfred 2，
+1.激活程序：option+空格
+2.打开软件：激活程序，输入软件名(也许没写完你就看到它了)，下拉列表里找到它，第一个直接敲回车，其他的使用command+数字就能打开。
+3.打开文件夹：激活程序，空格，输入文件（夹）名，回车，就是这么简单。
+4.锁屏or睡眠：激活程序，输入lock或者sleep，回车。
+5.计算器：激活程序，8+10+20*50.....下拉单里就是结果。
+6.复杂操作文件：激活程序，通过find、open、in等关键词搜索文件。find是定位文件，open是定位并打开文件，in是在文件中进行全文检索，三种检索方式基本上可以找到任何你想找的文件。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcszu6bj20xq07w3zc' width='300' />
+</center>
+还有许多自定义功能，比如有道翻译、快速搜索视频音乐书籍、运行shell脚本等等。你可以搜索Alfred workflow，这里不做介绍。
+
+<h3 id="输入增强工具（aText）"><a href="#输入增强工具（aText）" class="headerlink" title="输入增强工具（aText）"></a>输入增强工具（aText）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygculmelj207606ywf6' width='100' />
+</left>
+输入增强工具，见名知意，就是加快输入嘛，比如写文档常遇到公司名、公司地址，写代码遇到重复代码，手打好累，复制粘贴够了，使用aText，只需要输入自定义的几个字符，就完成了粘贴。比如我在写博客时需要写图片位置和链接地址，我才不手打，按下`;pc`就OK了。
+aText还可以执行脚本，比如我想更新七牛图库了，我想上传新的博文了，打开iTerm，cd到目录（目录还要亲自打开Finder找到，然后拖进iTerm），输入命令，等待完成，再输入命令，Oh NO！我只需要写成AppleScript脚本，按下`;hx`，命令行自动打开，自动执行，爽。
+
+
+<h3 id="录屏软件（QuickTime-Player）"><a href="#录屏软件（QuickTime-Player）" class="headerlink" title="录屏软件（QuickTime Player）"></a>录屏软件（QuickTime Player）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd72cmuj207w07i75g' width='100' />
+</left>
+许多人想玩录制屏幕，在App Store中寻找屏幕录制软件，其实，Mac自带的视频播放软件QuickTime Player就拥有屏幕录制的功能，打开软件，在菜单中选择“文件”</br>
+
+<ul>
+<li>“新建屏幕录制”就是新建屏幕录制</li>
+<li>“新建视频录制”，就会打开前置摄像头录制视频，而且，iPhone连接电脑之后，就可以在电脑上显示手机的屏幕，当然，也可以录制手机屏幕了。</li>
+</ul>
+<h3 id="简洁视频播放器（MPlayerX）"><a href="#简洁视频播放器（MPlayerX）" class="headerlink" title="简洁视频播放器（MPlayerX）"></a>简洁视频播放器（MPlayerX）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd3y3s3j206w06egmz' width='100' />
+</left>
+个人觉得Mac电脑自带的视频播放器挺丑的，而且支持的格式不太多，还不能播放未下载完的视频。而一些其他的视频软件，比如爱奇艺、暴风影音，都会带一些各自的视频功能。But，我只想播放视频，才不想看广告！于是我找到了一个叫MPlayerX的播放器，是的，它只是播放器，其他什么功能都没有，界面也很简洁，支持的格式也挺多，用着很舒服啊。
+
+<h3 id="虚拟机软件（Parallels-Desktop）"><a href="#虚拟机软件（Parallels-Desktop）" class="headerlink" title="虚拟机软件（Parallels Desktop）"></a>虚拟机软件（Parallels Desktop）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd58bs2j207y070gms' width='100' />
+</left>
+如果工作中需要使用windows系统特有的功能，又觉得安装双系统又太占空间，你可以试着使用虚拟机，Parallels Desktop软件可以帮助使用者安装虚拟机，包括分配内存空间等，你只需要下载好系统安装文件，用Parallels Desktop打开，并设置性能配置，就可以安装使用windows了。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd4tmg7j21cg0wawhy' width='300' />
+</center><center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd44uwrj20zk090750' width='300' />
+</center>
+
+<h3 id="SSH软件（vSSH-Lite）"><a href="#SSH软件（vSSH-Lite）" class="headerlink" title="SSH软件（vSSH Lite）"></a>SSH软件（vSSH Lite）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd92v3zj206o068gml' width='100' />
+</left>
+当需要连接远程机器时，需要使用SSH软件，而许多人不太喜欢使用Mac自带的命令行工具。这里推荐的vSSH Lite就是一个比较好用的SSH客户端，虽然，撸码界面比较丑，但是也是个不错的工具。也有人推荐使用zoc7，据说可以同时连接多台服务器，个人没用过，所以不做评论。ps：vSSH Lite可以在App Store免费下载哦。
+
+
+<h3 id="翻墙软件（Lantern-或者-ShadowsocksX）"><a href="#翻墙软件（Lantern-或者-ShadowsocksX）" class="headerlink" title="翻墙软件（Lantern 或者 ShadowsocksX）"></a>翻墙软件（Lantern 或者 ShadowsocksX）</h3><img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd19wipj205k05iglm' width='100' /> 
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd6ob9ij205k05ijrj' width='100' />
+
+<p>2015年和2016年，Mac上最火的翻墙软件其实是蓝灯（Lantern），免费，操作简单，打开就能翻墙，可是2016年后半年，蓝灯升级版本，并且进入收费模式，咳咳，这对国人来说，当然是很不爽的一件事，虽说免费版每月还有500M免费流量，可毕竟不够用的。于是大家纷纷放弃蓝灯，投入了ShadowsocksX的怀抱，ShadowsocksX其实就是一个软件，它需要你有国外服务器地址和账户密码，于是就租了个国外服务器，一年也就几十块钱。</p>
+<h3 id="SVN版本管理工具（Cornerstone）"><a href="#SVN版本管理工具（Cornerstone）" class="headerlink" title="SVN版本管理工具（Cornerstone）"></a>SVN版本管理工具（Cornerstone）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcw4f6xj207206gmy9' width='100' />
+</left>
+作为一个程序猿，当然少不了使用svn管理代码版本，mac上的svn工具有好几种，不过还是觉得Cornerstone比较好用一点。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcxo6bhj21v415o4ad' width='500' />
+</center>
+
+<h3 id="git版本管理工具（SourceTree）"><a href="#git版本管理工具（SourceTree）" class="headerlink" title="git版本管理工具（SourceTree）"></a>git版本管理工具（SourceTree）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd8e1qaj207406wq3t' width='100' />
+</left>
+作为比svn更高级的版本管理工具，git的使用者多是大型项目开发者，当然，小型项目也是可以的，是一个比较优秀的管理方案，著名的github就是使用git进行管理代码的。而SourceTree作为一个非常优秀的git管理软件，windows和Mac都有该软件。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd8sx61j21mc0u6doo' width='500' />
+</center>
+### html编写工具（HBuilder）
+<left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcx4y9bj206i06k0t2' width='100' />
+</left>
+作为一个html初学者，一个HBuild软件就能满足你所有的需求，这里不需要配置JDK，加PATH，创建tomcat服务器等bulabula的操作。HBuild自身就可以边写边看效果，自带创建服务器，也有代码提示，实在是一款不可多得的html软件。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcy3ktnj21wq176anl' width='500' />
+</center>
+### 文本工具（sublime text）
+<left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd99ywnj2078068mxz' width='100' />
+</left>
+sublime text是一款代码编辑器，里边配置了很多种编程语言语法。起初我使用sublime text只是为了创建保存一个txt文本，毕竟系统自带的“文本编辑”软件保存的格式奇奇怪怪的，叫什么多信息文本文稿。后来我发现系统自带的“文本编辑”软件不是不能保存txt文本，只需要在新建后按下“command+shift+t”，多信息文本文稿就变成了纯文本，保存时不输入后缀就会默认为txt。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd9zypgj21c20x4wnr' width='500' />
+</center>
+### 网络请求模拟工具（paw）
+<left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd5w73yj207406k3yy' width='100' />
+</left>
+开发时总需要测试一下后台写的接口是否成功，甚至需要拿出证据证明后台的接口有错误。paw就可以模拟http的get、post、delete、put等等请求方式，有入参有返回值，哼，这下后台再也甩不了锅了。也有人推荐echo，没用过，不做评论。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd6hvwej21us13cqh4' width='500' />
+</center>
+### 抓包工具（Charles）
+<left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcv1oi6j206i06gjsu' width='100' />
+</left>
+抓包就是将网络传输发送与接收的数据包进行截获、重发、编辑、转存等操作，也用来检查网络安全。抓包也经常被用来进行数据截取等。比如你想看一下手机里某个音乐的链接网址，抓一下包，就能找到，当然许多软件的请求都进行了加密。
+
+<h3 id="命令行工具（iTerm-2-Oh-My-Zsh）"><a href="#命令行工具（iTerm-2-Oh-My-Zsh）" class="headerlink" title="命令行工具（iTerm 2 + Oh My Zsh）"></a>命令行工具（iTerm 2 + Oh My Zsh）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd1gzksj206y064dg8' width='100' />
+</left>
+如果经常使用命令行的话你会发现，系统自带的命令行工具有点，太死板，不提示，界面也不好看。作为一个命令行达人，当然会使用更为方便的命令行工具了。配置方法这里就不详述了，请去传送门（[iTerm 2 + Oh My Zsh DIY](http://www.jianshu.com/p/7de00c73a2bb)）。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd13g05j20vo0p475g' width='300' />
+</center>
+
+<h3 id="解压缩工具（The-Unarchiver）"><a href="#解压缩工具（The-Unarchiver）" class="headerlink" title="解压缩工具（The Unarchiver）"></a>解压缩工具（The Unarchiver）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd9itaoj206u06gmya' width='100' />
+</left>
+Mac自带的归档不能很好的支持很多压缩格式，所以这里推荐The Unarchiver工具，能够比较好的支持常用格式。不过，好像因为编码格式原因，之前打开压缩后，日文名文件夹变成一串乱码，不过中文下正常使用。
+
+<h3 id="硬盘存储查看工具（DaisyDisk）"><a href="#硬盘存储查看工具（DaisyDisk）" class="headerlink" title="硬盘存储查看工具（DaisyDisk）"></a>硬盘存储查看工具（DaisyDisk）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcwticlj20780703zw' width='100' />
+</left>
+DaisyDisk可以以扇形图形化显示硬盘中文件存储分布，有助于查看文件占据空间比例。
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcwejq1j218i0xcwif' width='300' />
+</center>
+
+<h3 id="录制gif图（licecap）"><a href="#录制gif图（licecap）" class="headerlink" title="录制gif图（licecap）"></a>录制gif图（licecap）</h3><left>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd2xurwj206a06cdg9' width='100' />
+</left>
+licecap可以录制屏幕，自动变成gif图，只不过图片的清晰度或有损伤，可还是能够向人展示操作流程的。
+
+<h3 id="Mac上运行win软件（Crossover）"><a href="#Mac上运行win软件（Crossover）" class="headerlink" title="Mac上运行win软件（Crossover）"></a>Mac上运行win软件（Crossover）</h3><p>从此Mac上安装win软件不是梦，抛弃虚拟机。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/28/comeToListenMusic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/28/comeToListenMusic/" class="post-title-link" itemprop="url">进来听音乐吧</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-28 22:09:54" itemprop="dateCreated datePublished" datetime="2017-02-28T22:09:54+08:00">2017-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:53:40" itemprop="dateModified" datetime="2021-12-06T10:53:40+08:00">2021-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="添加音乐播放器"><a href="#添加音乐播放器" class="headerlink" title="添加音乐播放器"></a>添加音乐播放器</h2><p>以前觉得网页嵌入播放器很牛逼的感觉，原来就是一句代码的事儿！感谢外连接，感谢开源，让这个世界变得更美好。</p>
+<p>markdown语法是完全兼容html代码的，直接把html代码扔进去就oook咯。</p>
+<h3 id="添加豆瓣音乐"><a href="#添加豆瓣音乐" class="headerlink" title="添加豆瓣音乐"></a>添加豆瓣音乐</h3><p>复制下面代码到你的博文任意位置，然后<code>Hexo s</code>预览。</p>
+<p>加入豆瓣音乐 歌曲是随机播放，游客可切歌，不能定制播哪首歌，而且不能按钮停止，只能音量调到0，无语，有利有弊的吧。</p>
+<p>尽量放在最下面，如果你放在最上面，很有可能别人还未点击进入博文，你的博客就有了背景音乐了，要想赶紧播放音乐的另说。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\&lt;center&gt; </span><br><span class="line">	&lt;iframe name=&quot;iframe_canvas&quot; src=&quot;http://douban.fm/partner/baidu/doubanradio&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; width=&quot;400&quot; height=&quot;200&quot;&gt;</span><br><span class="line">	&lt;/iframe&gt; </span><br><span class="line">&lt;/center&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加网易云音乐"><a href="#添加网易云音乐" class="headerlink" title="添加网易云音乐"></a>添加网易云音乐</h3><p>打开网页版网易云音乐。</p>
+<p>如果只是加入单曲，只需要搜索歌曲，点开歌曲名，点击生成外链播放器，复制html代码（可以选择是否自动播放），将html代码无需任何修改放入markdown文章里就OK了。</p>
+<p>如果想要加入歌单，就需要自己创建歌单，然后分享歌单，找到自己的分享动态，点进去可以看到有“生成外链播放器”这些字眼，其余操作就和上面一样了。不过，你的歌单有变化的话，这个外链的歌曲同样跟着变，这一点挺棒的。</p>
+<p>例如，播放待你长发及腰这首歌，自动播放只需要嵌入一下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;http://music.163.com/outchain/player?type=2&amp;id=28947001&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=614872141&auto=1&height=430"></iframe>
+
+<p>类似方法还可以嵌入虾米播播</p>
+<p>添加high一下</p>
+<p>再次感谢开源</p>
+<p>效果很赞，整个页面渐进式摇摆，摇摆，还有音乐</p>
+<p>在 Hexo\themes\next\layout_partials\header.swig 中的 ul 标签加入如下 li 代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt; &lt;a title=&quot;把这个链接拖到你的Chrome收藏夹工具栏中&quot; href=&#x27;javascript:(function() &#123;</span><br><span class="line">    function c() &#123;</span><br><span class="line">        var e = document.createElement(&quot;link&quot;);</span><br><span class="line">        e.setAttribute(&quot;type&quot;, &quot;text/css&quot;);</span><br><span class="line">        e.setAttribute(&quot;rel&quot;, &quot;stylesheet&quot;);</span><br><span class="line">        e.setAttribute(&quot;href&quot;, f);</span><br><span class="line">        e.setAttribute(&quot;class&quot;, l);</span><br><span class="line">        document.body.appendChild(e)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function h() &#123;</span><br><span class="line">        var e = document.getElementsByClassName(l);</span><br><span class="line">        for (var t = 0; t &lt; e.length; t++) &#123;</span><br><span class="line">            document.body.removeChild(e[t])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function p() &#123;</span><br><span class="line">        var e = document.createElement(&quot;div&quot;);</span><br><span class="line">        e.setAttribute(&quot;class&quot;, a);</span><br><span class="line">        document.body.appendChild(e);</span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            document.body.removeChild(e)</span><br><span class="line">        &#125;, 100)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function d(e) &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            height : e.offsetHeight,</span><br><span class="line">            width : e.offsetWidth</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function v(i) &#123;</span><br><span class="line">        var s = d(i);</span><br><span class="line">        return s.height &gt; e &amp;&amp; s.height &lt; n &amp;&amp; s.width &gt; t &amp;&amp; s.width &lt; r</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function m(e) &#123;</span><br><span class="line">        var t = e;</span><br><span class="line">        var n = 0;</span><br><span class="line">        while (!!t) &#123;</span><br><span class="line">            n += t.offsetTop;</span><br><span class="line">            t = t.offsetParent</span><br><span class="line">        &#125;</span><br><span class="line">        return n</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function g() &#123;</span><br><span class="line">        var e = document.documentElement;</span><br><span class="line">        if (!!window.innerWidth) &#123;</span><br><span class="line">            return window.innerHeight</span><br><span class="line">        &#125; else if (e &amp;&amp; !isNaN(e.clientHeight)) &#123;</span><br><span class="line">            return e.clientHeight</span><br><span class="line">        &#125;</span><br><span class="line">        return 0</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function y() &#123;</span><br><span class="line">        if (window.pageYOffset) &#123;</span><br><span class="line">            return window.pageYOffset</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function E(e) &#123;</span><br><span class="line">        var t = m(e);</span><br><span class="line">        return t &gt;= w &amp;&amp; t &lt;= b + w</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function S() &#123;</span><br><span class="line">        var e = document.createElement(&quot;audio&quot;);</span><br><span class="line">        e.setAttribute(&quot;class&quot;, l);</span><br><span class="line">        e.src = i;</span><br><span class="line">        e.loop = false;</span><br><span class="line">        e.addEventListener(&quot;canplay&quot;, function() &#123;</span><br><span class="line">            setTimeout(function() &#123;</span><br><span class="line">                x(k)</span><br><span class="line">            &#125;, 500);</span><br><span class="line">            setTimeout(function() &#123;</span><br><span class="line">                N();</span><br><span class="line">                p();</span><br><span class="line">                for (var e = 0; e &lt; O.length; e++) &#123;</span><br><span class="line">                    T(O[e])</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, 15500)</span><br><span class="line">        &#125;, true);</span><br><span class="line">        e.addEventListener(&quot;ended&quot;, function() &#123;</span><br><span class="line">            N();</span><br><span class="line">            h()</span><br><span class="line">        &#125;, true);</span><br><span class="line">        e.innerHTML = &quot; &lt;p&gt;If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.&lt;/p&gt; &lt;p&gt;&quot;;</span><br><span class="line">        document.body.appendChild(e);</span><br><span class="line">        e.play()</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function x(e) &#123;</span><br><span class="line">        e.className += &quot; &quot; + s + &quot; &quot; + o</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function T(e) &#123;</span><br><span class="line">        e.className += &quot; &quot; + s + &quot; &quot; + u[Math.floor(Math.random() * u.length)]</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    function N() &#123;</span><br><span class="line">        var e = document.getElementsByClassName(s);</span><br><span class="line">        var t = new RegExp(&quot;\\b&quot; + s + &quot;\\b&quot;);</span><br><span class="line">        for (var n = 0; n &lt; e.length; ) &#123;</span><br><span class="line">            e[n].className = e[n].className.replace(t, &quot;&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    var e = 30;</span><br><span class="line">    var t = 30;</span><br><span class="line">    var n = 350;</span><br><span class="line">    var r = 350;</span><br><span class="line">    var i = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3&quot;;</span><br><span class="line">    var s = &quot;mw-harlem_shake_me&quot;;</span><br><span class="line">    var o = &quot;im_first&quot;;</span><br><span class="line">    var u = [&quot;im_drunk&quot;, &quot;im_baked&quot;, &quot;im_trippin&quot;, &quot;im_blown&quot;];</span><br><span class="line">    var a = &quot;mw-strobe_light&quot;;</span><br><span class="line">    var f = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css&quot;;</span><br><span class="line">    var l = &quot;mw_added_css&quot;;</span><br><span class="line">    var b = g();</span><br><span class="line">    var w = y();</span><br><span class="line">    var C = document.getElementsByTagName(&quot;*&quot;);</span><br><span class="line">    var k = null;</span><br><span class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</span><br><span class="line">        var A = C[L];</span><br><span class="line">        if (v(A)) &#123;</span><br><span class="line">            if (E(A)) &#123;</span><br><span class="line">                k = A;</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (A === null) &#123;</span><br><span class="line">        console.warn(&quot;Could not find a node of the right size. Please try a different page.&quot;);</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    c();</span><br><span class="line">    S();</span><br><span class="line">    var O = [];</span><br><span class="line">    for (var L = 0; L &lt; C.length; L++) &#123;</span><br><span class="line">        var A = C[L];</span><br><span class="line">        if (v(A)) &#123;</span><br><span class="line">            O.push(A)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()    &#x27;&gt;High一下&lt;/a&gt; &lt;/li&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/28/HEXOThemeNexT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/28/HEXOThemeNexT/" class="post-title-link" itemprop="url">HEXO使用极简主题NexT</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-28 20:33:56" itemprop="dateCreated datePublished" datetime="2017-02-28T20:33:56+08:00">2017-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:54:25" itemprop="dateModified" datetime="2021-12-06T10:54:25+08:00">2021-12-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用hexo搭建好个人博客之后，觉得自己好流弊啊，然而总感觉咋么这么丑捏？于是去看别人的博客，有些挺好看的嘛，于是学着使用了第一个主题：jacman，费劲力气配置好主题之后，打开博客，嗯……不丑了，难看了。去知乎翻一翻别人推荐的主题，嘿，发现了这款最适合我的极简主题NexT。</p>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
+<h2 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h2><h2 id="安装NexT主题"><a href="#安装NexT主题" class="headerlink" title="安装NexT主题"></a>安装NexT主题</h2><p>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可。具体到 NexT 来说，安装步骤如下：</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>1)使用git克隆最新版主题，以后便于使用<code>git pull</code>快速更新。</p>
+<p>在终端窗口下，定位到 Hexo 站点目录下。使用 Git checkout 代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>2)前往 NexT 版本<a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/releases">发布页面</a>。<br>选择你所需要的版本，下载 Download 区域下的 Source Code (zip) 到本地。<br>解压所下载的压缩包至站点的 themes 目录下， 并将 解压后的文件夹名称（hexo-theme-next-0.4.0）更改为 next。</p>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>与所有 Hexo 主题启用的模式一样。 当 克隆&#x2F;下载 完成后，打开 <strong>站点配置文件</strong>， 找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<p>之后，主题就已经启用了，下一步我们需要验证一下是否成功，在这之前，最好先使用<code>hexo clean</code>清除一下hexo的缓存。</p>
+<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 <code>--debug</code>），整个命令是 <code>hexo s --debug</code>。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>此时即可使用浏览器访问 <code>http://localhost:4000</code>，检查站点是否正确运行。</p>
+<blockquote>
+<p>当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。这是 NexT 默认的 Scheme —— Muse</p>
+</blockquote>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd3nq2sj21720nyn1a' width='500' />
+</center>
+
+<p>现在，你已经成功安装并启用了 NexT 主题。下一步我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
+<h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><h4 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h4><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</span><br><span class="line">Mist - Muse 的紧凑版本，整洁有序的单栏外观</span><br><span class="line">Pisces - 双栏 Scheme，小家碧玉似的清新</span><br></pre></td></tr></table></figure>
+<p>Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">\#scheme: Pisces</span><br></pre></td></tr></table></figure>
+<h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3><p>编辑 <strong>站点配置文件</strong>， 将 <code>language</code> 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+<p>目前 NexT 支持的语言如以下表格所示：</p>
+<table>
+<thead>
+<tr>
+<th align="left">语言</th>
+<th align="left">代码</th>
+<th align="left">设定示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">English</td>
+<td align="left">en</td>
+<td align="left">language: en</td>
+</tr>
+<tr>
+<td align="left">简体中文</td>
+<td align="left">zh-Hans</td>
+<td align="left">language: zh-Hans</td>
+</tr>
+<tr>
+<td align="left">Français</td>
+<td align="left">fr-FR</td>
+<td align="left">language: fr-FR</td>
+</tr>
+<tr>
+<td align="left">Português</td>
+<td align="left">pt</td>
+<td align="left">language: pt or language: pt-BR</td>
+</tr>
+<tr>
+<td align="left">繁體中文</td>
+<td align="left">zh-hk 或者 zh-tw</td>
+<td align="left">language: zh-hk</td>
+</tr>
+<tr>
+<td align="left">Русский язык</td>
+<td align="left">ru</td>
+<td align="left">language: ru</td>
+</tr>
+<tr>
+<td align="left">Deutsch</td>
+<td align="left">de</td>
+<td align="left">language: de</td>
+</tr>
+<tr>
+<td align="left">日本語</td>
+<td align="left">ja</td>
+<td align="left">language: ja</td>
+</tr>
+<tr>
+<td align="left">Indonesian</td>
+<td align="left">id</td>
+<td align="left">language: id</td>
+</tr>
+<tr>
+<td align="left">Korean</td>
+<td align="left">ko</td>
+<td align="left">language: ko</td>
+</tr>
+</tbody></table>
+<h3 id="设置-菜单"><a href="#设置-菜单" class="headerlink" title="设置 菜单"></a>设置 菜单</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 <a target="_blank" rel="noopener" href="http://fontawesome.io/">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
+<h4 id="菜单项"><a href="#菜单项" class="headerlink" title="菜单项"></a>菜单项</h4><p>编辑 <strong>主题配置文件</strong>，修改以下内容：</p>
+<p>设定菜单内容，对应的字段是 <code>menu</code>。 菜单内容的设置格式是：<code>item name: link</code>。其中 <code>item name</code> 是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  about: /about</span><br><span class="line">  categories: /categories</span><br><span class="line">  tags: /tags</span><br><span class="line">  #commonweal: /404.html</span><br></pre></td></tr></table></figure>
+<p>NexT 默认的菜单项有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">键值</th>
+<th align="left">设定值</th>
+<th align="left">显示文本（简体中文）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">home</td>
+<td align="left">home: &#x2F;</td>
+<td align="left">主页</td>
+</tr>
+<tr>
+<td align="left">archives</td>
+<td align="left">archives: &#x2F;archives</td>
+<td align="left">归档页</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td align="left">categories: &#x2F;categories</td>
+<td align="left">分类页</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td align="left">tags: &#x2F;tags</td>
+<td align="left">标签页</td>
+</tr>
+<tr>
+<td align="left">about</td>
+<td align="left">about: &#x2F;about</td>
+<td align="left">关于页面</td>
+</tr>
+<tr>
+<td align="left">commonweal</td>
+<td align="left">commonweal: &#x2F;404.html</td>
+<td align="left">公益 404</td>
+</tr>
+</tbody></table>
+<p><strong>但是除了主页和归档页，其他都需要手动创建</strong>。</p>
+<h4 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h4><p>设置菜单项的显示文本。在第一步中设置的菜单的名称并不直接用于界面上的展示。Hexo 在生成的时候将使用 这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放置在 NexT 主题目录下的 <code>languages/&#123;language&#125;.yml</code> （<code>&#123;language&#125;</code> 为你所使用的语言）。</p>
+<p>以简体中文为例，若你需要添加一个菜单项，比如 <code>something</code>。那么就需要修改简体中文对应的翻译文件 <code>languages/zh-Hans.yml</code>，在 <code>menu</code> 字段下添加一项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  something: 有料</span><br></pre></td></tr></table></figure>
+<h4 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h4><p>设定菜单项的图标，对应的字段是 <code>menu_icons</code>。 此设定格式是 <code>item name: icon name</code>，其中 <code>item name</code> 与上一步所配置的菜单名字对应，<code>icon name</code> 是 Font Awesome 图标的 名字。而 <code>enable</code> 可用于控制是否显示图标，你可以设置成 <code>false</code> 来去掉图标。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  # Icon Mapping.</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  commonweal: heartbeat</span><br></pre></td></tr></table></figure>
+<p>在菜单图标开启的情况下，如果菜单项与菜单未匹配（没有设置或者无效的 Font Awesome 图标名字） 的情况下，NexT 将会使用<code>问号</code>作为图标。</p>
+<blockquote>
+<p>请注意键值（如 home）的大小写要严格匹配</p>
+</blockquote>
+<h3 id="设置-侧栏"><a href="#设置-侧栏" class="headerlink" title="设置 侧栏"></a>设置 侧栏</h3><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 <code>sidebar</code> 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
+<p>设置侧栏的位置，修改 <code>sidebar.position</code> 的值，支持的选项有：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left - 靠左放置</span><br><span class="line">right - 靠右放置</span><br></pre></td></tr></table></figure>
+<p>目前仅 Pisces Scheme 支持 position 配置。影响版本5.0.0及更低版本。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  position: left</span><br></pre></td></tr></table></figure>
+<p>设置侧栏显示的时机，修改 <code>sidebar.display</code> 的值，支持的选项有：</p>
+<ul>
+<li><code>post</code> - 默认行为，在文章页面（拥有目录列表）时显示</li>
+<li><code>always</code> - 在所有页面中都显示</li>
+<li><code>hide</code> - 在所有页面中都隐藏（可以手动展开）</li>
+<li><code>remove</code> - 完全移除<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  display: post</span><br></pre></td></tr></table></figure>
+<h3 id="设置-头像"><a href="#设置-头像" class="headerlink" title="设置 头像"></a>设置 头像</h3></li>
+</ul>
+<p>编辑 <strong>站点配置文件</strong>， 新增字段 <code>avatar</code>， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
+<table>
+<thead>
+<tr>
+<th align="left">地址</th>
+<th align="left">值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">完整的互联网 URL</td>
+<td align="left"><a href="http://example.com/avatar.png">http://example.com/avatar.png</a></td>
+</tr>
+<tr>
+<td align="left">站点内的地址</td>
+<td align="left">将头像放置主题目录下的 <code>source/uploads/</code>（新建uploads目录若不存在） <br>配置为：<code>avatar: /uploads/avatar.png</code> <br>或者 放置在 <code>source/images/</code> 目录下 <br>配置为：<code>avatar: /images/avatar.png</code></td>
+</tr>
+</tbody></table>
+<p>头像设置示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: http://example.com/avatar.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置-作者昵称"><a href="#设置-作者昵称" class="headerlink" title="设置 作者昵称"></a>设置 作者昵称</h3><p>编辑 <strong>站点配置文件</strong>， 设置 <code>author</code> 为你的昵称。</p>
+<h3 id="站点描述"><a href="#站点描述" class="headerlink" title="站点描述"></a>站点描述</h3><p>编辑 <strong>站点配置文件</strong>， 设置 <code>description</code> 字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
+<h2 id="创建菜单项页面"><a href="#创建菜单项页面" class="headerlink" title="创建菜单项页面"></a>创建菜单项页面</h2><p>由于默认没有分类页面，如果菜单栏放出了分类按钮，点击会是404页面，创建分类页面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里的categories要与菜单里设置的路径一致</strong></p>
+<p>这样创建的页面会在<strong>站点配置</strong>的<code>source</code>文件夹下创建<code>categories</code>文件夹，并在文件夹内创建<code>index.md</code>，编辑刚新建的<code>index.md</code>页面，将页面的类型设置为 <code>categories</code> ，主题将自动为这个页面显示分类。页面内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2017-02-28 20:28:14</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false # 关闭这个页面的多说或者 Disqus 评论</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>在菜单中要打开对应链接。编辑 <strong>主题配置文件</strong>，添加 <code>categories</code> 到 <code>menu</code> 中，如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  archives: /archives</span><br><span class="line">  categories: /categories</span><br></pre></td></tr></table></figure>
+
+<p>同理，tags标签页和about标签页也可以这样生成。</p>
+<h2 id="继承第三方插件"><a href="#继承第三方插件" class="headerlink" title="继承第三方插件"></a>继承第三方插件</h2><h3 id="多说评论插件"><a href="#多说评论插件" class="headerlink" title="多说评论插件"></a>多说评论插件</h3><blockquote>
+<p>注意：<code>duoshuo_shortname</code> 不是你的多说登录的 id<br>使用多说前需要先在 <a target="_blank" rel="noopener" href="http://duoshuo.com/">多说</a> 创建一个站点。具体步骤如下：</p>
+</blockquote>
+<p>登录后在首页选择 “我要安装”。<br>创建站点，填写站点相关信息。 <strong>多说域名</strong> 这一栏填写的即是你的 <code>duoshuo_shortname</code>，如图：</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygd5luotj21880eijvm' width='500' />
+</center>
+
+<p>创建站点完成后在 <strong>主题配置文件</strong> 中新增 <code>duoshuo_shortname</code> 字段，值设置成上一步中的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duoshuo_shortname: iissnan-notes</span><br></pre></td></tr></table></figure>
+<p>请注意为了确保多说索引的页面地址正确，需要在 <strong>站点配置文件</strong> 中正确设置 <code>url</code> 为你站点的域名。 若您的评论跳转到 <code>http://yoursite.com</code>，请检查下 <code>url</code> 的配置是否正确。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://notes.wanghao.work/2015-07-25-%E5%A4%9A%E8%AF%B4%E4%B8%BB%E5%8A%A8%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92.html#more">关于多有评论的通知提醒</a></strong></p>
+<h3 id="阅读次数统计（LeanCloud）-由-Doublemine-贡献"><a href="#阅读次数统计（LeanCloud）-由-Doublemine-贡献" class="headerlink" title="阅读次数统计（LeanCloud） 由 Doublemine 贡献"></a>阅读次数统计（LeanCloud） 由 <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/pull/439">Doublemine</a> 贡献</h3><p>请查看 <a target="_blank" rel="noopener" href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">为NexT主题添加文章阅读量统计功能</a></p>
+<h3 id="其他第三方服务"><a href="#其他第三方服务" class="headerlink" title="其他第三方服务"></a><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/third-party-services.html">其他第三方服务</a></h3><p><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/third-party-services.html#algolia-search">Algolia搜索</a></p>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>更多关于next主题使用，请参考<a target="_blank" rel="noopener" href="http://www.codepub.cn/2016/03/20/Hexo-blog-theme-switching-from-Jacman-to-NexT-Mist/">Hexo博客主题从Jacman切换到NexT.Mist</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/28/useQiNiuPicService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/28/useQiNiuPicService/" class="post-title-link" itemprop="url">使用七牛云搭建免费图床</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-28 20:01:00" itemprop="dateCreated datePublished" datetime="2017-02-28T20:01:00+08:00">2017-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 11:06:00" itemprop="dateModified" datetime="2021-12-06T11:06:00+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<p>七牛图床因为域名原因已经废了，现在使用picgo软件，图床放在微博服务器上，出门右转。</p>
+---------------------------------------------
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为使用github搭建的个人博客容量有限，所以许多时候都不舍得向博客中添加图片，但是没有图片的博文就像餐中无肉一样，看起来就没食欲，因此跟大牛们学着使用七牛云免费存储空间，在这里向大家分享一下使用方法。</p>
+
+
+<h3 id="注册七牛云"><a href="#注册七牛云" class="headerlink" title="注册七牛云"></a>注册七牛云</h3><p>注册登录<a target="_blank" rel="noopener" href="http://www.qiniu.com/">七牛云</a>，完成实名认证会赠送10G流量，通过邀请好友也可以获得流量等等。</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcppq0mj21s612gn4b' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcrflpfj21ce0vy788' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcqllhij21c20r8wi1' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcs7yc8j21ai0ugn0m' width='500' />
+</center>
+
+<h2 id="一、普通上传资源方法"><a href="#一、普通上传资源方法" class="headerlink" title="一、普通上传资源方法"></a>一、普通上传资源方法</h2><p>一般来说，上传图片资源，需要</p>
+<ul>
+<li>登录七牛个人网页</li>
+<li>上传图片</li>
+<li>复制外链</li>
+<li>粘贴到Markdown</li>
+</ul>
+<p>可是作为一个爱装逼的程序猿，我怎么能受得了这么麻烦的步骤，所以我继续探索自动化上传图片。</p>
+<h2 id="二、qrsync-命令行同步工具"><a href="#二、qrsync-命令行同步工具" class="headerlink" title="二、qrsync 命令行同步工具"></a>二、qrsync 命令行同步工具</h2><p>对程序员来说，简便的方法当然是命令行啦，没有什么是一行命令不能解决的，如果有，那就多打几行。七牛的<a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/tools/qrsync">qrsync命令行同步工具</a>，就是为我这种懒得要死的程序猿设计的，只需要敲命令，一切搞定有木有（虽然截止发稿时，七牛推出了qshell命令行工具，qrsync好像已经停止更新，但是好像并不太影响使用，这里就先继续使用前人踩过坑的qrsync）。</p>
+<h3 id="配置qrsync"><a href="#配置qrsync" class="headerlink" title="配置qrsync"></a>配置qrsync</h3><p>将解压后文件夹中的qrsync文件拷贝到&#x2F;usr&#x2F;local&#x2F;bin&#x2F;中</p>
+<ul>
+<li>方法一：</li>
+<li>复制 qrsync 文件</li>
+<li>Finder快捷键 Shift+Command+G 打开前往窗口，输入 &#x2F;usr&#x2F;local&#x2F;bin&#x2F;</li>
+<li>粘贴 qrsync 文件</li>
+</ul>
+<br>
+
+<ul>
+<li><p>方法二：</p>
+</li>
+<li><p>终端命令</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cp /Users/xxx/Downloads/qiniu-devtools-darwin_amd64-v2.6.20131211/qrsync /usr/local/bin/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-conf-json"><a href="#配置-conf-json" class="headerlink" title="配置 conf.json"></a>配置 conf.json</h3><p>配置说明：用 conf.json将本地文件与七牛云的通道打通，将本机指定文件上传到指定的空间。</p>
+<p>目的：将 conf.json 文件里面的语法填写正确</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            &quot;access_key&quot;: &quot;Please apply your access key here&quot;,</span><br><span class="line">            &quot;secret_key&quot;: &quot;Dont send your secret key to anyone&quot;,</span><br><span class="line">            &quot;bucket&quot;: &quot;Bucket name on qiniu resource storage&quot;,</span><br><span class="line">            &quot;sync_dir&quot;: &quot;Local directory to upload&quot;,</span><br><span class="line">            &quot;async_ops&quot;: &quot;fop1;fop2;fopN&quot;,</span><br><span class="line">            &quot;debug_level&quot;: 1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>建立 conf.json 文件<br><br>用 sublime 新建文档，粘贴以上文本<br><br>Shift+Command+P 打开 命令面板<br><br>输入 json 回车，将文件格式改为 json<br><br>Command+S，将其保存在&#x2F;Users&#x2F;cnfeat&#x2F;7niu&#x2F;目录下，文件名保存为 conf<br><br>这样 conf.json 文件就新建好<br><br>目录地址是&#x2F;Users&#x2F;xxx&#x2F;7niu&#x2F;conf.json</p>
+<ul>
+<li>到七牛云获取你的AccessKey&#x2F;SecretKey</li>
+</ul>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcssl7fj21sa0van26' width='500' />
+</center>
+
+<ul>
+<li>“bucket” 即你的七牛云空间名字，你的空间名字在七牛网内是唯一的</li>
+<li>例如，我的七牛云空间名字是 jinimg</li>
+</ul>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygctny26j216o0zu0w7' width='500' />
+</center>
+
+<ul>
+<li>“sync_dir” 是你本地要上传图片文件夹的地址</li>
+<li>例如，我就在 Documents&#x2F;Pictures 文件夹建了 名为7niu 的文件夹，并在里面放了一张名为shuimo.jpg的图片</li>
+<li>所以，上传地址就是 <code>/Users/xxx/Documents/Pictures/7niu</code></li>
+<li>“async_ops” 是设置上传预转参数，可以留空</li>
+<li>“debug_level” 默认就好</li>
+</ul>
+<h3 id="使用命令行同步"><a href="#使用命令行同步" class="headerlink" title="使用命令行同步"></a>使用命令行同步</h3><p>打开终端输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qrsync /Users/xxx/7niu/conf.json </span><br></pre></td></tr></table></figure>
+<p>出现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:205: Syncing /Users/xxx/Documents/Pictures/7niu =&gt; jinimg ...</span><br><span class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:213: Progress file: /Users/xxx/.qrsync/J90i1ichzB7rPSSfLVRzWw==.log</span><br><span class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] syncer.go:83: Put /Users/xxx/Documents/Pictures/7niu/shuimo.jpg =&gt; shuimo.jpg</span><br><span class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] qrsync.go:184: Sync done!</span><br></pre></td></tr></table></figure>
+
+<p>显示 shuimo.jpg 图片已经上传成功。</p>
+<p>打开 <a target="_blank" rel="noopener" href="http://om2jpczx8.bkt.clouddn.com/shuimo.jpg">http://om2jpczx8.bkt.clouddn.com/shuimo.jpg</a>可以看见图片了。</p>
+<p>至此，用 命令行 上传图片至 七牛云 的教程完成。</p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p>but，这里只是简化了上传步骤，难道你不觉得，在Markdown中使用图片时还是比较麻烦吗？写博客写到一半时</p>
+<ul>
+<li><p>要打开七牛个人空间</p>
+</li>
+<li><p>复制图片链接</p>
+</li>
+<li><p>写图片格式，粘贴链接</p>
+<br>
+看起来好傻逼啊有木有？
+</li>
+<li><p>仔细看一下图片的链接，都是由固定前缀加上图片名字生成的</p>
+</li>
+<li><p>每次同步图片的命令行也是固定的 <code>qrsync /Users/xxx/7niu/conf.json</code></p>
+</li>
+<li><p>而Markdown中大部分的格式也都是固定格式</p>
+</li>
+</ul>
+<p>每次写都要DuangDuangDuang的敲，麻烦死了。作为一个半资深程序猿，写程序的最高境界就是不写程序，既然都是固定格式，那能不能快捷简便地储存这些代码，就像Xcode的snippets代码块那样，输入简单快捷键就能调出来这些代码，bingo，当然有啦，那就是<strong>aText</strong>。</p>
+<h3 id="aText"><a href="#aText" class="headerlink" title="aText"></a>aText</h3><p>aText 是一款输入增强工具，例如你经常输入 你家的地址 “某某市，某某街，某某区.. ”等很长的一段话，你可能会把他保存到某个地方，每次都复制，粘贴一下才能使用，相当没有效率。使用了aText后，把经常输入 的 文字 添加一个快捷文字为myaddr的Snippet到TextExpander中，下次当你录入myaddr后，aText就会自动把你的地址全部输入到当 前光标位置，是不是很方便。 aText 与 TextExpander 的功能非常类似。</p>
+<p>下载之后，需要在系统设置-&gt;安全性与隐私-&gt;辅助功能中允许aText控制电脑，然后重启aText。</p>
+<p>设置一些快捷键</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcpbj45j218g0twteu' width='500' />
+</center>
+
+<p>我们可以把引入图片设为快捷键，引入之后修改文件名字即可</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcq63plj218g0twgrb' width='500' />
+</center>
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/27/SwiftCarthage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/27/SwiftCarthage/" class="post-title-link" itemprop="url">carthage 第三方库管理工具</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-27 17:02:55" itemprop="dateCreated datePublished" datetime="2017-02-27T17:02:55+08:00">2017-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:55:51" itemprop="dateModified" datetime="2021-12-06T10:55:51+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信大家都使用过cocoapods第三方库管理工具，今天给大家推荐一个新兴的管理工具carthage。</p>
+<p>同样是第三方管理工具，cocoapods会创建和修改项目的workspace配置，使用起来也很便捷，但是需要翻墙。carthage的特点是灵活，不会生成workspace文件，只需要打包好的framework文件，引入之后就能使用，而且使用的时候项目干干净净，就像使用原生的framework一样，而且不用担心cocoapods打包时出现的各种问题。
+
+<p>##安装使用Carthage</p>
+<h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line"></span><br><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+
+<p>###查看版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ carthage version</span><br></pre></td></tr></table></figure>
+
+<p>在项目中使用carthage</p>
+<h3 id="1、进入项目所在文件夹"><a href="#1、进入项目所在文件夹" class="headerlink" title="1、进入项目所在文件夹"></a>1、进入项目所在文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/Documents/Project</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、创建空的Carthage文件"><a href="#2、创建空的Carthage文件" class="headerlink" title="2、创建空的Carthage文件"></a>2、创建空的Carthage文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch Carthage</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）"><a href="#3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）" class="headerlink" title="3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）"></a>3、使用xcode打开cartfile文件（或者直接右键选择打开方式，并非必须xcode打开）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ open -a Xcode Carthage</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、写入需要的第三方库"><a href="#4、写入需要的第三方库" class="headerlink" title="4、写入需要的第三方库"></a>4、写入需要的第三方库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 3.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里与cocoapods中一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~&gt; 3.0 表示使用版本3.0以上但是低于4.0的最新版本，如3.5, 3.9</span><br><span class="line">== 3.0 表示使用3.0版本</span><br><span class="line">\&gt;= 3.0表示使用3.0或更高的版本</span><br><span class="line">如果你没有指明版本号，则会自动使用最新的版本</span><br></pre></td></tr></table></figure>
+<h3 id="5、保存并关闭Cartfile文件，终端运行"><a href="#5、保存并关闭Cartfile文件，终端运行" class="headerlink" title="5、保存并关闭Cartfile文件，终端运行"></a>5、保存并关闭Cartfile文件，终端运行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ carthage update --platform iOS</span><br></pre></td></tr></table></figure>
+<p>carthage会为你下载和编译所需要的第三方库，当命令执行完毕，在你的项目文件夹中会创建一个名为Carthage的文件夹</p>
+<p>在 ~&#x2F;Carthage&#x2F;Build&#x2F;iOS里会出现xxx.framework文件</p>
+<h3 id="6、现在打开你的项目，点击project，选择target-再选择上方的General，将需要的framework文件拖到-Linked-frameworks-and-Binaries内"><a href="#6、现在打开你的项目，点击project，选择target-再选择上方的General，将需要的framework文件拖到-Linked-frameworks-and-Binaries内" class="headerlink" title="6、现在打开你的项目，点击project，选择target, 再选择上方的General，将需要的framework文件拖到 Linked frameworks and Binaries内"></a><p>6、现在打开你的项目，点击project，选择target, 再选择上方的General，将需要的framework文件拖到 Linked frameworks and Binaries内</h3><h3 id="7、点击Build-Phrase-tab选项，添加相应的run-script。建立对此脚本的依赖（编译静态库的后会运行此脚本）"><a href="#7、点击Build-Phrase-tab选项，添加相应的run-script。建立对此脚本的依赖（编译静态库的后会运行此脚本）" class="headerlink" title="7、点击Build Phrase tab选项，添加相应的run script。建立对此脚本的依赖（编译静态库的后会运行此脚本）"></a><p>7、点击Build Phrase tab选项，添加相应的run script。建立对此脚本的依赖（编译静态库的后会运行此脚本）</h3><br>
+shell中输入
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user/local/bin/carthage copy-frameworks</span><br></pre></td></tr></table></figure>
+Input Files中导入对应framework
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(SRCROOT/Cartfile/Build/iOS/Alamofire.framework)</span><br></pre></td></tr></table></figure>
+<br>
+### 8、使用第三方库
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/14/create_cocoapods/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/02/14/create_cocoapods/" class="post-title-link" itemprop="url">创建podspec文件，为自己的项目添加pod支持</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-14 10:41:55" itemprop="dateCreated datePublished" datetime="2017-02-14T10:41:55+08:00">2017-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 10:54:10" itemprop="dateModified" datetime="2021-12-06T10:54:10+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>平常在github上下载别人项目时，总是会发现一个.podspec文件，很明显，是跟pod有关，可它到底是做什么用的呢？</p>
+<p>原来podspec文件是用来让自己插件能够在cocoapods库使用的，就像我们平常使用的<code>pod AFNetworking, &#39;~1.1.0&#39;</code>，配置podspec之后，我们就可以pod自己的代码来使用了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/02/14/create_cocoapods/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jindou.li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jinxiaodou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jinxiaodou" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:974705131@qq.com" title="E-Mail → mailto:974705131@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/1742489577" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;1742489577" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jindou.li</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>

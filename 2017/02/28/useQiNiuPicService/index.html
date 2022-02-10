@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="七牛图床因为域名原因已经废了，现在使用picgo软件，图床放在微博服务器上，出门右转。 ---------------------------------------------   前言因为使用github搭建的个人博客容量有限，所以许多时候都不舍得向博客中添加图片，但是没有图片的博文就像餐中无肉一样，看起来就没食欲，因此跟大牛们学着使用七牛云免费存储空间，在这里向大家分享一下使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用七牛云搭建免费图床">
+<meta property="og:url" content="http://example.com/2017/02/28/useQiNiuPicService/index.html">
+<meta property="og:site_name" content="金豆的个人空间">
+<meta property="og:description" content="七牛图床因为域名原因已经废了，现在使用picgo软件，图床放在微博服务器上，出门右转。 ---------------------------------------------   前言因为使用github搭建的个人博客容量有限，所以许多时候都不舍得向博客中添加图片，但是没有图片的博文就像餐中无肉一样，看起来就没食欲，因此跟大牛们学着使用七牛云免费存储空间，在这里向大家分享一下使用方法。">
+<meta property="og:locale">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcppq0mj21s612gn4b">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcrflpfj21ce0vy788">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcqllhij21c20r8wi1">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcs7yc8j21ai0ugn0m">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcssl7fj21sa0van26">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygctny26j216o0zu0w7">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcpbj45j218g0twteu">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcq63plj218g0twgrb">
+<meta property="article:published_time" content="2017-02-28T12:01:00.000Z">
+<meta property="article:modified_time" content="2021-12-06T03:06:00.189Z">
+<meta property="article:author" content="jindou.li">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcppq0mj21s612gn4b">
+
+<link rel="canonical" href="http://example.com/2017/02/28/useQiNiuPicService/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>使用七牛云搭建免费图床 | 金豆的个人空间</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">金豆的个人空间</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">金豆的私人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/02/28/useQiNiuPicService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jindou.li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金豆的个人空间">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用七牛云搭建免费图床
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-02-28 20:01:00" itemprop="dateCreated datePublished" datetime="2017-02-28T20:01:00+08:00">2017-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-06 11:06:00" itemprop="dateModified" datetime="2021-12-06T11:06:00+08:00">2021-12-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<p>七牛图床因为域名原因已经废了，现在使用picgo软件，图床放在微博服务器上，出门右转。</p>
+---------------------------------------------
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>因为使用github搭建的个人博客容量有限，所以许多时候都不舍得向博客中添加图片，但是没有图片的博文就像餐中无肉一样，看起来就没食欲，因此跟大牛们学着使用七牛云免费存储空间，在这里向大家分享一下使用方法。</p>
+
+
+<h3 id="注册七牛云"><a href="#注册七牛云" class="headerlink" title="注册七牛云"></a>注册七牛云</h3><p>注册登录<a target="_blank" rel="noopener" href="http://www.qiniu.com/">七牛云</a>，完成实名认证会赠送10G流量，通过邀请好友也可以获得流量等等。</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcppq0mj21s612gn4b' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcrflpfj21ce0vy788' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcqllhij21c20r8wi1' width='500' />
+</center>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcs7yc8j21ai0ugn0m' width='500' />
+</center>
+
+<h2 id="一、普通上传资源方法"><a href="#一、普通上传资源方法" class="headerlink" title="一、普通上传资源方法"></a>一、普通上传资源方法</h2><p>一般来说，上传图片资源，需要</p>
+<ul>
+<li>登录七牛个人网页</li>
+<li>上传图片</li>
+<li>复制外链</li>
+<li>粘贴到Markdown</li>
+</ul>
+<p>可是作为一个爱装逼的程序猿，我怎么能受得了这么麻烦的步骤，所以我继续探索自动化上传图片。</p>
+<h2 id="二、qrsync-命令行同步工具"><a href="#二、qrsync-命令行同步工具" class="headerlink" title="二、qrsync 命令行同步工具"></a>二、qrsync 命令行同步工具</h2><p>对程序员来说，简便的方法当然是命令行啦，没有什么是一行命令不能解决的，如果有，那就多打几行。七牛的<a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/tools/qrsync">qrsync命令行同步工具</a>，就是为我这种懒得要死的程序猿设计的，只需要敲命令，一切搞定有木有（虽然截止发稿时，七牛推出了qshell命令行工具，qrsync好像已经停止更新，但是好像并不太影响使用，这里就先继续使用前人踩过坑的qrsync）。</p>
+<h3 id="配置qrsync"><a href="#配置qrsync" class="headerlink" title="配置qrsync"></a>配置qrsync</h3><p>将解压后文件夹中的qrsync文件拷贝到&#x2F;usr&#x2F;local&#x2F;bin&#x2F;中</p>
+<ul>
+<li>方法一：</li>
+<li>复制 qrsync 文件</li>
+<li>Finder快捷键 Shift+Command+G 打开前往窗口，输入 &#x2F;usr&#x2F;local&#x2F;bin&#x2F;</li>
+<li>粘贴 qrsync 文件</li>
+</ul>
+<br>
+
+<ul>
+<li><p>方法二：</p>
+</li>
+<li><p>终端命令</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cp /Users/xxx/Downloads/qiniu-devtools-darwin_amd64-v2.6.20131211/qrsync /usr/local/bin/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-conf-json"><a href="#配置-conf-json" class="headerlink" title="配置 conf.json"></a>配置 conf.json</h3><p>配置说明：用 conf.json将本地文件与七牛云的通道打通，将本机指定文件上传到指定的空间。</p>
+<p>目的：将 conf.json 文件里面的语法填写正确</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">            &quot;access_key&quot;: &quot;Please apply your access key here&quot;,</span><br><span class="line">            &quot;secret_key&quot;: &quot;Dont send your secret key to anyone&quot;,</span><br><span class="line">            &quot;bucket&quot;: &quot;Bucket name on qiniu resource storage&quot;,</span><br><span class="line">            &quot;sync_dir&quot;: &quot;Local directory to upload&quot;,</span><br><span class="line">            &quot;async_ops&quot;: &quot;fop1;fop2;fopN&quot;,</span><br><span class="line">            &quot;debug_level&quot;: 1</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>建立 conf.json 文件<br><br>用 sublime 新建文档，粘贴以上文本<br><br>Shift+Command+P 打开 命令面板<br><br>输入 json 回车，将文件格式改为 json<br><br>Command+S，将其保存在&#x2F;Users&#x2F;cnfeat&#x2F;7niu&#x2F;目录下，文件名保存为 conf<br><br>这样 conf.json 文件就新建好<br><br>目录地址是&#x2F;Users&#x2F;xxx&#x2F;7niu&#x2F;conf.json</p>
+<ul>
+<li>到七牛云获取你的AccessKey&#x2F;SecretKey</li>
+</ul>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcssl7fj21sa0van26' width='500' />
+</center>
+
+<ul>
+<li>“bucket” 即你的七牛云空间名字，你的空间名字在七牛网内是唯一的</li>
+<li>例如，我的七牛云空间名字是 jinimg</li>
+</ul>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygctny26j216o0zu0w7' width='500' />
+</center>
+
+<ul>
+<li>“sync_dir” 是你本地要上传图片文件夹的地址</li>
+<li>例如，我就在 Documents&#x2F;Pictures 文件夹建了 名为7niu 的文件夹，并在里面放了一张名为shuimo.jpg的图片</li>
+<li>所以，上传地址就是 <code>/Users/xxx/Documents/Pictures/7niu</code></li>
+<li>“async_ops” 是设置上传预转参数，可以留空</li>
+<li>“debug_level” 默认就好</li>
+</ul>
+<h3 id="使用命令行同步"><a href="#使用命令行同步" class="headerlink" title="使用命令行同步"></a>使用命令行同步</h3><p>打开终端输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qrsync /Users/xxx/7niu/conf.json </span><br></pre></td></tr></table></figure>
+<p>出现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:205: Syncing /Users/xxx/Documents/Pictures/7niu =&gt; jinimg ...</span><br><span class="line">2017/02/28 14:21:33 [INFO][qbox.us/qrsync/v1] qrsync.go:213: Progress file: /Users/xxx/.qrsync/J90i1ichzB7rPSSfLVRzWw==.log</span><br><span class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] syncer.go:83: Put /Users/xxx/Documents/Pictures/7niu/shuimo.jpg =&gt; shuimo.jpg</span><br><span class="line">2017/02/28 14:21:34 [INFO][qbox.us/qrsync/v1] qrsync.go:184: Sync done!</span><br></pre></td></tr></table></figure>
+
+<p>显示 shuimo.jpg 图片已经上传成功。</p>
+<p>打开 <a target="_blank" rel="noopener" href="http://om2jpczx8.bkt.clouddn.com/shuimo.jpg">http://om2jpczx8.bkt.clouddn.com/shuimo.jpg</a>可以看见图片了。</p>
+<p>至此，用 命令行 上传图片至 七牛云 的教程完成。</p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><p>but，这里只是简化了上传步骤，难道你不觉得，在Markdown中使用图片时还是比较麻烦吗？写博客写到一半时</p>
+<ul>
+<li><p>要打开七牛个人空间</p>
+</li>
+<li><p>复制图片链接</p>
+</li>
+<li><p>写图片格式，粘贴链接</p>
+<br>
+看起来好傻逼啊有木有？
+</li>
+<li><p>仔细看一下图片的链接，都是由固定前缀加上图片名字生成的</p>
+</li>
+<li><p>每次同步图片的命令行也是固定的 <code>qrsync /Users/xxx/7niu/conf.json</code></p>
+</li>
+<li><p>而Markdown中大部分的格式也都是固定格式</p>
+</li>
+</ul>
+<p>每次写都要DuangDuangDuang的敲，麻烦死了。作为一个半资深程序猿，写程序的最高境界就是不写程序，既然都是固定格式，那能不能快捷简便地储存这些代码，就像Xcode的snippets代码块那样，输入简单快捷键就能调出来这些代码，bingo，当然有啦，那就是<strong>aText</strong>。</p>
+<h3 id="aText"><a href="#aText" class="headerlink" title="aText"></a>aText</h3><p>aText 是一款输入增强工具，例如你经常输入 你家的地址 “某某市，某某街，某某区.. ”等很长的一段话，你可能会把他保存到某个地方，每次都复制，粘贴一下才能使用，相当没有效率。使用了aText后，把经常输入 的 文字 添加一个快捷文字为myaddr的Snippet到TextExpander中，下次当你录入myaddr后，aText就会自动把你的地址全部输入到当 前光标位置，是不是很方便。 aText 与 TextExpander 的功能非常类似。</p>
+<p>下载之后，需要在系统设置-&gt;安全性与隐私-&gt;辅助功能中允许aText控制电脑，然后重启aText。</p>
+<p>设置一些快捷键</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcpbj45j218g0twteu' width='500' />
+</center>
+
+<p>我们可以把引入图片设为快捷键，引入之后修改文件名字即可</p>
+<center>
+<img src='https://wx1.sinaimg.cn/large/67dc47e9ly1fxygcq63plj218g0twgrb' width='500' />
+</center>
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/02/27/SwiftCarthage/" rel="prev" title="carthage 第三方库管理工具">
+      <i class="fa fa-chevron-left"></i> carthage 第三方库管理工具
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/02/28/HEXOThemeNexT/" rel="next" title="HEXO使用极简主题NexT">
+      HEXO使用极简主题NexT <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E4%B8%83%E7%89%9B%E4%BA%91"><span class="nav-number">1.1.</span> <span class="nav-text">注册七牛云</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%99%AE%E9%80%9A%E4%B8%8A%E4%BC%A0%E8%B5%84%E6%BA%90%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">一、普通上传资源方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81qrsync-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7"><span class="nav-number">3.</span> <span class="nav-text">二、qrsync 命令行同步工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEqrsync"><span class="nav-number">3.1.</span> <span class="nav-text">配置qrsync</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-conf-json"><span class="nav-number">3.2.</span> <span class="nav-text">配置 conf.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%90%8C%E6%AD%A5"><span class="nav-number">3.3.</span> <span class="nav-text">使用命令行同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-number">4.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#aText"><span class="nav-number">4.1.</span> <span class="nav-text">aText</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">jindou.li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jinxiaodou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jinxiaodou" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:974705131@qq.com" title="E-Mail → mailto:974705131@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/1742489577" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;1742489577" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jindou.li</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
