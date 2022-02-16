@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-16 10:52:37 / Modified: 11:22:43" itemprop="dateCreated datePublished" datetime="2022-02-16T10:52:37+08:00">2022-02-16</time>
+              <time title="Created: 2022-02-16 10:52:37 / Modified: 13:26:16" itemprop="dateCreated datePublished" datetime="2022-02-16T10:52:37+08:00">2022-02-16</time>
             </span>
 
           
@@ -200,15 +200,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>使用sourcetree推送GitHub项目时报错：Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/02/16/sourcetreeGithubToken/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>使用sourcetree推送GitHub项目时报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</span><br><span class="line">remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.</span><br><span class="line">fatal: unable to access ‘https://github.com/xxx/xxx.git/’: The requested URL returned error: 403</span><br></pre></td></tr></table></figure>
+
+<p>这是因为github现在只能使用personal access token登录，</p>
+<p>github上生成token的方法是，登录账号后，右上角头像-&gt;<code>Settings</code>-&gt;<code>Developer settings</code>-&gt;<code>Personal access tokens</code>-&gt;<code>Generate new token</code>，</p>
+<p>新创建token页面中，首先设置token的名字，用于辨识token的作用，之后选择token的有效期和设置token的权限作用域，完成后的token只会显示一次，建议找个地方保存一下。当然，以后token忘记了，也可以新建一个去使用。</p>
+<p>sourcetree 修改方法：</p>
+<p>Mac电脑在sourcetree中进入项目，点击右上角【设置】，选择远程仓库，把原本的<code>https://github.com/xxx/yyyy.git</code>修改成<code>https://ghp_acRdgvdf68rdfsg@github.com/xxx/yyyy.git</code>，<br>格式是<code>https://&lt;your_token&gt;@github.com/&lt;USERNAME&gt;/&lt;REPO&gt;.git</code><br><img src="https://upload-images.jianshu.io/upload_images/4571904-d244e4060038530c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在命令行中，同样的使用该格式clone https仓库：</p>
+<p><code>git clone https://&lt;your_token&gt;@github.com/&lt;USERNAME&gt;/&lt;REPO&gt;.git</code></p>
+
       
     </div>
 
